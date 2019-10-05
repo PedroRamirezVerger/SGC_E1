@@ -1,5 +1,5 @@
 idioma: java
 deploy:
-  privider: heroku
+  provider: heroku
    api_key:
     secure: "YOUR ENCRYPTED API KEY"
