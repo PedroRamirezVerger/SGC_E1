@@ -2,4 +2,4 @@ idioma: java
 deploy:
   provider: heroku
    api_key:
-    secure: "YOUR ENCRYPTED API KEY"
+    secure: 693d1a4c-d38f-4761-8394-adf6cf572067
