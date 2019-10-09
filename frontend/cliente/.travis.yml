@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - 12.11.1
-scrit:  
+script:  
   - "npm run lint"
   - "npm run test"
   
