@@ -36,4 +36,7 @@ export class LoginComponent implements OnInit {
       this.msg = 'Login incorrecto.'
     }
   }
+  singIn(){
+    this.router.navigate(['/registro'])
+  }
 }
