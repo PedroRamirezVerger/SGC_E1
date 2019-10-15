@@ -6,6 +6,3 @@ deploy:
 language: node_js
 node_js: 
   - "12.11.1"
-script: 
-  - "npm run lint"
-  - "npm run test"
