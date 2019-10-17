@@ -2,8 +2,8 @@
   "name": "cliente",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "npm run serve --prefix frontend/cliente -o --port 4201" ,
+    "ng": "ng --prefix frontend/cliente",
+    "start": "npm run serve --prefix frontend/cliente " ,
     "build": "npm run build --prefix frontend/cliente",
     "test": "npm run test --prefix frontend/cliente",
     "lint": "npm run lint --prefix frontend/cliente",

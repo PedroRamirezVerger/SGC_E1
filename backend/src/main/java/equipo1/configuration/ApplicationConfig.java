@@ -3,10 +3,10 @@ package equipo1.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.authentication.UserCredentials;
+
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.MongoClient;
@@ -19,15 +19,14 @@ import com.mongodb.client.MongoDatabase;
 
 public class ApplicationConfig {
 	@Bean
-	public MongoDbFactory mongoDbFactory() throws Exception {
+	public MongoDbFactory mongoDbFactory() {
 
 		MongoClientURI uri = new MongoClientURI(
 				"mongodb+srv://<sergiorodriguez>:<basedatossergio>@cluster0-mbkjd.mongodb.net/test?retryWrites=true&w=majority");
 
 		MongoClient mongoClient = new MongoClient(uri);
 		MongoDatabase database = mongoClient.getDatabase("SGC-E1");
-		UserCredentials userCredentials = new UserCredentials("sergiorodriguez", "basedatossergio");
-		return new SimpleMongoDbFactory(mongoClient, "equipo1", userCredentials);
+		
 
 	}
 
