@@ -5,9 +5,9 @@
     "ng": "ng",
     "start": "npm run serve --prefix frontend/cliente",
     "build": "npm run build --prefix frontend/cliente",
-    "test": "ng test ",
-    "lint": "ng lint ",
-    "e2e": "ng e2e "
+    "test": "npm run test --prefix frontend/cliente",
+    "lint": "npm run lint --prefix frontend/cliente",
+    "e2e": "npm run e2e --prefix frontend/cliente"
   },
   "private": true,
   "dependencies": {
