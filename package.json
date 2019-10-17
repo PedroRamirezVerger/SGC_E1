@@ -2,13 +2,12 @@
   "name": "cliente",
   "version": "0.0.0",
   "scripts": {
-    "outputpath": "frontend/cliente",
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ng": "ng -op ./frontend/cliente",
+    "start": "ng serve -op ./frontend/cliente",
+    "build": "ng build -op ./frontend/cliente",
+    "test": "ng test -op ./frontend/cliente",
+    "lint": "ng lint -op ./frontend/cliente",
+    "e2e": "ng e2e -op ./frontend/cliente"
   },
   "private": true,
   "dependencies": {
