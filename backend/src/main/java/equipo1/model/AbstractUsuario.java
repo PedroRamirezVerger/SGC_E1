@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Transient;
-import javax.servlet.http.HttpSession;
 
 @Entity(name="abstractusuario")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -15,7 +13,7 @@ import javax.servlet.http.HttpSession;
 public abstract class AbstractUsuario {
 	@Id
 	protected String dni;
-	protected String contraseña;
+	protected String contrasena;
 	protected String tipo;
 	
 	public String getDni() {
@@ -24,11 +22,11 @@ public abstract class AbstractUsuario {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	
 	public String getTipo() {
