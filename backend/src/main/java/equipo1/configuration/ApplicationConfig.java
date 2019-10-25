@@ -18,7 +18,7 @@ import com.mongodb.client.MongoDatabase;
 @EnableMongoRepositories({ "equipo1.repositories" })
 
 public class ApplicationConfig {
-	@Bean
+	/*@Bean
 	public MongoDbFactory mongoDbFactory() {
 
 		MongoClientURI uri = new MongoClientURI(
@@ -28,13 +28,13 @@ public class ApplicationConfig {
 		MongoDatabase database = mongoClient.getDatabase("SGC-E1");
 		
 
-	}
+	}*/
 
-	@Bean
+	/*@Bean
 	public MongoTemplate mongoTemplate() throws Exception {
 
 		MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory());
 		return mongoTemplate;
 
-	}
+	}*/
 }
