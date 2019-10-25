@@ -7,8 +7,7 @@
     "build": "npm run build --prefix frontend/cliente",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "npm run build --prefix frontend/cliente"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
