@@ -1,6 +1,7 @@
 {
   "name": "cliente",
   "version": "0.0.0",
+  "main": "./frontend/cliente/server.js",
   "scripts": {
     "ng": "ng ",
     "start": "node server.js ",
