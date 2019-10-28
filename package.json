@@ -4,12 +4,13 @@
   "main": "./frontend/cliente/server.js",
   "scripts": {
     "ng": "ng ",
-    "start": "node server.js ",
+    "start": "npm start --prefix frontend/cliente",
     "build": "npm run build --prefix frontend/cliente",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm run build --prefix frontend/cliente"
+    "postinstall": "npm run build --prefix frontend/cliente",
+    "preinstall":"cd $(frontend/cliente)"
   },
   "private": true,
   "dependencies": {
