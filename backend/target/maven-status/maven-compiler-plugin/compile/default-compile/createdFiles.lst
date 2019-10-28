@@ -1,0 +1,4 @@
+com\example\backend\controllers\UsuarioRestController.class
+com\example\backend\models\entity\Usuario.class
+com\example\backend\BackendApplication.class
+com\example\backend\models\dao\IUsuarioDAO.class
