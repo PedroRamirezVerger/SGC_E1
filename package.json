@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "npm run build --prefix frontend/cliente",
-    "preinstall":"cd $(frontend/cliente)"
+    "preinstall": "cd $(frontend/cliente)"
   },
   "private": true,
   "dependencies": {
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.8",
     "@angular/cli": "~8.3.8",
-    "@angular/compiler-cli": "~8.2.9",
+    "@angular/compiler-cli": "^8.2.12",
     "@angular/language-service": "~8.2.9",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
