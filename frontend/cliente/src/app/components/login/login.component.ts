@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 
 @Component({
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit {
   msg: string = ''
 
 
-  constructor(private router:Router) { 
+  constructor(private router:Router,
+              private loginService: LoginService
+              ) { 
 
   }
 
@@ -24,18 +27,18 @@ export class LoginComponent implements OnInit {
   }
 
 
-  logIn(nombre: any, password: string){
-    console.log(nombre);
-    console.log(password);
-    if(nombre === this.nombre_usuario && password === this.password){
-      this.loginPasado = true;
+  logIn(nombre: string, password: string){
+    this.loginService.validateLogin(nombre, password).subscribe(
+      (response) => this.loginPasado = response
+    );
+    if(this.loginPasado){
       this.msg = 'Login correcto!';
       this.router.navigate(['/citas'])
     } else {
-      this.loginPasado = false;
       this.msg = 'Login incorrecto.'
     }
   }
+
   singIn(){
     this.router.navigate(['/registro'])
   }

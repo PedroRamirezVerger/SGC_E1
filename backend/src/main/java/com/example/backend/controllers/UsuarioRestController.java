@@ -18,9 +18,7 @@ public class UsuarioRestController {
 	
 	@Autowired
 	private IUsuarioService usuarioService;
-	
-	@Autowired
-	private IUsuarioDAO usuarioDao;
+
 	
 	@GetMapping("/usuarios")
 	public List<Usuario> getAllUsers() {
