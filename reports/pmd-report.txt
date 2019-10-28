@@ -1,0 +1,316 @@
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:3:	UnusedImports: Avoid unused imports such as 'org.springframework.context.annotation.Bean'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:3:	UnusedImports: Avoid unused imports such as 'org.springframework.context.annotation.Bean'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:7:	UnusedImports: Avoid unused imports such as 'org.springframework.data.mongodb.MongoDbFactory'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:7:	UnusedImports: Avoid unused imports such as 'org.springframework.data.mongodb.MongoDbFactory'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:8:	UnusedImports: Avoid unused imports such as 'org.springframework.data.mongodb.core.MongoTemplate'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:8:	UnusedImports: Avoid unused imports such as 'org.springframework.data.mongodb.core.MongoTemplate'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:12:	UnusedImports: Avoid unused imports such as 'com.mongodb.MongoClient'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:12:	UnusedImports: Avoid unused imports such as 'com.mongodb.MongoClient'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:13:	UnusedImports: Avoid unused imports such as 'com.mongodb.MongoClientURI'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:13:	UnusedImports: Avoid unused imports such as 'com.mongodb.MongoClientURI'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:14:	UnusedImports: Avoid unused imports such as 'com.mongodb.client.MongoDatabase'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:14:	UnusedImports: Avoid unused imports such as 'com.mongodb.client.MongoDatabase'
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:20:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:20:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:20:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:20:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:21:	CommentSize: Comment is too large: Too many lines
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:21:	CommentSize: Comment is too large: Too many lines
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:25:	CommentSize: Comment is too large: Line too long
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:25:	CommentSize: Comment is too large: Line too long
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:33:	CommentSize: Comment is too large: Too many lines
+backend/src/main/java/equipo1/configuration/ApplicationConfig.java:33:	CommentSize: Comment is too large: Too many lines
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:13:	AbstractNaming: Abstract classes should be named AbstractXXX
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:13:	AbstractNaming: Abstract classes should be named AbstractXXX
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:13:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:13:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:14:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:14:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:18:	UnnecessaryAnnotationValueElement: Avoid the use of value in annotations when its the only element
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:18:	UnnecessaryAnnotationValueElement: Avoid the use of value in annotations when its the only element
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:19:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:19:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:24:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:24:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:28:	UnnecessaryAnnotationValueElement: Avoid the use of value in annotations when its the only element
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:28:	UnnecessaryAnnotationValueElement: Avoid the use of value in annotations when its the only element
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:29:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/AbstractUsuarioRepository.java:29:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/CentroSaludRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/CentroSaludRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/CentroSaludRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/CentroSaludRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/CitaRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/CitaRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/CitaRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/CitaRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/CitaRepository.java:9:	ShortVariable: Avoid variables with short names like id
+backend/src/main/java/equipo1/dao/CitaRepository.java:9:	ShortVariable: Avoid variables with short names like id
+backend/src/main/java/equipo1/dao/EnfermeroRepository.java:9:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/EnfermeroRepository.java:9:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/EnfermeroRepository.java:10:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/EnfermeroRepository.java:10:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/EspecialidadRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/EspecialidadRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/EspecialidadRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/EspecialidadRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/GerenteRepository.java:9:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/GerenteRepository.java:9:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/GerenteRepository.java:10:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/GerenteRepository.java:10:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/MedicoRepository.java:10:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/MedicoRepository.java:10:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/MedicoRepository.java:11:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/MedicoRepository.java:11:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/PacienteRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/PacienteRepository.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/dao/PacienteRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/dao/PacienteRepository.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	AbstractClassWithoutAbstractMethod: This abstract class does not have any abstract methods
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	AbstractClassWithoutAbstractMethod: This abstract class does not have any abstract methods
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	DataClass: The class 'AbstractUsuario' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=6, WMC=6)
+backend/src/main/java/equipo1/model/AbstractUsuario.java:13:	DataClass: The class 'AbstractUsuario' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=6, WMC=6)
+backend/src/main/java/equipo1/model/AbstractUsuario.java:15:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:15:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:17:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:17:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/AbstractUsuario.java:22:	MethodArgumentCouldBeFinal: Parameter 'dni' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/AbstractUsuario.java:22:	MethodArgumentCouldBeFinal: Parameter 'dni' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/AbstractUsuario.java:28:	MethodArgumentCouldBeFinal: Parameter 'contrasena' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/AbstractUsuario.java:28:	MethodArgumentCouldBeFinal: Parameter 'contrasena' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/AbstractUsuario.java:35:	MethodArgumentCouldBeFinal: Parameter 'tipo' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/AbstractUsuario.java:35:	MethodArgumentCouldBeFinal: Parameter 'tipo' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:15:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/CentroSalud.java:15:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/CentroSalud.java:15:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:15:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:15:	DataClass: The class 'CentroSalud' is suspected to be a Data Class (WOC=25.000%, NOPA=0, NOAM=6, WMC=8)
+backend/src/main/java/equipo1/model/CentroSalud.java:15:	DataClass: The class 'CentroSalud' is suspected to be a Data Class (WOC=25.000%, NOPA=0, NOAM=6, WMC=8)
+backend/src/main/java/equipo1/model/CentroSalud.java:17:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:17:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:18:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:18:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:19:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:19:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:24:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:24:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:30:	MethodArgumentCouldBeFinal: Parameter 'localidad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:30:	MethodArgumentCouldBeFinal: Parameter 'localidad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:36:	MethodArgumentCouldBeFinal: Parameter 'medicos' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:36:	MethodArgumentCouldBeFinal: Parameter 'medicos' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:39:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:39:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:39:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:39:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:39:	MethodNamingConventions: The instance method name 'AddMedico' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/model/CentroSalud.java:39:	MethodNamingConventions: The instance method name 'AddMedico' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/model/CentroSalud.java:42:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:42:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/CentroSalud.java:42:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:42:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/CentroSalud.java:42:	MethodNamingConventions: The instance method name 'DeleteMedico' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/model/CentroSalud.java:42:	MethodNamingConventions: The instance method name 'DeleteMedico' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/model/Cita.java:14:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Cita.java:14:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Cita.java:14:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Cita.java:14:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Cita.java:14:	DataClass: The class 'Cita' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=14, WMC=14)
+backend/src/main/java/equipo1/model/Cita.java:14:	DataClass: The class 'Cita' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=14, WMC=14)
+backend/src/main/java/equipo1/model/Cita.java:14:	ShortClassName: Avoid short class names like Cita
+backend/src/main/java/equipo1/model/Cita.java:14:	ShortClassName: Avoid short class names like Cita
+backend/src/main/java/equipo1/model/Cita.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:16:	ShortVariable: Avoid variables with short names like id
+backend/src/main/java/equipo1/model/Cita.java:16:	ShortVariable: Avoid variables with short names like id
+backend/src/main/java/equipo1/model/Cita.java:17:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:17:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:18:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:18:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:19:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:19:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:20:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:20:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:21:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:21:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:22:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:22:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Cita.java:27:	MethodArgumentCouldBeFinal: Parameter 'id' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:27:	MethodArgumentCouldBeFinal: Parameter 'id' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:27:	ShortVariable: Avoid variables with short names like id
+backend/src/main/java/equipo1/model/Cita.java:27:	ShortVariable: Avoid variables with short names like id
+backend/src/main/java/equipo1/model/Cita.java:33:	MethodArgumentCouldBeFinal: Parameter 'paciente' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:33:	MethodArgumentCouldBeFinal: Parameter 'paciente' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:39:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:39:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:45:	MethodArgumentCouldBeFinal: Parameter 'fecha' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:45:	MethodArgumentCouldBeFinal: Parameter 'fecha' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:51:	MethodArgumentCouldBeFinal: Parameter 'hora' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:51:	MethodArgumentCouldBeFinal: Parameter 'hora' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:57:	MethodArgumentCouldBeFinal: Parameter 'centroSalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:57:	MethodArgumentCouldBeFinal: Parameter 'centroSalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:63:	MethodArgumentCouldBeFinal: Parameter 'consulta' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Cita.java:63:	MethodArgumentCouldBeFinal: Parameter 'consulta' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:5:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Enfermero.java:5:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Enfermero.java:5:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:5:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:5:	DataClass: The class 'Enfermero' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=10, WMC=10)
+backend/src/main/java/equipo1/model/Enfermero.java:5:	DataClass: The class 'Enfermero' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=10, WMC=10)
+backend/src/main/java/equipo1/model/Enfermero.java:7:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:7:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:8:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:8:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:9:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:9:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:11:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:11:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Enfermero.java:15:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:15:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:21:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:21:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:27:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:27:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:33:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:33:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:39:	MethodArgumentCouldBeFinal: Parameter 'centrosalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Enfermero.java:39:	MethodArgumentCouldBeFinal: Parameter 'centrosalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Especialidad.java:13:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Especialidad.java:13:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Especialidad.java:13:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Especialidad.java:13:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Especialidad.java:13:	DataClass: The class 'Especialidad' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=4, WMC=4)
+backend/src/main/java/equipo1/model/Especialidad.java:13:	DataClass: The class 'Especialidad' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=4, WMC=4)
+backend/src/main/java/equipo1/model/Especialidad.java:15:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Especialidad.java:15:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Especialidad.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Especialidad.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Especialidad.java:21:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Especialidad.java:21:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Especialidad.java:27:	MethodArgumentCouldBeFinal: Parameter 'duracionCita' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Especialidad.java:27:	MethodArgumentCouldBeFinal: Parameter 'duracionCita' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:5:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Gerente.java:5:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Gerente.java:5:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Gerente.java:5:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Gerente.java:5:	DataClass: The class 'Gerente' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=8, WMC=8)
+backend/src/main/java/equipo1/model/Gerente.java:5:	DataClass: The class 'Gerente' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=8, WMC=8)
+backend/src/main/java/equipo1/model/Gerente.java:7:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:7:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:8:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:8:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:9:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:9:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Gerente.java:15:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:15:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:21:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:21:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:27:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:27:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:33:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Gerente.java:33:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:5:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Medico.java:5:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Medico.java:5:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Medico.java:5:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Medico.java:5:	DataClass: The class 'Medico' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=12, WMC=12)
+backend/src/main/java/equipo1/model/Medico.java:5:	DataClass: The class 'Medico' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=12, WMC=12)
+backend/src/main/java/equipo1/model/Medico.java:7:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:7:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:8:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:8:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:9:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:9:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:11:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:11:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:12:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:12:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Medico.java:17:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:17:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:23:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:23:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:29:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:29:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:35:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:35:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:41:	MethodArgumentCouldBeFinal: Parameter 'especialidad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:41:	MethodArgumentCouldBeFinal: Parameter 'especialidad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:47:	MethodArgumentCouldBeFinal: Parameter 'centrosalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Medico.java:47:	MethodArgumentCouldBeFinal: Parameter 'centrosalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:8:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Paciente.java:8:	AtLeastOneConstructor: Each class should declare at least one constructor
+backend/src/main/java/equipo1/model/Paciente.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Paciente.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/model/Paciente.java:8:	DataClass: The class 'Paciente' is suspected to be a Data Class (WOC=12.500%, NOPA=0, NOAM=14, WMC=16)
+backend/src/main/java/equipo1/model/Paciente.java:8:	DataClass: The class 'Paciente' is suspected to be a Data Class (WOC=12.500%, NOPA=0, NOAM=14, WMC=16)
+backend/src/main/java/equipo1/model/Paciente.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:10:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:11:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:11:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:12:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:12:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:13:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:13:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:14:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:14:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:15:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:15:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:16:	CommentRequired: Field comments are required
+backend/src/main/java/equipo1/model/Paciente.java:21:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:21:	MethodArgumentCouldBeFinal: Parameter 'nombre' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:27:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:27:	MethodArgumentCouldBeFinal: Parameter 'apellido' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:33:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:33:	MethodArgumentCouldBeFinal: Parameter 'email' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:39:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:39:	MethodArgumentCouldBeFinal: Parameter 'telefono' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:45:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:45:	MethodArgumentCouldBeFinal: Parameter 'medico' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:51:	MethodArgumentCouldBeFinal: Parameter 'centrosalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:51:	MethodArgumentCouldBeFinal: Parameter 'centrosalud' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:57:	MethodArgumentCouldBeFinal: Parameter 'enfermedades' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:57:	MethodArgumentCouldBeFinal: Parameter 'enfermedades' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:60:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/Paciente.java:60:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/Paciente.java:60:	MethodArgumentCouldBeFinal: Parameter 'enfermedad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:60:	MethodArgumentCouldBeFinal: Parameter 'enfermedad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:60:	MethodNamingConventions: The instance method name 'AddEnfermedad' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/model/Paciente.java:60:	MethodNamingConventions: The instance method name 'AddEnfermedad' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/model/Paciente.java:63:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/Paciente.java:63:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/model/Paciente.java:63:	MethodArgumentCouldBeFinal: Parameter 'enfermedad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:63:	MethodArgumentCouldBeFinal: Parameter 'enfermedad' is not assigned and could be declared final
+backend/src/main/java/equipo1/model/Paciente.java:63:	MethodNamingConventions: The instance method name 'DeleteEnfermedad' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/model/Paciente.java:63:	MethodNamingConventions: The instance method name 'DeleteEnfermedad' doesn't match '[a-z][a-zA-Z0-9]*'
+backend/src/main/java/equipo1/spring/BackendApplication.java:7:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/spring/BackendApplication.java:7:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/spring/BackendApplication.java:7:	UseUtilityClass: All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+backend/src/main/java/equipo1/spring/BackendApplication.java:7:	UseUtilityClass: All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+backend/src/main/java/equipo1/spring/BackendApplication.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/spring/BackendApplication.java:9:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/spring/BackendApplication.java:9:	MethodArgumentCouldBeFinal: Parameter 'args' is not assigned and could be declared final
+backend/src/main/java/equipo1/spring/BackendApplication.java:9:	MethodArgumentCouldBeFinal: Parameter 'args' is not assigned and could be declared final
+backend/src/main/java/equipo1/test/App.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/test/App.java:8:	CommentRequired: Header comments are required
+backend/src/main/java/equipo1/test/App.java:8:	ShortClassName: Avoid short class names like App
+backend/src/main/java/equipo1/test/App.java:8:	ShortClassName: Avoid short class names like App
+backend/src/main/java/equipo1/test/App.java:8:	UseUtilityClass: All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+backend/src/main/java/equipo1/test/App.java:8:	UseUtilityClass: All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+backend/src/main/java/equipo1/test/App.java:10:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/test/App.java:10:	CommentRequired: Public method and constructor comments are required
+backend/src/main/java/equipo1/test/App.java:10:	MethodArgumentCouldBeFinal: Parameter 'args' is not assigned and could be declared final
+backend/src/main/java/equipo1/test/App.java:10:	MethodArgumentCouldBeFinal: Parameter 'args' is not assigned and could be declared final
+backend/src/main/java/equipo1/test/App.java:10:	UncommentedEmptyMethodBody: Document empty method body
+backend/src/main/java/equipo1/test/App.java:10:	UncommentedEmptyMethodBody: Document empty method body
