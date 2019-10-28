@@ -3,7 +3,6 @@ package com.example.backend.models.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.client.InterceptingClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 
 import com.example.backend.models.dao.IUsuarioDAO;
@@ -20,7 +19,7 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		return usuarioDao.findAll();
 	}
 
-	@Autowired
+	@Autowired(required = false)
 	public Usuario findUserByDni(String dni) {
 		return usuarioDao.findByDni(dni);
 	}

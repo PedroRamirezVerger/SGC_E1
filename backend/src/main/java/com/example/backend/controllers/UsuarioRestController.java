@@ -24,12 +24,12 @@ public class UsuarioRestController {
 	
 	@GetMapping("/usuarios")
 	public List<Usuario> getAllUsers() {
-		return usuarioDao.findAll();
+		return usuarioService.findAll();
 	}
 	
 	@GetMapping("/usuarios/{dni}")
 	public Usuario getUserByDni(@PathVariable("dni") String dni) {
-		return usuarioDao.findByDni(dni);
+		return usuarioService.findUserByDni(dni);
 	}
 	
 }
