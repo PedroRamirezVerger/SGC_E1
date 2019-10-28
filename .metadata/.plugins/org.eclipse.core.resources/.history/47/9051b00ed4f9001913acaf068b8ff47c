@@ -23,8 +23,8 @@ public class UsuarioRestController {
 	private IUsuarioDAO usuarioDao;
 	
 	@GetMapping("/usuarios")
-	public String getAllUsers() {
-		return "Hola";
+	public List<Usuario> getAllUsers() {
+		return usuarioService.findAll();
 	}
 	
 	@GetMapping("/usuarios/{dni}")
