@@ -15,8 +15,8 @@
 	<description>Spring project for the backend</description>
 
 	<properties>
-		<!--  <basedir>${project.basedir}</basedir>
-		<targetdir>${project.build.directory}</targetdir>-->
+		<basedir>${project.basedir}</basedir>
+		<targetdir>${project.build.directory}</targetdir>
 		<java.version>1.8</java.version>
 	</properties>
 
