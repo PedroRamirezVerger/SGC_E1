@@ -8,4 +8,5 @@ public interface IUsuarioService {
 
 	public List<Usuario> findAll();
 	public Usuario findUserByDni(String dni);
+	
 }
