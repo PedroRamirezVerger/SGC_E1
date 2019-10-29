@@ -10,6 +10,10 @@ import { LoginComponent } from './components/login/login.component';
 import { CitasComponent } from './components/citas/citas.component';
 import { RegistroComponent } from './components/registro/registro.component';
 
+// Services
+import { LoginService } from './components/login/login.service';
+import { HttpClientModule } from '@angular/common/http'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,9 +23,10 @@ import { RegistroComponent } from './components/registro/registro.component';
   ],
   imports: [
     BrowserModule, 
+    HttpClientModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
