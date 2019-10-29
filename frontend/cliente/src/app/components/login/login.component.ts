@@ -10,9 +10,6 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
-  nombre_usuario: string = 'antonio.pasadas';
-  password: string =  'antonio.pasadas12345';
-
   loginPasado: boolean;
   msg: string = ''
 
@@ -21,8 +18,8 @@ export class LoginComponent implements OnInit {
               private loginService: LoginService
               ) { 
 
-  }
 
+}
   ngOnInit() {
   }
 

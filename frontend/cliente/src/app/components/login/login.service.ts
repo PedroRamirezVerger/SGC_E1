@@ -15,7 +15,7 @@ export class LoginService {
   }
 
   validateLogin(nombre: string, password: string): Observable<boolean> {
-    this.tipo_data = nombre + '/' + password
+    this.tipo_data = '/' + nombre + '/' + password
     return this.httpClient.get<boolean>(this.URL_ENDPOINT + this.tipo_data);
   }
 

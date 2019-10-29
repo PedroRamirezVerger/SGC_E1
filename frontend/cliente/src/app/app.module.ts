@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 // Services
 import { LoginService } from './components/login/login.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +26,7 @@ import { LoginService } from './components/login/login.service';
   ],
   imports: [
     BrowserModule, 
+    HttpClientModule,
     APP_ROUTING
   ],
   providers: [
