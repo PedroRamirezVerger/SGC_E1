@@ -23,6 +23,11 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	public Usuario findUserByDni(String dni) {
 		return usuarioDao.findByDni(dni);
 	}
+
+	@Override
+	public void saveUser(Usuario usuario) {
+		this.usuarioDao.save(usuario);
+	}
 	
 	
 

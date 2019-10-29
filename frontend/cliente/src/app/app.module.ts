@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { CitasComponent } from './components/citas/citas.component';
 import { RegistroComponent } from './components/registro/registro.component';
-import { UsuarioComponent } from './components/usuario/usuario.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -21,8 +20,7 @@ import { LoginService } from './components/login/login.service';
     AppComponent,
     LoginComponent,
     CitasComponent,
-    RegistroComponent,
-    UsuarioComponent
+    RegistroComponent
   ],
   imports: [
     BrowserModule, 

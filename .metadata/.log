@@ -1854,3 +1854,24 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 04:42:11.077
 !MESSAGE executing callback sts4.classpath.OgzprKGu SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2019-10-29 04:58:26.769
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 04:58:37.549
+!MESSAGE Preparing classpath changed notification backend
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 04:58:37.550
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 04:58:37.558
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 04:58:37.564
+!MESSAGE buffering callback sts4.classpath.OgzprKGu backend false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 04:58:37.565
+!MESSAGE executing callback sts4.classpath.OgzprKGu 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 04:58:37.634
+!MESSAGE executing callback sts4.classpath.OgzprKGu SUCCESS [done]
