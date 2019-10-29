@@ -1,0 +1,107 @@
+<div class="container">
+    <h1>Pedir cita médica</h1>
+
+    <form class="columnas">
+        <div class="columna1">
+            <!--Elegir tipo de médico COMPLETADO-->
+            <div class="form-group">
+                <label for="TipoMedico">Tipo de médico</label>
+                <select name="tipomedico">
+                    <option selected value="0"> Elige una opción </option>
+                    <optgroup label ="Médico de cabecera">
+                        <option value="1">Médico de cabecera</option> 
+                    </optgroup>
+                    <optgroup label="Especialista"> 
+                        <option value="2">Cardiología</option> 
+                        <option value="3">Dermatología</option> 
+                        <option value="4">Endocrinología</option> 
+                        <option value="5">Ginecología</option> 
+                        <option value="6">Nefrología</option> 
+                        <option value="7">Neumología</option> 
+                        <option value="8">Neurología</option> 
+                        <option value="9">Oncología</option> 
+                        <option value="10">Oftalmología</option> 
+                        <option value="11">Otorrinolaringología</option> 
+                        <option value="12">Pediatría</option> 
+                        <option value="13">Psiquiatría</option>
+                        <option value="14">Radiología</option>
+                        <option value="15">Traumatología</option>
+                        <option value="16">Urología</option>
+                    </optgroup> 
+                 </select>
+            </div>
+            
+            <!--Elegir fecha y hora. 
+            FALTA DISTINGUIR ENTRE MED.CABEC (citas cada 5 minutos) y MED.ESPEC(citas sin duracion fijada)
+            FALTA CONFIGURAR PARA QUE NO MUESTRE DIAS PASADOS EN EL CALENDARIO NI LAS HORAS EN EL RELOJ-->
+            <div class ="form-group">
+                <label for="Fecha">Día y hora</label>
+                    Selecciona la fecha deseada:
+                    <input type="date" name="fecha" min="2019-10-29" max="2020-12-31" step="1">
+                    Selecciona la hora deseada:
+                    <input type="time" name="hora" min="07:00" max="21:00" step="300">
+            </div>
+            <!--Elegir médico. 
+            FALTA CONFIGURAR PARA QUE MUESTRE OPCIONES EN FUNCION DE LA ESPECIALIDAD-->
+            <div class ="form-group">
+                <label for="Médico">Elegir médico</label>
+                <select class='form-control' name='medico'>
+                    <option selected value="0"> Elige una opción </option>
+                    <optgroup label ="Médico de cabecera">
+                        <option value="1">Luis Ortega Calero</option> 
+                    </optgroup>
+                    <optgroup label="Cardiología">
+                        <option value="2">María Fernández Rodríguez</option>
+                    </optgroup>
+                    <optgroup label="Dermatología">
+                        <option value="3">Roberto Ramírez Pacheco</option>
+                    </optgroup>
+                    <optgroup label="Endocrinología">
+                            <option value="4">Alejandro Rico Jiménez</option>
+                    </optgroup>
+                    <optgroup label="Ginecología">
+                        <option value="5">Sergio Muñoz Cortés</option>
+                    </optgroup>
+                    <optgroup label="Nefrología">
+                            <option value="6">Carolina Medina Yañez</option>
+                    </optgroup>
+                    <optgroup label="Neumología">
+                            <option value="7">Esther Rubio Moreno</option>
+                    </optgroup>
+                    <optgroup label="Neurología">
+                            <option value="8">Jose Luis Morales Hernández</option>
+                    </optgroup>
+                    <optgroup label="Oncología">
+                            <option value="9">Manuel Blanco Rodríguez</option>
+                    </optgroup>
+                    <optgroup label="Oftalmología">
+                            <option value="10">Ignacio Úbeda Serrano</option>
+                    </optgroup>
+                    <optgroup label="Otorrinolaringología">
+                            <option value="11">Mercedes González Díaz</option>
+                    </optgroup>
+                    <optgroup label="Pediatría">
+                            <option value="12">Gonzalo Rincón Martínez</option>
+                    </optgroup>
+                    <optgroup label="Psiquiatría">
+                            <option value="13">Ana Hernández Parra</option>
+                    </optgroup>
+                    <optgroup label="Radiología">
+                            <option value="14">Francisco Ruiz Fernández</option>
+                    </optgroup>
+                    <optgroup label="Traumatología">
+                            <option value="15">Teresa Hernández Montes</option>
+                    </optgroup>
+                    <optgroup label="Urología">
+                            <option value="16">Mariano Santillana Rodríguez</option>
+                    </optgroup>
+                </select>
+            </div>
+            <button type="button" (click)="anadircita()" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
+        </div>
+
+    </form> 
+</div>
+            <!--FALTA INCLUIR BOTON PARA COMPROBAR QUE LA FECHA Y HORA ELEGIDA PARA ESE MEDICO ESTE
+            DISPONIBLE EN LA BBDD. SI ESTA DISPONIBLE, GUARDAR EN LA BBDD, SI NO, MOSTRAR MENSAJE DE ERROR 
+            -->

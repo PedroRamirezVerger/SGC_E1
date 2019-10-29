@@ -14,13 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { LoginService } from './components/login/login.service';
+import { PedircitaComponent } from './components/pedircita/pedircita.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CitasComponent,
-    RegistroComponent
+    RegistroComponent,
+    PedircitaComponent
   ],
   imports: [
     BrowserModule, 

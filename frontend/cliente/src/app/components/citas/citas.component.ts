@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-citas',
@@ -14,9 +15,12 @@ export class CitasComponent implements OnInit {
            {fecha: '26/11/2019', consulta: '67', medico: 'Paula Bermejo Delgado', especialidad: 'Nefrología'}
           ];
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+  }
+  pedircita(){
+    this.router.navigate(['/pedircita'])
   }
 
 }
