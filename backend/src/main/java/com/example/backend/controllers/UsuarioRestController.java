@@ -18,7 +18,7 @@ import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.IUsuarioService;
 
 @CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
-//@CrossOrigin(value = "http://localhost:4200") PARA DESARROLLO
+//@CrossOrigin(value = "http://localhost:4200") 
 @RestController
 @RequestMapping("/api")
 public class UsuarioRestController {
