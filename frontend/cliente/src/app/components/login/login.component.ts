@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 
 @Component({
@@ -9,26 +10,24 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  nombre_usuario: string = 'antonio.pasadas';
-  password: string =  'antonio.pasadas12345';
-
   loginPasado: boolean;
   msg: string = ''
 
 
-  constructor(private router:Router) { 
+  constructor(private router:Router,
+    private loginService: LoginService
+    ) { 
 
-  }
-
+}
   ngOnInit() {
   }
 
 
   logIn(nombre: any, password: string){
-    console.log(nombre);
-    console.log(password);
-    if(nombre === this.nombre_usuario && password === this.password){
-      this.loginPasado = true;
+    this.loginService.validateLogin(nombre, password).subscribe(
+      (response) => this.loginPasado = response
+    );
+    if(this.loginPasado){
       this.msg = 'Login correcto!';
       this.router.navigate(['/citas'])
     } else {
