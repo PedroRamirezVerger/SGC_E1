@@ -1432,3 +1432,105 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 00:13:07.725
 !MESSAGE executing callback sts4.classpath.cGunYuBE SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:42.354
+!MESSAGE Preparing classpath changed notification backend
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:42.357
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:42.363
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:42.367
+!MESSAGE buffering callback sts4.classpath.cGunYuBE backend false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:42.368
+!MESSAGE executing callback sts4.classpath.cGunYuBE 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:42.399
+!MESSAGE executing callback sts4.classpath.cGunYuBE SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:45.296
+!MESSAGE Preparing classpath changed notification backend
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:45.297
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:45.305
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:45.311
+!MESSAGE buffering callback sts4.classpath.cGunYuBE backend false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:45.311
+!MESSAGE executing callback sts4.classpath.cGunYuBE 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:45.334
+!MESSAGE executing callback sts4.classpath.cGunYuBE SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:57.686
+!MESSAGE Preparing classpath changed notification backend
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:57.688
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:57.696
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:57.702
+!MESSAGE buffering callback sts4.classpath.cGunYuBE backend false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:57.703
+!MESSAGE executing callback sts4.classpath.cGunYuBE 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:12:57.720
+!MESSAGE executing callback sts4.classpath.cGunYuBE SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2019-10-29 01:13:06.619
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:13:36.553
+!MESSAGE Preparing classpath changed notification backend
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:13:36.554
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:13:36.560
+!MESSAGE classpath=94 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:13:36.564
+!MESSAGE buffering callback sts4.classpath.cGunYuBE backend false 94
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:13:36.564
+!MESSAGE executing callback sts4.classpath.cGunYuBE 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:13:36.595
+!MESSAGE executing callback sts4.classpath.cGunYuBE SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:14:22.836
+!MESSAGE Preparing classpath changed notification backend
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:14:22.837
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:14:22.844
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:14:22.849
+!MESSAGE buffering callback sts4.classpath.cGunYuBE backend false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:14:22.850
+!MESSAGE executing callback sts4.classpath.cGunYuBE 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-10-29 01:14:22.904
+!MESSAGE executing callback sts4.classpath.cGunYuBE SUCCESS [done]
+
+!ENTRY org.eclipse.jdt.debug 2 0 2019-10-29 01:30:28.231
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.eclipse.jdt.debug 2 0 2019-10-29 01:33:18.945
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.eclipse.jdt.debug 2 0 2019-10-29 01:35:05.210
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
