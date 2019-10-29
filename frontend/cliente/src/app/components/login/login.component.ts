@@ -26,14 +26,18 @@ export class LoginComponent implements OnInit {
 
   logIn(nombre: string, password: string){
     this.loginService.validateLogin(nombre, password).subscribe(
-      (response) => this.loginPasado = response
+      response => {
+        console.log("hola");
+        console.log(response);
+        (this.loginPasado = response)
+        if(this.loginPasado){
+          this.msg = 'Login correcto!';
+          this.router.navigate(['/citas'])
+        } else {
+          this.msg = 'Login incorrecto.'
+        }
+      }
     );
-    if(this.loginPasado){
-      this.msg = 'Login correcto!';
-      this.router.navigate(['/citas'])
-    } else {
-      this.msg = 'Login incorrecto.'
-    }
   }
 
   singIn(){
