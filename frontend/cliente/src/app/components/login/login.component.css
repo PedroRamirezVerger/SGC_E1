@@ -1,6 +1,0 @@
-.container{
-    background-image: url(https://diarioenfermero.es/wp-content/uploads/2017/08/SESCAM.jpg);
-    background-attachment: fixed; /* El fondo permanecerá fijo */
-    background-repeat: no-repeat; /* El fondo no se repetirá */
-    background-position: top right; /* El fondo se mostrará en la parte superior derecha */
-}
