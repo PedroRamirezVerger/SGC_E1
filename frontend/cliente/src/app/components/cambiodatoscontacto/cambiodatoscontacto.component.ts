@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/entity/Usuario';
+import { CambiodatoscontactoService} from './cambiodatoscontacto.service';
 
 @Component({
   selector: 'app-cambiodatoscontacto',
@@ -8,14 +10,23 @@ import { Router } from '@angular/router';
 })
 export class CambiodatoscontactoComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  usuario: Usuario = new Usuario;
+  constructor(private router:Router, private Cambiodatoscontactoservice:CambiodatoscontactoService) { }
 
   ngOnInit() {
   }
 
   modificardatoscontacto(telefono: string, email: string){
     
-    this.router.navigate(['/citas'])
+    this.usuario.telefono = telefono;
+    this.usuario.email = email;
+    
+
+    this.Cambiodatoscontactoservice.modificarUsuario(this.usuario).subscribe(
+      response => {
+        this.router.navigate(['/citas'])
+      }
+    );
   }
 
 }
