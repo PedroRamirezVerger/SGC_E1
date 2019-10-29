@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.backend.models.dao.IUsuarioDAO;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.IUsuarioService;
 
@@ -28,6 +27,23 @@ public class UsuarioRestController {
 	@GetMapping("/usuarios/{dni}")
 	public Usuario getUserByDni(@PathVariable("dni") String dni) {
 		return usuarioService.findUserByDni(dni);
+	}
+	
+	@GetMapping("/usuarios/{dni}/{password}")
+	public boolean validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
+		boolean loginPasado = false;
+		List<Usuario> listaUsuarios = usuarioService.findAll();
+		System.out.println(dni);
+		for(Usuario u: listaUsuarios) {
+			if(u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
+				loginPasado = true;
+				break;
+			} else {
+				loginPasado = false;
+			}
+		}
+		
+		return loginPasado;
 	}
 	
 }

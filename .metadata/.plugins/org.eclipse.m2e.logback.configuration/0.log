@@ -599,3 +599,254 @@ Caused by: java.io.FileNotFoundException: C:\SGC_E1\.metadata\.plugins\org.eclip
 2019-10-29 00:33:49,092 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-10-29 00:33:49,095 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-10-29 00:33:49,095 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 00:58:43,600 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 00:58:43,602 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 00:58:43,605 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 00:58:43,607 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 00:58:43,607 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:07:43,459 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:07:43,461 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:07:43,464 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:07:43,466 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:07:43,467 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:07:47,211 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:07:47,213 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:07:47,215 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:07:47,217 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:07:47,218 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:08:06,398 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:08:06,400 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:08:06,401 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:08:06,404 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:08:06,404 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:08:10,629 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:08:10,630 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:08:10,632 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:08:10,634 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:08:10,635 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:12:02,153 [Worker-53: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:backend:0.0.1-SNAPSHOT @ C:\SGC_E1\backend\pom.xml.
+2019-10-29 01:12:03,182 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:03,185 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:03,186 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:03,188 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:03,188 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:12:38,907 [Worker-43: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:backend:0.0.1-SNAPSHOT @ C:\SGC_E1\backend\pom.xml.
+2019-10-29 01:12:38,912 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.pom
+2019-10-29 01:12:38,938 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.pom
+2019-10-29 01:12:38,970 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.pom
+2019-10-29 01:12:38,981 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.pom
+2019-10-29 01:12:39,002 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2.pom
+2019-10-29 01:12:39,025 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2.pom
+2019-10-29 01:12:39,047 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm/1.2.2/cucumber-jvm-1.2.2.pom
+2019-10-29 01:12:39,072 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm/1.2.2/cucumber-jvm-1.2.2.pom
+2019-10-29 01:12:39,097 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2.pom
+2019-10-29 01:12:39,114 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2.pom
+2019-10-29 01:12:39,135 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.pom
+2019-10-29 01:12:39,151 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.pom
+2019-10-29 01:12:39,168 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom
+2019-10-29 01:12:39,184 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom
+2019-10-29 01:12:39,202 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3.pom
+2019-10-29 01:12:39,253 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3.pom
+2019-10-29 01:12:39,275 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2.pom
+2019-10-29 01:12:39,287 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2.pom
+2019-10-29 01:12:39,308 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2.pom
+2019-10-29 01:12:39,319 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2.pom
+2019-10-29 01:12:39,471 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar
+2019-10-29 01:12:39,567 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar
+2019-10-29 01:12:39,581 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar
+2019-10-29 01:12:39,636 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar
+2019-10-29 01:12:39,649 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar
+2019-10-29 01:12:39,656 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11.jar
+2019-10-29 01:12:39,664 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2.jar
+2019-10-29 01:12:39,697 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar
+2019-10-29 01:12:39,728 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar
+2019-10-29 01:12:39,735 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2.jar
+2019-10-29 01:12:39,744 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2.jar
+2019-10-29 01:12:39,779 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2.jar
+2019-10-29 01:12:39,842 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2.jar
+2019-10-29 01:12:39,849 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2.jar
+2019-10-29 01:12:39,869 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2.jar
+2019-10-29 01:12:39,929 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar
+2019-10-29 01:12:39,948 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar
+2019-10-29 01:12:39,949 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2.jar
+2019-10-29 01:12:39,961 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar
+2019-10-29 01:12:39,981 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3.jar
+2019-10-29 01:12:40,013 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar
+2019-10-29 01:12:40,048 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3.jar
+2019-10-29 01:12:40,236 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3.jar
+2019-10-29 01:12:40,247 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3.jar
+2019-10-29 01:12:40,254 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar
+2019-10-29 01:12:40,321 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar
+2019-10-29 01:12:40,892 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar
+2019-10-29 01:12:40,972 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2.jar
+2019-10-29 01:12:41,059 [Worker-43: Building workspace] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2.jar
+2019-10-29 01:12:41,512 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar
+2019-10-29 01:12:41,524 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2.jar
+2019-10-29 01:12:41,535 [Worker-55: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2.jar
+2019-10-29 01:12:41,894 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:41,897 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:41,898 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:41,900 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:41,900 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:12:43,376 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11-sources.jar
+2019-10-29 01:12:43,472 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/4.11/junit-4.11-sources.jar
+2019-10-29 01:12:43,511 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for junit:junit:4.11
+2019-10-29 01:12:43,583 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:43,584 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:12:43,601 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:43,603 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:43,603 [Worker-43: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:12:43,615 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1-sources.jar
+2019-10-29 01:12:43,630 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1-sources.jar
+2019-10-29 01:12:43,661 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.hamcrest:hamcrest-core:2.1
+2019-10-29 01:12:43,758 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2-sources.jar
+2019-10-29 01:12:43,841 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-java/1.2.2/cucumber-java-1.2.2-sources.jar
+2019-10-29 01:12:43,870 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for info.cukes:cucumber-java:1.2.2
+2019-10-29 01:12:43,963 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2-sources.jar
+2019-10-29 01:12:44,038 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-core/1.2.2/cucumber-core-1.2.2-sources.jar
+2019-10-29 01:12:44,066 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for info.cukes:cucumber-core:1.2.2
+2019-10-29 01:12:44,189 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3-sources.jar
+2019-10-29 01:12:44,233 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3-sources.jar
+2019-10-29 01:12:44,280 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for info.cukes:cucumber-html:0.2.3
+2019-10-29 01:12:44,406 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3-sources.jar
+2019-10-29 01:12:44,576 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-jvm-deps/1.0.3/cucumber-jvm-deps-1.0.3-sources.jar
+2019-10-29 01:12:44,598 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for info.cukes:cucumber-jvm-deps:1.0.3
+2019-10-29 01:12:44,698 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2-sources.jar
+2019-10-29 01:12:44,885 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/gherkin/2.12.2/gherkin-2.12.2-sources.jar
+2019-10-29 01:12:44,913 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for info.cukes:gherkin:2.12.2
+2019-10-29 01:12:45,007 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2-sources.jar
+2019-10-29 01:12:45,044 [Worker-49: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/info/cukes/cucumber-junit/1.2.2/cucumber-junit-1.2.2-sources.jar
+2019-10-29 01:12:45,068 [Worker-49: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for info.cukes:cucumber-junit:1.2.2
+2019-10-29 01:12:45,491 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:45,491 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:45,491 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:45,493 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:45,493 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:12:56,366 [Worker-42: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:backend:0.0.1-SNAPSHOT @ C:\SGC_E1\backend\pom.xml.
+2019-10-29 01:12:57,148 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:57,151 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:57,151 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:57,154 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:57,154 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:12:59,211 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:59,212 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:12:59,224 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:12:59,226 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:12:59,226 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:13:02,223 [Worker-45: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:backend:0.0.1-SNAPSHOT @ C:\SGC_E1\backend\pom.xml.
+2019-10-29 01:13:02,847 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:02,850 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:13:02,850 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:13:02,852 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:02,853 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:13:12,076 [Worker-38: Launching Executing clean in C__SGC_E1_backend] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\SGC_E1\backend
+2019-10-29 01:13:12,077 [Worker-38: Launching Executing clean in C__SGC_E1_backend] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2019-10-29 01:13:15,350 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:15,351 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:13:15,362 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:13:15,364 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:15,364 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:13:35,490 [Worker-55: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:backend:0.0.1-SNAPSHOT @ C:\SGC_E1\backend\pom.xml.
+2019-10-29 01:13:36,259 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:36,263 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:13:36,263 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:13:36,266 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:36,266 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:13:38,054 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:38,055 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:13:38,068 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:13:38,070 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:38,070 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:13:45,300 [Worker-44: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-10-29 01:13:45,802 [Worker-44: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:backend:0.0.1-SNAPSHOT @ C:\SGC_E1\backend\pom.xml.
+2019-10-29 01:13:46,550 [Worker-44: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /backend/src/main/java
+2019-10-29 01:13:46,551 [Worker-44: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /backend/src/main/resources
+2019-10-29 01:13:46,552 [Worker-44: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /backend/src/main/resources
+2019-10-29 01:13:46,552 [Worker-44: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /backend/src/test/java
+2019-10-29 01:13:46,748 [Worker-44: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2019-10-29 01:13:47,415 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:47,415 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:13:47,434 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:13:47,437 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:13:47,437 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:14:21,743 [Worker-39: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:backend:0.0.1-SNAPSHOT @ C:\SGC_E1\backend\pom.xml.
+2019-10-29 01:14:22,498 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:14:22,501 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:14:22,501 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:14:22,504 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:14:22,504 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:14:24,445 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:14:24,446 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:14:24,458 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:14:24,459 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:14:24,459 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:18:02,569 [Worker-57: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:18:02,570 [Worker-57: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:18:02,571 [Worker-57: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:18:02,575 [Worker-57: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:18:02,575 [Worker-57: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:20:34,777 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:20:34,778 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:20:34,778 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:20:34,780 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:20:34,780 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:21:01,876 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:21:01,876 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:21:01,877 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:21:01,878 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:21:01,878 [Worker-60: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:23:13,295 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:23:13,296 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:23:13,299 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:23:13,302 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:23:13,302 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:27:45,280 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:27:45,281 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:27:45,284 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:27:45,285 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:27:45,285 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:28:45,171 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:28:45,172 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:28:45,173 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:28:45,176 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:28:45,176 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:29:58,682 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:29:58,683 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:29:58,685 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:29:58,686 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:29:58,687 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:31:11,898 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:31:11,900 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:31:11,902 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:31:11,903 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:31:11,903 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:31:38,391 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:31:38,392 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:31:38,394 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:31:38,396 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:31:38,396 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:31:50,369 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:31:50,371 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:31:50,372 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:31:50,374 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:31:50,374 [Worker-56: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:32:26,601 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:32:26,603 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:32:26,605 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:32:26,607 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:32:26,607 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:33:18,628 [Worker-38: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:33:18,630 [Worker-38: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:33:18,632 [Worker-38: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:33:18,635 [Worker-38: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:33:18,635 [Worker-38: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:34:56,192 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:34:56,193 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:34:56,195 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:34:56,197 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:34:56,197 [Worker-68: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-10-29 01:36:26,778 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:36:26,779 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-29 01:36:26,780 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-10-29 01:36:26,782 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-29 01:36:26,782 [Worker-58: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
