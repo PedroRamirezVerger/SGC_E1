@@ -1,4 +1,6 @@
-C:\SGC_E1\backend\src\main\java\com\example\backend\models\dao\IUsuarioDAO.java
-C:\SGC_E1\backend\src\main\java\com\example\backend\BackendApplication.java
-C:\SGC_E1\backend\src\main\java\com\example\backend\controllers\UsuarioRestController.java
-C:\SGC_E1\backend\src\main\java\com\example\backend\models\entity\Usuario.java
+C:\Users\pdrit\eclipse-workspace\SGC_E1\src\main\java\com\example\backend\models\services\IUsuarioService.java
+C:\Users\pdrit\eclipse-workspace\SGC_E1\src\main\java\com\example\backend\BackendApplication.java
+C:\Users\pdrit\eclipse-workspace\SGC_E1\src\main\java\com\example\backend\models\entity\Usuario.java
+C:\Users\pdrit\eclipse-workspace\SGC_E1\src\main\java\com\example\backend\controllers\UsuarioRestController.java
+C:\Users\pdrit\eclipse-workspace\SGC_E1\src\main\java\com\example\backend\models\dao\IUsuarioDAO.java
+C:\Users\pdrit\eclipse-workspace\SGC_E1\src\main\java\com\example\backend\models\services\UsuarioServiceImpl.java
