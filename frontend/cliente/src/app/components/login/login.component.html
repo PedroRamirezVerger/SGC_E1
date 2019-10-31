@@ -4,11 +4,13 @@
     <form class="form">
         <div class="form-group">
             <label for="Usuario">Usuario</label>
-            <input class="form-control" #username name="username" placeholder="Usuario">
+            <input class="form-control" #username name="username" placeholder="Usuario"  ngControl="nombre" required minlength="4">
+            <span *ngIf="!nombre.valid && nombre.touched">El nombre es obligatorio</span>
         </div>
         <div class="form-group">
             <label for="Password">Password</label>
-            <input type="password" class="form-control" #password name="password" placeholder="Password">
+            <input type="password" class="form-control" #password name="password" placeholder="Password" ngControl="password" required minlength="4">
+            <span *ngIf="!password.valid && password.touched">El nombre es obligatorio</span>
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input">
