@@ -5,20 +5,20 @@ import java.util.Date;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 @Document(value = "pacientes")
 public class Paciente extends Usuario{
 	
-	@Id
-	private ObjectId _id;
+	
+	
 	
 	private String nombre;
 	private String apellidos;
-	private String dni;
+	
 	private String telefono;
 	private String email;
 	private String sexo;
 	private Date fechaNacimiento;
-	private String tipo;
 	
 	public String get_id() {
 		return _id.toHexString();
@@ -26,6 +26,8 @@ public class Paciente extends Usuario{
 	public void set_id(ObjectId _id) {
 		this._id = _id;
 	}
+	
+	
 	public String getNombre() {
 		return nombre;
 	}

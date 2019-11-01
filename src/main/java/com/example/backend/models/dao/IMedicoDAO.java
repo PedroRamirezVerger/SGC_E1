@@ -8,5 +8,5 @@ import com.example.backend.models.entity.Medico;
 
 @Repository
 public interface IMedicoDAO extends MongoRepository<Medico, String> {
-	Medico findByDni(String dni);
+	//Medico findByDni(String dni);
 }

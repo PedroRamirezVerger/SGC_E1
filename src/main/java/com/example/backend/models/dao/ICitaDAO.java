@@ -11,9 +11,10 @@ import com.example.backend.models.entity.Paciente;
 
 @Repository
 public interface ICitaDAO extends MongoRepository<Cita, String> {
-	Cita findByMedicoAndPaciente(Medico medico, Paciente paciente);
+	/*Cita findByMedicoAndPaciente(Medico medico, Paciente paciente);
 	
 	Cita findByMedico(Medico medico);
 	
 	Cita findByPaciente(Paciente paciente);
+	*/
 }

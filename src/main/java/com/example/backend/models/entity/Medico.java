@@ -7,8 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(value = "medicos")
 public class Medico extends Usuario {
 	
-	@Id
-	private ObjectId _id;
+	
+	
 	
 	private String nombre;
 	private String apellido;
@@ -23,6 +23,7 @@ public class Medico extends Usuario {
 	public void set_id(ObjectId _id) {
 		this._id = _id;
 	}
+	
 	public String getNombre() {
 		return nombre;
 	}

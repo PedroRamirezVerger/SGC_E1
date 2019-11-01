@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(value = "centros_salud")
 
 public class CentroSalud {
-	@Id
+	
 	private String nombre;
 	private String localidad;
 	private Stack<Medico> medicos;
