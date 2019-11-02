@@ -12,8 +12,6 @@ export class LoginComponent implements OnInit {
 
   loginPasado: boolean;
   msg: string = ''
-  @Input() dni:string; // Make this a required attribute. Throw an exception if it doesnt exist
-  @Input() password:string;
 
   constructor(private router:Router,
               private loginService: LoginService
