@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 
@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   loginPasado: boolean;
   msg: string = ''
-
+  @Input() dni:string; // Make this a required attribute. Throw an exception if it doesnt exist
+  @Input() password:string;
 
   constructor(private router:Router,
               private loginService: LoginService
@@ -21,10 +22,15 @@ export class LoginComponent implements OnInit {
 
 }
   ngOnInit() {
+    
   }
 
 
   logIn(nombre: string, password: string){
+    if(nombre.length == 0|| password.length == 0) {
+      this.msg = 'Tienes que rellenar todos los campos.'
+   }
+   else{
     this.loginService.validateLogin(nombre, password).subscribe(
       response => {
         (this.loginPasado = response)
@@ -36,6 +42,8 @@ export class LoginComponent implements OnInit {
         }
       }
     );
+   }
+    
   }
 
   singIn(){
