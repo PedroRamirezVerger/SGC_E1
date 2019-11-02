@@ -10,6 +10,7 @@ import { RegistroService } from './registro.service';
 })
 export class RegistroComponent implements OnInit {
 
+  msg: string = ''
   usuario: Usuario = new Usuario;
   constructor(private router:Router,
               private registroService: RegistroService) {
@@ -29,14 +30,22 @@ export class RegistroComponent implements OnInit {
     this.usuario.email = email;
     this.usuario.sexo = sexo;
     this.usuario.fechaNacimiento = fechaNacimiento;
-    this.usuario.tipo = tipo;
+    this.usuario.tipo = "usuario";
     console.log(this.usuario);
 
+    if(nombre.length == 0|| apellidos.length == 0 || dni.length == 0 || password.length == 0 || telefono.length == 0 
+      || email.length == 0 || sexo.length == 0 || fechaNacimiento == null || tipo.length == 0) {
+      this.msg = 'Tienes que rellenar todos los campos.'
+   }
+   else{
     this.registroService.registrarUsuario(this.usuario).subscribe(
       response => {
         this.router.navigate(['/login'])
       }
     );
+   }
+    
+    
 
   }
 
