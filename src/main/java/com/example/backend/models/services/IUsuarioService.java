@@ -8,5 +8,6 @@ public interface IUsuarioService {
 
 	public List<Usuario> findAll();
 	public Usuario findUserByDni(String dni);
+	public Usuario findUserByTipo(String tipo);
 	public void saveUser(Usuario usuario);
 }
