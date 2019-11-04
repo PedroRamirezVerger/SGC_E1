@@ -6,28 +6,44 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(value = "usuarios")
+@Document(value="usuarios")
 public class Usuario {
 	
-	@Id
-	private ObjectId _id;
+	@Id ObjectId _id;
 	
+	protected String dni;
+	protected String password;
+	protected String tipo;
 	private String nombre;
 	private String apellidos;
-	private String dni;
-	private String password;
+	private String direccion;
 	private String telefono;
 	private String email;
 	private String sexo;
 	private Date fechaNacimiento;
-	private String tipo;
 	
+	public Usuario(String dni, String password, String tipo, String nombre, String apellidos,String direccion, String telefono,
+			String email, String sexo, Date fechaNacimiento) {
+		super();
+		this.dni = dni;
+		this.password = password;
+		this.tipo = tipo;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.setDireccion(direccion);
+		this.telefono = telefono;
+		this.email = email;
+		this.sexo = sexo;
+		this.fechaNacimiento = fechaNacimiento;
+	}
 	public String get_id() {
 		return _id.toHexString();
 	}
 	public void set_id(ObjectId _id) {
 		this._id = _id;
 	}
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,18 +55,6 @@ public class Usuario {
 	}
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
-	}
-	public String getDni() {
-		return dni;
-	}
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	public String getTelefono() {
 		return telefono;
@@ -76,10 +80,29 @@ public class Usuario {
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	public String getTipo() {
 		return tipo;
 	}
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 }
