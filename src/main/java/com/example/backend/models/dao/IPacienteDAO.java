@@ -7,5 +7,5 @@ import com.example.backend.models.entity.Paciente;
 
 @Repository
 public interface IPacienteDAO extends MongoRepository<Paciente, String>{
-	//Paciente findByDni(String dni);
+	Paciente findByDni(String dni);
 }
