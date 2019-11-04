@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Usuario;
+import com.example.backend.models.services.ICitaService;
 import com.example.backend.models.services.IUsuarioService;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
@@ -22,45 +23,10 @@ import com.example.backend.models.services.IUsuarioService;
 @RestController
 @RequestMapping("/api")
 public class CitaRestController {
-	/*
+/*	
 	@Autowired
-	private IUsuarioService usuarioService;
+	private ICitaService citaService;
 
-	
-	@GetMapping("/usuarios")
-	public List<Usuario> getAllUsers() {
-		return usuarioService.findAll();
-	}
-	
-	@GetMapping("/usuarios/{dni}")
-	public Usuario getUserByDni(@PathVariable("dni") String dni) {
-		return usuarioService.findUserByDni(dni);
-	}
-	
-	@GetMapping("/usuarios/{dni}/{password}")
-	public boolean validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
-		boolean loginPasado = false;
-		List<Usuario> listaUsuarios = usuarioService.findAll();
-		System.out.println(dni);
-		for(Usuario u: listaUsuarios) {
-			if(u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
-				loginPasado = true;
-				break;
-			} else {
-				loginPasado = false;
-			}
-		}
-		
-		return loginPasado;
-	}
-	
-	
-	@PostMapping("/usuarios")
-	public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
-		usuario.set_id(ObjectId.get());
-		usuarioService.saveUser(usuario);
-		return usuario;
-	}
 	
 	*/
 }

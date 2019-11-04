@@ -1,80 +1,41 @@
 package com.example.backend.models.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-@Document(value = "pacientes")
+
+
 public class Paciente extends Usuario{
+	private Medico medicoCabecera;
+	private ArrayList<Cita> citas;
 	
-	
-	
-	
-	private String nombre;
-	private String apellidos;
-	
-	private String telefono;
-	private String email;
-	private String sexo;
-	private Date fechaNacimiento;
-	
-	public String get_id() {
-		return _id.toHexString();
+	public Paciente(String dni, String password, String tipo, String nombre, String apellidos, String direccion, String telefono,
+			String email, String sexo, Date fechaNacimiento, Medico medicaoCabecera, ArrayList<Cita> citas) {
+		super(dni, password, tipo, nombre, apellidos, direccion, telefono, email, sexo, fechaNacimiento);
+		this.medicoCabecera=medicaoCabecera;
+		this.citas=citas;
 	}
-	public void set_id(ObjectId _id) {
-		this._id = _id;
+
+	public Medico getMedicoCabecera() {
+		return medicoCabecera;
 	}
-	
-	
-	public String getNombre() {
-		return nombre;
+	public void setMedicoCabecera(Medico medicoCabecera) {
+		this.medicoCabecera = medicoCabecera;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public ArrayList<Cita> getCitas() {
+		return citas;
 	}
-	public String getApellidos() {
-		return apellidos;
-	}
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-	public String getDni() {
-		return dni;
-	}
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setCitas(ArrayList<Cita> citas) {
+		this.citas = citas;
 	}
 	
-	public String getTelefono() {
-		return telefono;
+	public void pedirCita() {
+		
 	}
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+	public void borrarCita() {
+		
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getSexo() {
-		return sexo;
-	}
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void modificarCita(){
+		
 	}
 }
