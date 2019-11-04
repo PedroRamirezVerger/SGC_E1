@@ -104,7 +104,6 @@ export class RegistroComponent implements OnInit {
       alert('Tienes que rellenar todos los campos.')
    }
    else if(this.validardni(dni) && this.validartelefono(telefono) && this.comprobarpassword(password)){
-     alert("Registrado correctamente")
     this.registroService.registrarUsuario(this.usuario).subscribe(
       response => {
         this.router.navigate(['/login'])
