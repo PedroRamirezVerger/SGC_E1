@@ -9,8 +9,8 @@ public class Cita {
 	
 	@Id ObjectId _id;
 	
-	private Paciente paciente;
-	private Medico medico;
+	private String dniPaciente;
+	private String dniMedico;
 	private Date fecha;
 	private String hora;
 	private CentroSalud centroSalud;

@@ -52,7 +52,6 @@ public class UsuarioRestController {
 				loginPasado = false;
 			}
 		}
-		
 		return loginPasado;
 	}
 	

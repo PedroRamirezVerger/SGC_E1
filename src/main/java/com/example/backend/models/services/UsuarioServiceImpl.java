@@ -1,5 +1,6 @@
 package com.example.backend.models.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	}
 	
 	@Autowired(required = false)
-	public Usuario findUserByTipo(String tipo) {
+	public ArrayList<Usuario> findUserByTipo(String tipo) {
 		return usuarioDao.findByTipo(tipo);
 	}
 	

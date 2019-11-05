@@ -1,5 +1,8 @@
 package com.example.backend.models.dao;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,10 +14,11 @@ import com.example.backend.models.entity.Paciente;
 
 @Repository
 public interface ICitaDAO extends MongoRepository<Cita, String> {
-	Cita findByMedicoAndPaciente(Medico medico, Paciente paciente);
 	
-	Cita findByMedico(Medico medico);
+	ArrayList<Cita> findByPacienteAndFecha(Paciente paciente, Date fecha);
 	
-	Cita findByPaciente(Paciente paciente);
+	ArrayList<Cita> findByMedico(Medico medico);
+	
+	ArrayList<Cita> findByPaciente(Paciente paciente);
 	
 }
