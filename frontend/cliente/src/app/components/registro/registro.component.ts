@@ -86,10 +86,11 @@ export class RegistroComponent implements OnInit {
     return true;
   }
 
-  singUp(nombre: string, apellidos: string, dni:string, password: string, telefono: string, email: string, sexo: string, fechaNacimiento: Date){
+  singUp(nombre: string, apellidos: string, direccion:string, dni:string, password: string, telefono: string, email: string, sexo: string, fechaNacimiento: Date){
     console.log(nombre);
     this.usuario.nombre = nombre;
     this.usuario.apellidos = apellidos;
+    this.usuario.direccion = direccion;
     this.usuario.dni = dni;
     this.usuario.password = password;
     this.usuario.telefono = telefono;
@@ -99,7 +100,7 @@ export class RegistroComponent implements OnInit {
     this.usuario.tipo = "usuario";
     console.log(this.usuario);
 
-    if(nombre.length == 0 || apellidos.length == 0 || password.length == 0  
+    if(nombre.length == 0 || apellidos.length == 0 || direccion.length == 0 || password.length == 0  
       || email.length == 0 || sexo.length == 0 || fechaNacimiento == null ) {
       alert('Tienes que rellenar todos los campos.')
    }

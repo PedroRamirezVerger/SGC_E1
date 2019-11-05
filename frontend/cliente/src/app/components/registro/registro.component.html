@@ -20,6 +20,10 @@
                 <label for="Apellidos">Apellidos</label>
                 <input class="form-control" #apellidos name="apellidos" id="Apellidos" placeholder="Apellidos" required>
             </div>
+            <div class="form-group">
+                <label for="Direccion">Direccion</label>
+                <input class="form-control" #direccion name="direccion" id="Direccion" placeholder="Direccion" required>
+            </div>
         </div>
         <div class="columna2">
             <div class="form-group">
@@ -47,7 +51,7 @@
             <p>
 
             </p>
-            <button type="button" (click)="singUp(nombre.value, apellidos.value, dni.value, password.value, telefono.value, email.value, sexo.value, fechaNacimiento.value, $event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Registrarse</button>
+            <button type="button" (click)="singUp(nombre.value, apellidos.value, direccion.value, dni.value, password.value, telefono.value, email.value, sexo.value, fechaNacimiento.value, $event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Registrarse</button>
             <hr>
                                            
            
