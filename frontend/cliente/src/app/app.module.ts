@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './components/login/login.service';
 import { PedircitaComponent } from './components/pedircita/pedircita.component';
 import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/cambiodatoscontacto.component';
+import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambiocontrasena.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/c
     CitasComponent,
     RegistroComponent,
     PedircitaComponent,
-    CambiodatoscontactoComponent
+    CambiodatoscontactoComponent,
+    CambiocontrasenaComponent
   ],
   imports: [
     BrowserModule, 
