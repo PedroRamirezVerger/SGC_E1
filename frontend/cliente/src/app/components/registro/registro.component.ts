@@ -32,6 +32,15 @@ export class RegistroComponent implements OnInit {
     
     return true;
   }
+  controlaremail(email:string){
+    var arroba="@";
+    var punto=".";
+    if(email.indexOf(arroba)==-1 || email.indexOf(punto)==-1){
+      alert('Introduzca el email de manera correcta. Ejemplo: ejemplo@ejemplo.es');
+      return false;
+    }
+    return true;
+  }
   validartelefono(telefono:string){
     var comprobacion=parseInt(telefono);
     if( telefono.length!= 9 || String(comprobacion).length != 9){
@@ -104,7 +113,7 @@ export class RegistroComponent implements OnInit {
       || email.length == 0 || sexo.length == 0 || fechaNacimiento == null ) {
       alert('Tienes que rellenar todos los campos.')
    }
-   else if(this.validardni(dni) && this.validartelefono(telefono) && this.comprobarpassword(password)){
+   else if(this.validardni(dni) && this.validartelefono(telefono) && this.comprobarpassword(password) && this.controlaremail(email)){
     this.registroService.registrarUsuario(this.usuario).subscribe(
       response => {
         this.router.navigate(['/login'])
