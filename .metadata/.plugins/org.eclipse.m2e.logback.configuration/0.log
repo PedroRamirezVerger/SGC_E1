@@ -1550,3 +1550,23 @@ Caused by: java.io.FileNotFoundException: C:\SGC_E1\.metadata\.plugins\org.eclip
 2019-11-06 18:23:09,398 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-11-06 18:23:09,399 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-11-06 18:23:09,399 [Worker-141: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-11-06 23:30:17,066 [Worker-209: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:30:17,067 [Worker-209: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-06 23:30:17,067 [Worker-209: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-06 23:30:17,072 [Worker-209: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:30:17,072 [Worker-209: Launching backend - BackendApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-11-06 23:32:42,275 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:32:42,275 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-06 23:32:42,275 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-06 23:32:42,279 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:32:42,280 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-11-06 23:32:58,589 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:32:58,590 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-06 23:32:58,591 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-06 23:32:58,593 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:32:58,593 [Worker-209: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources
+2019-11-06 23:36:29,620 [Worker-224: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:36:29,621 [Worker-224: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-06 23:36:29,623 [Worker-224: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-06 23:36:29,625 [Worker-224: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-06 23:36:29,625 [Worker-224: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SGC_E1\backend\src\test\resources

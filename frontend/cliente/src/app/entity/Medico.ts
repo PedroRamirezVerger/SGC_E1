@@ -1,11 +1,11 @@
 import { Usuario } from './Usuario';
 
-export class Medico extends Usuario{
+export class Medico {//extends Usuario{
     especialidad: string;
     centrosalud: string;
 
     constructor(){
-        super();
+        //super();
         this.especialidad = "";
         this.centrosalud = "";
     }

@@ -9,6 +9,10 @@ export class Usuario {
     telefono: string;
     email: string;
     sexo: string;
+    localidad: string;
+    centroMedico: string;
+    medico: string;
+    especialidad: string;
     fechaNacimiento: Date;
 
     constructor() {
@@ -21,7 +25,12 @@ export class Usuario {
         this.telefono = "" ;
         this.email = "" ;
         this.sexo = "" ;
+        this.localidad = "" ;
+        this.centroMedico = "" ;
+        this.medico = "" ;
+        this.especialidad = "" ;
         this.fechaNacimiento = null;
+
     }
 
 }

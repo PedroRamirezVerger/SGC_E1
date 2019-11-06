@@ -4,7 +4,6 @@ export class Cita {
     dniMedico: string;
     fecha: Date;
     hora: Date;
-    centroSalud: string;
     consulta: string;
     especialidad: string;
 
@@ -13,7 +12,6 @@ export class Cita {
         this.dniMedico = "" ;
         this.fecha = null ;
         this.hora = null ;
-        this.centroSalud = "" ;
         this.consulta = "" ;
         this.especialidad = "";
     }

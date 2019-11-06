@@ -16,44 +16,37 @@ public class Usuario {
 	private ObjectId _id;
 	
 	@Indexed(unique = true)
-	protected String dni;
+	private String dni;
 	
-	protected String password;
+	private String password;
 	
-	protected String tipo;
+	private String tipo;
 	
-	protected String nombre;
+	private String nombre;
 	
-	protected String apellidos;
+	private String apellidos;
 	
-	protected String direccion;
+	private String direccion;
 	
 	@Indexed(unique = true)
-	protected String telefono;
+	private String telefono;
 	
 	@Email
 	@Indexed(unique = true)
-	protected String email;
+	private String email;
 	
-	protected String sexo;
+	private String sexo;
 	
-	protected Date fechaNacimiento;
+	private String localidad;
 	
-	public Usuario(ObjectId _id, String dni, String password, String tipo, String nombre, String apellidos,
-			String direccion, String telefono, @Email String email, String sexo, Date fechaNacimiento) {
-		super();
-		this._id = _id;
-		this.dni = dni;
-		this.password = password;
-		this.tipo = tipo;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.direccion = direccion;
-		this.telefono = telefono;
-		this.email = email;
-		this.sexo = sexo;
-		this.fechaNacimiento = fechaNacimiento;
-	}
+	private String centroMedico;
+	
+	private String medico;
+	
+	private String especialidad;
+	
+	private Date fechaNacimiento;
+	
 	
 	public String get_id() {
 		return _id.toHexString();
@@ -133,7 +126,33 @@ public class Usuario {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+	
+	
 
+	public String getLocalidad() {
+		return localidad;
+	}
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+	public String getCentroMedico() {
+		return centroMedico;
+	}
+	public void setCentroMedico(String centroMedico) {
+		this.centroMedico = centroMedico;
+	}
+	public String getMedico() {
+		return medico;
+	}
+	public void setMedico(String medico) {
+		this.medico = medico;
+	}
+	public String getEspecialidad() {
+		return especialidad;
+	}
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}
 	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
