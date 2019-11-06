@@ -1,5 +1,6 @@
 package com.example.backend.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.backend.models.entity.Cita;
+import com.example.backend.models.entity.Paciente;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.ICitaService;
 import com.example.backend.models.services.IUsuarioService;
@@ -23,10 +26,21 @@ import com.example.backend.models.services.IUsuarioService;
 @RestController
 @RequestMapping("/api")
 public class CitaRestController {
-/*	
+	
 	@Autowired
 	private ICitaService citaService;
-
 	
-	*/
+	@GetMapping("/citas/{dni}")
+	public ArrayList<Cita> getCitasPaciente(@PathVariable("dniPaciente") String dniPaciente) {
+		return citaService.findByDniPaciente(dniPaciente);
+	}
+	
+	@PostMapping("/citas")
+	public Cita pedirCita(@Valid @RequestBody Cita cita) {
+		cita.set_id(ObjectId.get());
+		citaService.saveCita(cita);
+		
+		return cita;
+	}
+	
 }
