@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/entity/Usuario';
-import { RegistroService } from './registro.service';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
@@ -12,14 +12,14 @@ export class RegistroComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
   constructor(private router:Router,
-              private registroService: RegistroService) {
+              private usuarioService: UsuarioService) {
 
    }
 
   ngOnInit() {
   }
 
-  singUp(nombre: string, apellidos: string, dni:string, password: string, telefono: string, email: string, sexo: string, fechaNacimiento: Date, tipo: string){
+  singUp(nombre: string, apellidos: string, dni:string, password: string, telefono: string, email: string, sexo: string, fechaNacimiento: Date, tipo: string, direccion: string){
     console.log(nombre);
     this.usuario.nombre = nombre;
     this.usuario.apellidos = apellidos;
@@ -30,9 +30,10 @@ export class RegistroComponent implements OnInit {
     this.usuario.sexo = sexo;
     this.usuario.fechaNacimiento = fechaNacimiento;
     this.usuario.tipo = tipo;
+    this.usuario.direccion = direccion;
     console.log(this.usuario);
 
-    this.registroService.registrarUsuario(this.usuario).subscribe(
+    this.usuarioService.registrarUsuario(this.usuario).subscribe(
       response => {
         this.router.navigate(['/login'])
       }

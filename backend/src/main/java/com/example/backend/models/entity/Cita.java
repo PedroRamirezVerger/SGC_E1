@@ -18,6 +18,7 @@ public class Cita {
 	private Date hora;
 	private String centroSalud;
 	private String consulta;
+	private String especialidad;
 	
 	
 	public String get_id() {
@@ -32,6 +33,7 @@ public class Cita {
 	public void setDniPaciente(String dniPaciente) {
 		this.dniPaciente = dniPaciente;
 	}
+	
 	public String getDniMedico() {
 		return dniMedico;
 	}
@@ -62,9 +64,12 @@ public class Cita {
 	public void setConsulta(String consulta) {
 		this.consulta = consulta;
 	}
-	
-	
-	
+	public String getEspecialidad() {
+		return especialidad;
+	}
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}
 	
 	
 	

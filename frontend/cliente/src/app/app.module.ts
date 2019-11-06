@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { CitasComponent } from './components/citas/citas.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { PedircitaComponent } from './components/pedircita/pedircita.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
 // Services
-import { LoginService } from './components/login/login.service';
-import { PedircitaComponent } from './components/pedircita/pedircita.component';
+import { CitaService } from './services/cita.service';
+import { UsuarioService } from './services/usuario.service';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { PedircitaComponent } from './components/pedircita/pedircita.component';
     APP_ROUTING
   ],
   providers: [
-    LoginService
+    CitaService,
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })

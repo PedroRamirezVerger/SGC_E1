@@ -2,7 +2,6 @@ package com.example.backend.controllers;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,17 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Cita;
+import com.example.backend.models.respuesta.RespuestaCitasUsuario;
 import com.example.backend.models.services.ICitaService;
+import com.example.backend.models.services.IUsuarioService;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
 @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
 @RestController
-@RequestMapping("/api")
+@RequestMapping("")
 public class CitaRestController {
 	
 	
 	@Autowired
 	private ICitaService citaService;
+	
+	@Autowired 
+	private IUsuarioService usuarioService;
 	
 	@GetMapping("/citas")
 	public List<Cita> getAllCitas() {
@@ -30,8 +34,11 @@ public class CitaRestController {
 	}
 	
 	@GetMapping("/citas/{dniPaciente}")
-	public List<Cita> getCitasPacienteByDni(@PathVariable ("dniPaciente") String dniPaciente){
-		return citaService.findCitasByDniPaciente(dniPaciente);
+	public RespuestaCitasUsuario getCitasPacienteByDni(@PathVariable ("dniPaciente") String dniPaciente){
+		RespuestaCitasUsuario respuestaCitasUsuario = new RespuestaCitasUsuario();
+		respuestaCitasUsuario.setUsuario(usuarioService.findUserByDni(dniPaciente));
+		respuestaCitasUsuario.setListaCitasPaciente(citaService.findCitasByDniPaciente(dniPaciente));
+		return respuestaCitasUsuario;
 	}
 	
 	
