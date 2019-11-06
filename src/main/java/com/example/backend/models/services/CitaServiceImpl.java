@@ -17,18 +17,18 @@ public class CitaServiceImpl implements ICitaService {
 	private ICitaDAO citaDao;
 	//
 	@Autowired
-	public ArrayList<Cita> findByPacienteAndFecha(Paciente paciente, Date fecha) {
-		return citaDao.findByPacienteAndFecha(paciente, fecha);
+	public ArrayList<Cita> findByPacienteAndFecha(String dniPaciente, Date fecha) {
+		return citaDao.findByDniPacienteAndFecha(dniPaciente, fecha);
 	}
 
 	@Autowired
-	public ArrayList<Cita> findByMedico(Medico medico) {
-		return citaDao.findByMedico(medico);
+	public ArrayList<Cita> findByDniMedico(String dniMedico) {
+		return citaDao.findByDniMedico(dniMedico);
 	}
 
 	@Autowired
-	public ArrayList<Cita> findByPaciente(Paciente paciente) {
-		return citaDao.findByPaciente(paciente);
+	public ArrayList<Cita> findByDniPaciente(String dniPaciente) {
+		return citaDao.findByDniPaciente(dniPaciente);
 	}
 
 	@Override
@@ -36,5 +36,7 @@ public class CitaServiceImpl implements ICitaService {
 		this.citaDao.save(cita);
 		
 	}
+
+	
 
 }

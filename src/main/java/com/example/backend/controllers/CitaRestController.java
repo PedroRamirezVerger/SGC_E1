@@ -31,8 +31,8 @@ public class CitaRestController {
 	private ICitaService citaService;
 	
 	@GetMapping("/citas/{dni}")
-	public ArrayList<Cita> getCitasPaciente(@PathVariable("paciente") Paciente paciente) {
-		return citaService.findByPaciente(paciente);
+	public ArrayList<Cita> getCitasPaciente(@PathVariable("dniPaciente") String dniPaciente) {
+		return citaService.findByDniPaciente(dniPaciente);
 	}
 	
 	@PostMapping("/citas")

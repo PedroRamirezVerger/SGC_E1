@@ -15,10 +15,10 @@ import com.example.backend.models.entity.Paciente;
 @Repository
 public interface ICitaDAO extends MongoRepository<Cita, String> {
 	
-	ArrayList<Cita> findByPacienteAndFecha(Paciente paciente, Date fecha);
+	ArrayList<Cita> findByDniPacienteAndFecha(String dniPaciente, Date fecha);
 	
-	ArrayList<Cita> findByMedico(Medico medico);
+	ArrayList<Cita> findByDniMedico(String dniMedico);
 	
-	ArrayList<Cita> findByPaciente(Paciente paciente);
+	ArrayList<Cita> findByDniPaciente(String dniPaciente);
 	
 }
