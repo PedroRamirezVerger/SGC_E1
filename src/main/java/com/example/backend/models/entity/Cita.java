@@ -22,17 +22,18 @@ public class Cita {
 	public void set_id(ObjectId _id) {
 		this._id = _id;
 	}
-	public Paciente getPaciente() {
-		return paciente;
+
+	public String getDniPaciente() {
+		return dniPaciente;
 	}
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
+	public void setDniPaciente(String dniPaciente) {
+		this.dniPaciente = dniPaciente;
 	}
-	public Medico getMedico() {
-		return medico;
+	public String getDniMedico() {
+		return dniMedico;
 	}
-	public void setMedico(Medico medico) {
-		this.medico = medico;
+	public void setDniMedico(String dniMedico) {
+		this.dniMedico = dniMedico;
 	}
 	public Date getFecha() {
 		return fecha;
