@@ -9,8 +9,8 @@ import { Usuario } from 'src/app/entity/Usuario';
 })
 export class RegistroService {
   
-private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios"; 
-// private URL_ENDPOINT: string = "http://localhost:8080/api/usuarios"; PARA CUANDO SE DESARROLLA
+// private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios"; 
+private URL_ENDPOINT: string = "http://localhost:8080/api/usuarios"; // PARA CUANDO SE DESARROLLA
 private tipo_data: string = '';
 
 // Http Options

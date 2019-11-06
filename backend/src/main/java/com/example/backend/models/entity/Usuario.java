@@ -28,6 +28,7 @@ public class Usuario {
 	
 	protected String direccion;
 	
+	@Indexed(unique = true)
 	protected String telefono;
 	
 	@Email

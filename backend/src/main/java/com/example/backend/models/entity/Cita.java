@@ -6,18 +6,19 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 @Document(value = "citas")
 public class Cita {
 	
 	@Id
 	private ObjectId _id;
-	
 	private String dniPaciente;
 	private String dniMedico;
 	private Date fecha;
 	private Date hora;
 	private String centroSalud;
-	private int consulta;
+	private String consulta;
+	
 	
 	public String get_id() {
 		return _id.toHexString();
@@ -55,13 +56,17 @@ public class Cita {
 	public void setCentroSalud(String centroSalud) {
 		this.centroSalud = centroSalud;
 	}
-	public int getConsulta() {
+	public String getConsulta() {
 		return consulta;
 	}
-	public void setConsulta(int consulta) {
+	public void setConsulta(String consulta) {
 		this.consulta = consulta;
 	}
 	
 	
-
+	
+	
+	
+	
+	
 }
