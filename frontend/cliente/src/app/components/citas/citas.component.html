@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let cita of citas">
-            <td scope="row">{{cita.fecha}}</td>
+            <td scope="row">{{cita.fecha | date:"short"}}</td>
             <td>{{cita.consulta}}</td>
             <td>{{cita.dniMedico}}</td>
             <td>{{cita.especialidad}}</td>

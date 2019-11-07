@@ -12,7 +12,7 @@ import { UsuarioService } from '../../services/usuario.service';
 export class LoginComponent implements OnInit {
 
   loginPasado: boolean;
-  msg: string = ''
+  msg: string = '';
 
 
   constructor(private router:Router,
