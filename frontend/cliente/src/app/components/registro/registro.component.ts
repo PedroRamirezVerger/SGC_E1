@@ -56,7 +56,7 @@ export class RegistroComponent implements OnInit {
     }
     var numeros=parseInt(password);
     if(String(numeros).length < 2){
-     alert("La contraseña tiene que tener al menos 2 numeros.")
+     alert("La contraseña tiene que tener al menos un numero.")
      return false;
     }
     var comprobacionnumeros='123456789';
