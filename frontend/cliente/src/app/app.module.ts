@@ -17,6 +17,7 @@ import { LoginService } from './components/login/login.service';
 import { PedircitaComponent } from './components/pedircita/pedircita.component';
 import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/cambiodatoscontacto.component';
 import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambiocontrasena.component';
+import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambioc
     RegistroComponent,
     PedircitaComponent,
     CambiodatoscontactoComponent,
-    CambiocontrasenaComponent
+    CambiocontrasenaComponent,
+    CambiarcitaComponent
   ],
   imports: [
     BrowserModule, 

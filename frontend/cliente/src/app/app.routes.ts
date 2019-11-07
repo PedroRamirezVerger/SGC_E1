@@ -5,6 +5,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { PedircitaComponent } from './components/pedircita/pedircita.component';
 import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/cambiodatoscontacto.component';
 import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambiocontrasena.component';
+import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.component';
 
 
 
@@ -16,6 +17,7 @@ const APP_ROUTES: Routes = [
     { path: 'pedircita', component: PedircitaComponent},
     { path: 'cambiodatoscontacto', component: CambiodatoscontactoComponent},
     { path: 'cambiocontrasena', component: CambiocontrasenaComponent},
+    { path: 'cambiocita', component: CambiarcitaComponent},
     { path: '**', pathMatch: 'full', redirectTo:'login' },
    
 

@@ -30,6 +30,9 @@ export class CitasComponent implements OnInit {
     var index=this.citas.indexOf(cita);
     this.citas.splice(index, 1);
   }
+  cambiarcita(){
+    this.router.navigate(['/cambiocita'])
+  }
   cambiarcontrasena(){
     this.router.navigate(['/cambiocontrasena'])
   }
