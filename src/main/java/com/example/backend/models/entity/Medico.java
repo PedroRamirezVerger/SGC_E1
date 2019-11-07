@@ -2,29 +2,39 @@ package com.example.backend.models.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.Email;
 
-public class Medico extends Usuario {
-	private Especialidad especialidad;
-	private CentroSalud centrosalud;
+import org.bson.types.ObjectId;
+
+public class Medico{ //extends Usuario{
 	
-	
-	public Medico(String dni, String password, String tipo, String nombre, String apellidos, String direccion, String telefono,
-			String email, String sexo, Date fechaNacimiento, Especialidad especialidad, CentroSalud centroSalud) {
-		super(dni, password, tipo, nombre, apellidos, direccion, telefono, email, sexo, fechaNacimiento);
-		this.especialidad=especialidad;
-		this.centrosalud=centroSalud;
+	private String especialidad;
+	private String centroMedico;
+
+	public Medico(ObjectId _id, String dni, String password, String tipo, String nombre, String apellidos,
+			String direccion, String telefono, @Email String email, String sexo, Date fechaNacimiento,
+			String especialidad, String centroMedico) {
+		//super(_id, dni, password, tipo, nombre, apellidos, direccion, telefono, email, sexo, fechaNacimiento);
+		this.especialidad = especialidad;
+		this.centroMedico = centroMedico;
 	}
 
-	public Especialidad getEspecialidad() {
+	public String getEspecialidad() {
 		return especialidad;
 	}
-	public void setEspecialidad(Especialidad especialidad) {
+
+	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
 	}
-	public CentroSalud getCentrosalud() {
-		return centrosalud;
+
+	public String getCentroMedico() {
+		return centroMedico;
 	}
-	public void setCentrosalud(CentroSalud centrosalud) {
-		this.centrosalud = centrosalud;
+
+	public void setCentroMedico(String centroMedico) {
+		this.centroMedico = centroMedico;
 	}
+	
+	
+
 }
