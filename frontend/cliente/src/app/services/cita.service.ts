@@ -12,7 +12,7 @@ import { RespuestaCitasPaciente } from '../respuesta/respuesta-citas-paciente';
 export class CitaService {
 
 
-  private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
+  private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/citas";
   // private URL_ENDPOINT: string = "http://localhost:8080/citas";  // PARA CUANDO SE DESARROLLA
   private tipo_data: string = '';
 
