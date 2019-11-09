@@ -95,7 +95,6 @@ export class RegistroComponent implements OnInit {
     this.usuario.email = email;
     this.usuario.sexo = sexo;
     this.usuario.fechaNacimiento = fechaNacimiento;
-    this.usuario.tipo = tipo;
     this.usuario.direccion = direccion;
     console.log(this.usuario);
 
@@ -105,7 +104,7 @@ export class RegistroComponent implements OnInit {
       alert('Tienes que rellenar todos los campos.')
    }
    else if(this.validardni(dni) && this.validartelefono(telefono) && this.comprobarpassword(password)){
-    this.registroService.registrarUsuario(this.usuario).subscribe(
+    this.usuarioService.registrarUsuario(this.usuario).subscribe(
 
       response => {
         this.router.navigate(['/login'])
@@ -113,5 +112,5 @@ export class RegistroComponent implements OnInit {
     );
 
   }
-
+  }
 }

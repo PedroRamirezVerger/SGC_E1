@@ -42,6 +42,7 @@ export class PedircitaComponent implements OnInit {
     this.cita.fecha=null;
     this.cita.hora=null;
     this.cita.consulta="alguna";
+    
     this.cita.especialidad="otra";
     console.log(this.cita);
     this.citaService.añadirCita(this.cita).subscribe(

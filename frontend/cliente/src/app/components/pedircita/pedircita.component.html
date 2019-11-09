@@ -6,28 +6,11 @@
             <!--Elegir tipo de médico COMPLETADO-->
             <div class="form-group">
                 <label for="TipoMedico">Tipo de médico</label>
-                <br> <select name="tipomedico">
-                 <option selected value="0"> Elige una opción </option>
-                    <optgroup label ="Médico de cabecera">
-                        <option value="1">Médico de cabecera</option> 
-                    </optgroup>
-                    <optgroup label="Especialista"> 
-                        <option value="2">Cardiología</option> 
-                        <option value="3">Dermatología</option> 
-                        <option value="4">Endocrinología</option> 
-                        <option value="5">Ginecología</option> 
-                        <option value="6">Nefrología</option> 
-                        <option value="7">Neumología</option> 
-                        <option value="8">Neurología</option> 
-                        <option value="9">Oncología</option> 
-                        <option value="10">Oftalmología</option> 
-                        <option value="11">Otorrinolaringología</option> 
-                        <option value="12">Pediatría</option> 
-                        <option value="13">Psiquiatría</option>
-                        <option value="14">Radiología</option>
-                        <option value="15">Traumatología</option>
-                        <option value="16">Urología</option>
-                    </optgroup> 
+                <br> <select name="tipomedico" id="tipo-medico">
+                    <option selected value ="1">Médico de cabecera</option> 
+                    
+                    <option value="2"> Especialista</option>
+                       
                  </select>
             </div>
             
@@ -40,15 +23,17 @@
                 <br> Selecciona la hora deseada: <br>
                 <input type="time" #hora name="hora" id="hora" min="07:00" max="21:00" step="300">
             </div>
-            <!--Elegir médico. 
-            FALTA CONFIGURAR PARA QUE MUESTRE OPCIONES EN FUNCION DE LA ESPECIALIDAD-->
-            <!--<div class ="form-group">
-                <label for="Médico">Elegir médico <br></label>
-                <select class='form-control' #sexo name="sexo" name='Sexo'>
-                <select class='form-control' name='medico'>
-                    <option selected value="0"> Elige una opción </option>
-                    <optgroup label ="Médico de cabecera">
-                        <option value="1">Luis Ortega Calero</option> 
+            <button type="button" (click)="anadircita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
+        </div>
+         
+            
+        <div class="columna2">
+            <div class ="form-group" id="especialistas">
+                <label for="Médico">Elegir especialista <br></label>
+                <select class='form-control' name='medico' placeholder="Seleccione especialista">
+                    <option value="0">Seleccione un especialista</option>                    
+                    <optgroup label ="Urología">
+                        <option value="1">Mariano Santillana Rodríguez</option> 
                     </optgroup>
                     <optgroup label="Cardiología">
                         <option value="2">María Fernández Rodríguez</option>
@@ -92,18 +77,9 @@
                     <optgroup label="Traumatología">
                             <option value="15">Teresa Hernández Montes</option>
                     </optgroup>
-                    <optgroup label="Urología">
-                            <option value="16">Mariano Santillana Rodríguez</option>
-                    </optgroup>
                 </select>
-               <!-- <input class="form-control" #especialidad name="especialidad" id="especialidad">
             </div>
-            -->
-            <button type="button" (click)="anadircita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
         </div>
 
     </form> 
 </div>
-            <!--FALTA INCLUIR BOTON PARA COMPROBAR QUE LA FECHA Y HORA ELEGIDA PARA ESE MEDICO ESTE
-            DISPONIBLE EN LA BBDD. SI ESTA DISPONIBLE, GUARDAR EN LA BBDD, SI NO, MOSTRAR MENSAJE DE ERROR 
-            -->
