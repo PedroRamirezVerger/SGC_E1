@@ -1,35 +1,36 @@
 package com.example.backend.models.services;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.backend.models.dao.ICitaDAO;
 import com.example.backend.models.entity.Cita;
-import com.example.backend.models.entity.Medico;
-import com.example.backend.models.entity.Paciente;
 
 @Service
-public class CitaServiceImpl implements ICitaService {
+public class CitaServiceImpl implements ICitaService{
+	
 	@Autowired
 	private ICitaDAO citaDao;
-	//
-	@Autowired
-	public ArrayList<Cita> findByPacienteAndFecha(String dniPaciente, Date fecha) {
-		return citaDao.findByDniPacienteAndFecha(dniPaciente, fecha);
+	
+	@Override
+	public List<Cita> findAll() {
+		return citaDao.findAll();
+	}
+	
+
+	@Override
+	@Autowired(required = false)
+	public List<Cita> findCitasByDniPaciente(String dniPaciente) {
+		return citaDao.findByDniPaciente(dniPaciente);
 	}
 
-	@Autowired
-	public ArrayList<Cita> findByDniMedico(String dniMedico) {
+	@Override
+	public List<Cita> findCitasByDniMedico(String dniMedico) {
 		return citaDao.findByDniMedico(dniMedico);
 	}
 
-	@Autowired
-	public ArrayList<Cita> findByDniPaciente(String dniPaciente) {
-		return citaDao.findByDniPaciente(dniPaciente);
-	}
 
 	@Override
 	public void saveCita(Cita cita) {
@@ -38,5 +39,8 @@ public class CitaServiceImpl implements ICitaService {
 	}
 
 	
-
+	
+	
+	
+	
 }

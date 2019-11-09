@@ -19,8 +19,9 @@ import com.example.backend.models.services.IUsuarioService;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
 @CrossOrigin(value = "http://localhost:4200") 
+
 @RestController
-@RequestMapping("/api")
+@RequestMapping("")
 public class UsuarioRestController {
 	
 	@Autowired
@@ -41,7 +42,6 @@ public class UsuarioRestController {
 	public boolean validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
 		boolean loginPasado = false;
 		List<Usuario> listaUsuarios = usuarioService.findAll();
-		System.out.println(dni);
 		for(Usuario u: listaUsuarios) {
 			if(u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
 				loginPasado = true;
@@ -50,7 +50,6 @@ public class UsuarioRestController {
 				loginPasado = false;
 			}
 		}
-		
 		return loginPasado;
 	}
 	
