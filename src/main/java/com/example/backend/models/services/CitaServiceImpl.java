@@ -31,6 +31,13 @@ public class CitaServiceImpl implements ICitaService{
 		return citaDao.findByDniMedico(dniMedico);
 	}
 
+
+	@Override
+	public void saveCita(Cita cita) {
+		this.citaDao.save(cita);
+		
+	}
+
 	
 	
 	

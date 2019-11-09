@@ -43,6 +43,7 @@ public class UsuarioRestController {
 		boolean loginPasado = false;
 		List<Usuario> listaUsuarios = usuarioService.findAll();
 		for(Usuario u: listaUsuarios) {
+			
 			if(u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
 				loginPasado = true;
 				break;

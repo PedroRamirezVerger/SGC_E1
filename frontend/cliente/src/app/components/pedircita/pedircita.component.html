@@ -36,14 +36,15 @@
             FALTA CONFIGURAR PARA QUE NO MUESTRE DIAS PASADOS EN EL CALENDARIO NI LAS HORAS EN EL RELOJ-->
             <div class ="form-group">
                 <br>Selecciona la fecha deseada:<br>
-                <input type="date" name="fecha" min="2019-10-29" max="2020-12-31" step="1">
+                <input class="form-control" #fecha name="fecha" id="fecha" min="2019-10-29" max="2020-12-31" step="1">
                 <br> Selecciona la hora deseada: <br>
-                <input type="time" name="hora" min="07:00" max="21:00" step="300">
+                <input type="time" #hora name="hora" id="hora" min="07:00" max="21:00" step="300">
             </div>
             <!--Elegir médico. 
             FALTA CONFIGURAR PARA QUE MUESTRE OPCIONES EN FUNCION DE LA ESPECIALIDAD-->
-            <div class ="form-group">
+            <!--<div class ="form-group">
                 <label for="Médico">Elegir médico <br></label>
+                <select class='form-control' #sexo name="sexo" name='Sexo'>
                 <select class='form-control' name='medico'>
                     <option selected value="0"> Elige una opción </option>
                     <optgroup label ="Médico de cabecera">
@@ -95,8 +96,10 @@
                             <option value="16">Mariano Santillana Rodríguez</option>
                     </optgroup>
                 </select>
+               <!-- <input class="form-control" #especialidad name="especialidad" id="especialidad">
             </div>
-            <button type="button" (click)="anadircita()" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
+            -->
+            <button type="button" (click)="anadircita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
         </div>
 
     </form> 

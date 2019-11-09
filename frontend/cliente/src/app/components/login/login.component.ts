@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
 
@@ -14,17 +14,18 @@ export class LoginComponent implements OnInit {
   loginPasado: boolean;
   msg: string = ''
 
+
   constructor(private router:Router,
               private usuarioService: UsuarioService,
               ) { 
   }
 
   ngOnInit() {
-    
   }
+
+
   logIn(dni: string, password: string){
     this.usuarioService.validateLogin(dni, password).subscribe(
-
       response => {
         (this.loginPasado = response)
         if(this.loginPasado){
@@ -35,8 +36,6 @@ export class LoginComponent implements OnInit {
         }
       }
     );
-   }
-    
   }
 
   singIn(){

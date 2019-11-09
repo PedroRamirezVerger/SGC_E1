@@ -25,8 +25,8 @@ import { UsuarioService } from './services/usuario.service';
     LoginComponent,
     CitasComponent,
     RegistroComponent,
-    PedircitaComponent,
-    CambiodatoscontactoComponent
+    PedircitaComponent//,
+    //CambiodatosContactoComponent
   ],
   imports: [
     BrowserModule, 

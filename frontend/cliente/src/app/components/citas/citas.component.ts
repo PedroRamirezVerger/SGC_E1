@@ -49,7 +49,7 @@ export class CitasComponent implements OnInit {
 
 
   pedircita(){
-    this.router.navigate(['/pedircita'])
+    this.router.navigate(['/pedircita', this.usuario])
   }
   modificardatoscontacto(){
     this.router.navigate(['/cambiodatoscontacto'])

@@ -1,5 +1,6 @@
 package com.example.backend.models.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.bson.types.ObjectId;
@@ -9,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(value = "citas")
 public class Cita {
-	
+
 	@Id
 	private ObjectId _id;
 	private String dniPaciente;
