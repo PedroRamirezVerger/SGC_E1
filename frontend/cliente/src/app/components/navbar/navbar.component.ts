@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
   
 
   ngOnInit() {
+    // this.loginService.isAuthenticated()
     this.activateRoute.params.subscribe(params => {
       console.log(params);
       if(params['dni'])

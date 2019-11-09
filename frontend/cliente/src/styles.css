@@ -1,0 +1,34 @@
+.footer {
+    position: fixed;
+    bottom: 0%;
+    height: 30px;
+    width: 100%;
+}
+
+.automovimiento {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 50px;
+    top: 0;
+}
+
+.login-container {
+    width: 35%;
+    height: 50%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 35%;
+    padding: 30px;
+    background-color: rgba(225, 227, 248, 0.226);
+    border-radius: 25px
+}
+
+
+/*body {
+    background: url("assets/citas-medico-dedo.jpg") round fixed;
+}*/
+
+body {
+    background-color: rgba(227, 241, 241, 0.596);
+}

@@ -12,7 +12,9 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { PedircitaComponent } from './components/pedircita/pedircita.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+
+
 
 
 

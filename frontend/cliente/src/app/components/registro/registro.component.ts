@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/entity/Usuario';
 import { UsuarioService } from '../../services/usuario.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-registro',
@@ -19,23 +21,22 @@ export class RegistroComponent implements OnInit {
   ngOnInit() {
   }
 
-  singUp(nombre: string, apellidos: string, dni:string, password: string, telefono: string, email: string, sexo: string, fechaNacimiento: Date, tipo: string, direccion: string){
-    console.log(nombre);
-    this.usuario.nombre = nombre;
-    this.usuario.apellidos = apellidos;
-    this.usuario.dni = dni;
-    this.usuario.password = password;
-    this.usuario.telefono = telefono;
-    this.usuario.email = email;
-    this.usuario.sexo = sexo;
-    this.usuario.fechaNacimiento = fechaNacimiento;
-    this.usuario.tipo = tipo;
-    this.usuario.direccion = direccion;
+
+  singUp(){
     console.log(this.usuario);
+
+    // TODO CUANDO TENGAMOS EL ADMIN, ESTO LO HARA EL.
+
+    this.usuario.tipo = 'paciente';
+    this.usuario.centroMedico = 'Sanitas CR';
+    this.usuario.medico = 'Antonio Perez Rodriguez';
+    this.usuario.especialidad = 'Pediatría'
+
 
     this.usuarioService.registrarUsuario(this.usuario).subscribe(
       response => {
         this.router.navigate(['/login'])
+        Swal.fire('Nuevo usuario', `Usuario ${this.usuario.nombre} creado con éxito!`, 'success')
       }
     );
 

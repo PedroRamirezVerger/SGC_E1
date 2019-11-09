@@ -1,63 +1,62 @@
 <div class="container">
-    <h1>Registro</h1>
-
-    <form class="columnas">
-        <div class="columna1">
+    <br>
+    <h2>Registro</h2>
+    <br>
+    <form class="columnas col-md-12">
+        <div class="columna1 col-md-5">
             <div class="form-group">
                 <label for="Dni">Dni</label>
-                <input class="form-control" #dni name="dni" id="dni" placeholder="Dni">
+                <input class="form-control" [(ngModel)]="usuario.dni" name="dni" id="dni">
             </div>
             <div class="form-group">
                 <label for="Password">Password</label>
-                <input type="password" class="form-control" #password name="password" id="password" placeholder="Password">
+                <input type="password" class="form-control" [(ngModel)]="usuario.password" name="password" id="password">
             </div>
             <div class="form-group">
                 <label for="Nombre">Nombre</label>
-                <input class="form-control" #nombre name="nombre" id="Nombre" placeholder="Nombre">
+                <input class="form-control" required [(ngModel)]="usuario.nombre" #nombre="ngModel" name="nombre" id="Nombre">
+                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+                    El campo nombre es obligatorio
+                </div>
             </div>
             <div class="form-group">
                 <label for="Apellidos">Apellidos</label>
-                <input class="form-control" #apellidos name="apellidos" id="Apellidos" placeholder="Apellidos">
+                <input class="form-control" [(ngModel)]="usuario.apellidos" name="apellidos" id="Apellidos">
+            </div>
+            <div class="form-group ">
+                <label for="Email ">Email</label>
+                <input class="form-control" type="email" [(ngModel)]="usuario.email " name="email " id="Email ">
             </div>
         </div>
-        <div class="columna2">
-            <div class="form-group">
-                <label for="Email">Email</label>
-                <input class="form-control" #email name="email" id="Email" placeholder="Email">
+        <div class=" columna2 col-md-5">
+            <div class="form-group ">
+                <label for="Telefono ">Teléfono</label>
+                <input class="form-control " [(ngModel)]="usuario.telefono " name="telefono " id="Telefono" placeholder="teléfono">
             </div>
-            <div class="form-group">
-                <label for="Telefono">Telefono</label>
-                <input class="form-control" #telefono name="telefono" id="Telefono" placeholder="Telefono">
-            </div>
-            <div class="form-group">
-                <label for="fechaNacimiento">Fecha nacimiento
-                    <br>
+            <div class="form-group ">
+                <label for="fechaNacimiento ">Fecha nacimiento
                 </label>
-                <input type="datetime-local" name="fechaNacimiento" step="1" min="1930-01-01" max="2019-12-31" value="2019-01-01" #fechaNacimiento name="fechaNacimiento">
+                <input type="date" [(ngModel)]="usuario.fechaNacimiento" name="fechaNacimiento " step="1 " min="1930-01-01 " max="2019-12-31 " value="2019-01-01 ">
             </div>
-
-            <div class="form-group">
-                <label for="direccion">direccion</label>
-                <input class="form-control" #direccion name="direccion" id="direccion" placeholder="direccion">
+            <div class="form-group ">
+                <label for="direccion ">Dirección</label>
+                <input class="form-control " [(ngModel)]="usuario.direccion " name="direccion " id="direccion " placeholder="direccion">
             </div>
-            <div class="form-group">
-                <label for="Sexo">Sexo</label>
-                <!--input class="form-control" id="Sexo" placeholder="Sexo">-->
-                <select class='form-control' #sexo name="sexo" name='Sexo'>
-                    <option value="1">Hombre</option> 
-                    <option value="2">Mujer</option> 
+            <div class="form-group ">
+                <label for="Localidad ">Localidad</label>
+                <input class="form-control " [(ngModel)]="usuario.localidad " name="localidad " id="localidad " placeholder="localidad">
+            </div>
+            <div class="form-group ">
+                <label for="Sexo ">Sexo</label>
+                <select class='form-control' [(ngModel)]="usuario.sexo " name="sexo ">
+                    <option>Hombre</option> 
+                    <option>Mujer</option> 
                 </select>
             </div>
-            <div class="form-group">
-                <label for="tipo">Tipo</label>
-                <input class="form-control" #tipo name="tipo" id="tipo" placeholder="tipo">
+            <div>
+                <button type="button " (click)="singUp($event) " style="margin: 10px " class="btn btn-primary " id="registrarse-button ">Registrarse</button>
             </div>
-            <p>
-
-            </p>
-            <button type="button" (click)="singUp(nombre.value, apellidos.value, dni.value, password.value, telefono.value,
-                                           email.value, sexo.value, fechaNacimiento.value, tipo.value, direccion.value, $event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Registrarse</button>
+            <div style="height: 50px;"></div>
         </div>
-
     </form>
 </div>
