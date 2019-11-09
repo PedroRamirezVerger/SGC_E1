@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
-import { Usuario } from '../entity/Usuario';
-import { Cita } from '../entity/Cita';
 import { RespuestaCitasPaciente } from '../respuesta/respuesta-citas-paciente';
 
 @Injectable({
