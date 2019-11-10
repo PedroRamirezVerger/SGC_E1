@@ -33,6 +33,8 @@ export class PedircitaComponent implements OnInit {
       this.usuario.apellidos = params['apellidos'];
       this.usuario.centroMedico = params['centroMedico'];
     });
+    let x=document.getElementById("especialistas");
+    x.style.display="none";
   }
 
   anadircita(dia: string, hora: string, tipoMedico: string){
@@ -61,11 +63,12 @@ export class PedircitaComponent implements OnInit {
   }
   mostrarEspecialidad(n:number) {
     let x=document.getElementById("especialistas");
-    if (n==1) {
-      x.style.display="block";
-    }
     if (n==0) {
       x.style.display="none";
     }
+    if (n==1) {
+      x.style.display="block";
+    }
+   
   }
 }
