@@ -10,9 +10,10 @@ import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.compo
 
 
 
+
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: 'citas', component: CitasComponent },
+    { path: 'citas/:dni', component: CitasComponent },
     { path: 'registro', component: RegistroComponent},
     { path: 'pedircita', component: PedircitaComponent},
     { path: 'cambiodatoscontacto', component: CambiodatoscontactoComponent},

@@ -23,17 +23,11 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	public Usuario findUserByDni(String dni) {
 		return usuarioDao.findByDni(dni);
 	}
-	
-	@Autowired(required = false)
-	public Usuario findUserByTipo(String tipo) {
-		return usuarioDao.findByTipo(tipo);
-	}
-	
+
 	@Override
 	public void saveUser(Usuario usuario) {
 		this.usuarioDao.save(usuario);
 	}
-
 	
 	
 

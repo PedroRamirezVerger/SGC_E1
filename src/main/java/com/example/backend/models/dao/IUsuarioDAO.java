@@ -8,5 +8,4 @@ import com.example.backend.models.entity.Usuario;
 @Repository
 public interface IUsuarioDAO extends MongoRepository<Usuario, String> {
 	Usuario findByDni(String dni);
-	Usuario findByTipo(String tipo);
 }

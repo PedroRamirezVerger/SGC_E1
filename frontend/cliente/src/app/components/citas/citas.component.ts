@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ChildActivationStart } from '@angular/router';
+
+import { Router, ActivatedRoute } from '@angular/router';
+import { Cita } from 'src/app/entity/Cita';
+import { CitaService } from 'src/app/services/cita.service';
+import { Usuario } from 'src/app/entity/Usuario';
+import { RespuestaCitasPaciente } from 'src/app/respuesta/respuesta-citas-paciente';
+
+
 
 @Component({
   selector: 'app-citas',
@@ -8,19 +15,41 @@ import { Router, ChildActivationStart } from '@angular/router';
 })
 export class CitasComponent implements OnInit {
 
-  citas = [{id:'1', fecha: '13/10/2019', consulta: '37', medico: 'Antonio Ramos Romero', especialidad: 'Traumatología'},
-           {id:'2', fecha: '15/10/2019', consulta: '45', medico: 'Luis Jimenez Roldán', especialidad: 'Neurología'},
-           {id:'3', fecha: '17/10/2019', consulta: '65', medico: 'María Torras Catalán', especialidad: 'Urgencias'},
-           {id:'4', fecha: '23/11/2019', consulta: '23', medico: 'Manuel Puente Garcia', especialidad: 'Oncología'},
-           {id:'5', fecha: '26/11/2019', consulta: '67', medico: 'Paula Bermejo Delgado', especialidad: 'Nefrología'}
-          ];
 
-  constructor(private router:Router) { }
+  respuestaCitasPaciente: RespuestaCitasPaciente;
+
+  citas: Cita[] = [];
+  usuario: Usuario = new Usuario();
+  dni: string = '';
+
+
+  constructor(private router:Router,
+              private citaService: CitaService,
+              private activateRoute: ActivatedRoute) {
+
+  }
 
   ngOnInit() {
+    this.activateRoute.params.subscribe(params => {
+      this.dni = params['dni'];
+      if(this.dni)
+        this.mostrarListaCitas();
+    });
   }
+
+  mostrarListaCitas(){
+    this.citaService.getCitasUsuario(this.dni).subscribe(
+      response => {
+        this.respuestaCitasPaciente = response;
+        this.usuario = this.respuestaCitasPaciente.usuario;
+        this.citas = this.respuestaCitasPaciente.listaCitasPaciente;
+      }
+    );
+  }
+
+
   pedircita(){
-    this.router.navigate(['/pedircita'])
+    this.router.navigate(['/pedircita', this.usuario])
   }
   modificardatoscontacto(){
     this.router.navigate(['/cambiodatoscontacto'])

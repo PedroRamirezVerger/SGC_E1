@@ -1,20 +1,24 @@
 package com.example.backend.models.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@Document(value = "citas")
 public class Cita {
-	
-	@Id ObjectId _id;
-	
-	private Paciente paciente;
-	private Medico medico;
+
+	@Id
+	private ObjectId _id;
+	private String dniPaciente;
+	private String dniMedico;
 	private Date fecha;
-	private String hora;
-	private CentroSalud centroSalud;
-	private int consulta;
+	private String consulta;
+	private String especialidad;
+	
 	
 	public String get_id() {
 		return _id.toHexString();
@@ -22,17 +26,18 @@ public class Cita {
 	public void set_id(ObjectId _id) {
 		this._id = _id;
 	}
-	public Paciente getPaciente() {
-		return paciente;
+	public String getDniPaciente() {
+		return dniPaciente;
 	}
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
+	public void setDniPaciente(String dniPaciente) {
+		this.dniPaciente = dniPaciente;
 	}
-	public Medico getMedico() {
-		return medico;
+	
+	public String getDniMedico() {
+		return dniMedico;
 	}
-	public void setMedico(Medico medico) {
-		this.medico = medico;
+	public void setDniMedico(String dniMedico) {
+		this.dniMedico = dniMedico;
 	}
 	public Date getFecha() {
 		return fecha;
@@ -40,24 +45,21 @@ public class Cita {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-	public String getHora() {
-		return hora;
-	}
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
-	public CentroSalud getCentroSalud() {
-		return centroSalud;
-	}
-	public void setCentroSalud(CentroSalud centroSalud) {
-		this.centroSalud = centroSalud;
-	}
-	public int getConsulta() {
+
+	public String getConsulta() {
 		return consulta;
 	}
-	public void setConsulta(int consulta) {
+	public void setConsulta(String consulta) {
 		this.consulta = consulta;
 	}
+	public String getEspecialidad() {
+		return especialidad;
+	}
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}
+	
+	
 	
 	
 }

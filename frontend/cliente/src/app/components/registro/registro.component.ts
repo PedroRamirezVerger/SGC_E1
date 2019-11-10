@@ -1,9 +1,8 @@
+  
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/entity/Usuario';
-import { RegistroService } from './registro.service';
-import { isNumber } from 'util';
-import { parse } from 'url';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
@@ -12,17 +11,15 @@ import { parse } from 'url';
 })
 export class RegistroComponent implements OnInit {
 
-  msg: string = ''
   usuario: Usuario = new Usuario;
   constructor(private router:Router,
-              private registroService: RegistroService) {
+              private usuarioService: UsuarioService) {
 
    }
 
   ngOnInit() {
   }
 
-  
   validardni(dni:string) {
     var numero=parseInt(dni);
     if(dni.length != 9 || String(numero).length + 1 != dni.length){
@@ -96,6 +93,7 @@ export class RegistroComponent implements OnInit {
   }
 
   singUp(nombre: string, apellidos: string, direccion:string, dni:string, password: string, telefono: string, email: string, sexo: string, fechaNacimiento: Date){
+
     console.log(nombre);
     this.usuario.nombre = nombre;
     this.usuario.apellidos = apellidos;
@@ -106,8 +104,9 @@ export class RegistroComponent implements OnInit {
     this.usuario.email = email;
     this.usuario.sexo = sexo;
     this.usuario.fechaNacimiento = fechaNacimiento;
-    this.usuario.tipo = "usuario";
+    this.usuario.direccion = direccion;
     console.log(this.usuario);
+
 
     if(nombre.length == 0 || apellidos.length == 0 || direccion.length == 0 || password.length == 0  
       || email.length == 0 || sexo.length == 0 || fechaNacimiento == null ) {
@@ -115,14 +114,12 @@ export class RegistroComponent implements OnInit {
    }
    else if(this.validardni(dni) && this.validartelefono(telefono) && this.comprobarpassword(password) && this.controlaremail(email)){
     this.registroService.registrarUsuario(this.usuario).subscribe(
+
       response => {
         this.router.navigate(['/login'])
       }
     );
-   }
-    
-    
 
   }
-
+  }
 }

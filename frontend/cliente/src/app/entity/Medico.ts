@@ -1,12 +1,13 @@
-import { Especialidad } from './Especialidad';
-import { CentroSalud } from './CentroSalud';
 
-export class Medico{
-    especialidad: Especialidad;
-    centrosalud: CentroSalud;
+import { Usuario } from './Usuario';
+
+export class Medico {//extends Usuario{
+    especialidad: string;
+    centrosalud: string;
 
     constructor(){
-        this.especialidad=null;
-        this.centrosalud=null;
+        //super();
+        this.especialidad = "";
+        this.centrosalud = "";
     }
 }
