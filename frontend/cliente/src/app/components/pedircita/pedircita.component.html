@@ -4,22 +4,22 @@
     <form class="columnas">
         <div class="columna1">
             <!--Elegir tipo de médico COMPLETADO-->
-            <div class="form-group">
-                <label for="TipoMedico">Tipo de médico</label>
-                <br> <select name="tipomedico" id="tipo-medico">
-                    <option selected value ="1">Médico de cabecera</option> 
-                    
-                    <option value="2"> Especialista</option>
-                       
-                 </select>
-            </div>
+            <label class="container">
+                    <input type="radio" name="tipoMedicoo" value="1" checked>Médico de cabecera
+                    <br>
+                    <input type="radio" name="tipoMedicoo" value="2">Especialista
+                    <br> 
+            </label>
+           
             
             <!--Elegir fecha y hora. 
             FALTA DISTINGUIR ENTRE MED.CABEC (citas cada 5 minutos) y MED.ESPEC(citas sin duracion fijada)
             FALTA CONFIGURAR PARA QUE NO MUESTRE DIAS PASADOS EN EL CALENDARIO NI LAS HORAS EN EL RELOJ-->
             <div class ="form-group">
                 <br>Selecciona la fecha deseada:<br>
-                <input class="form-control" #fecha name="fecha" id="fecha" min="2019-10-29" max="2020-12-31" step="1">
+                <!--<input class="form-control" #fecha name="fecha" id="fecha" min="2019-10-29" max="2020-12-31" step="1">
+                -->
+                <input type="date" #fecha name="fecha" step="1" min="1930-01-01" max="2019-12-31" value="2019-01-01" required>
                 <br> Selecciona la hora deseada: <br>
                 <input type="time" #hora name="hora" id="hora" min="07:00" max="21:00" step="300">
             </div>
@@ -29,7 +29,6 @@
             
         <div class="columna2">
             <div class ="form-group" id="especialistas">
-                <label for="Médico">Elegir especialista <br></label>
                 <select class='form-control' name='medico' placeholder="Seleccione especialista">
                     <option value="0">Seleccione un especialista</option>                    
                     <optgroup label ="Urología">

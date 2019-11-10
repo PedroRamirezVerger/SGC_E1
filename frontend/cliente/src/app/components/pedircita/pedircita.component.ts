@@ -35,15 +35,23 @@ export class PedircitaComponent implements OnInit {
     });
   }
 
-  anadircita(fecha: Date, hora: Date){
+  anadircita(dia: string, hora: string, tipoMedico: Number){
+    let horaSeparada=hora.split(':');
+    let diaSeparado=dia.split('-');
+    let fecha =new Date(parseInt(diaSeparado[2]),parseInt(diaSeparado[1]), parseInt(diaSeparado[0]),
+    parseInt(horaSeparada[0]),parseInt(horaSeparada[1]) )
     this.cita.dniPaciente=this.usuario.dni;
-    //this.cita.dniMedico=dniMedico;
-    this.cita.dniMedico=this.usuario.medico;
-    this.cita.fecha=null;
+    if (tipoMedico==1) {
+      this.cita.dniMedico=this.usuario.medico;
+      this.cita.especialidad="Médico de cabecera";
+    }else{
+      this.cita.dniMedico=this.usuario.medico;
+      this.cita.especialidad="otra";
+    }
+    this.cita.fecha=fecha;
     this.cita.hora=null;
     this.cita.consulta="alguna";
-    
-    this.cita.especialidad="otra";
+   
     console.log(this.cita);
     this.citaService.añadirCita(this.cita).subscribe(
       response => {
