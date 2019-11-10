@@ -104,7 +104,6 @@ export class RegistroComponent implements OnInit {
     this.usuario.email = email;
     this.usuario.sexo = sexo;
     this.usuario.fechaNacimiento = fechaNacimiento;
-    this.usuario.direccion = direccion;
     console.log(this.usuario);
 
 
