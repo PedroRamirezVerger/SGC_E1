@@ -6,6 +6,9 @@ select{
 .columna1{
     float: left;
 }
+.columna2.especialistas{
+    display: none;
+}
 .right {
     width: 75%;
 }

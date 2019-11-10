@@ -16,7 +16,6 @@ public class Cita {
 	private String dniPaciente;
 	private String dniMedico;
 	private Date fecha;
-	private Date hora;
 	private String consulta;
 	private String especialidad;
 	
@@ -45,12 +44,6 @@ public class Cita {
 	}
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
-	}
-	public Date getHora() {
-		return hora;
-	}
-	public void setHora(Date hora) {
-		this.hora = hora;
 	}
 
 	public String getConsulta() {

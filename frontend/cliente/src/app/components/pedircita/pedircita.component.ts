@@ -35,21 +35,20 @@ export class PedircitaComponent implements OnInit {
     });
   }
 
-  anadircita(dia: string, hora: string, tipoMedico: Number){
+  anadircita(dia: string, hora: string, tipoMedico: string){
     let horaSeparada=hora.split(':');
     let diaSeparado=dia.split('-');
     let fecha =new Date(parseInt(diaSeparado[2]),parseInt(diaSeparado[1]), parseInt(diaSeparado[0]),
     parseInt(horaSeparada[0]),parseInt(horaSeparada[1]) )
     this.cita.dniPaciente=this.usuario.dni;
-    if (tipoMedico==1) {
+    if (tipoMedico=='0') {
       this.cita.dniMedico=this.usuario.medico;
       this.cita.especialidad="Médico de cabecera";
     }else{
       this.cita.dniMedico=this.usuario.medico;
-      this.cita.especialidad="otra";
+      this.cita.especialidad=tipoMedico;
     }
     this.cita.fecha=fecha;
-    this.cita.hora=null;
     this.cita.consulta="alguna";
    
     console.log(this.cita);
@@ -60,5 +59,13 @@ export class PedircitaComponent implements OnInit {
     );
     
   }
- 
+  mostrarEspecialidad(n:number) {
+    let x=document.getElementById("especialistas");
+    if (n==1) {
+      x.style.display="block";
+    }
+    if (n==0) {
+      x.style.display="none";
+    }
+  }
 }

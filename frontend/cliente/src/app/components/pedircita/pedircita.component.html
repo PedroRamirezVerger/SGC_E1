@@ -5,10 +5,11 @@
         <div class="columna1">
             <!--Elegir tipo de médico COMPLETADO-->
             <label class="container">
-                    <input type="radio" name="tipoMedicoo" value="1" checked>Médico de cabecera
+                    <input type="radio" name="check" id="check" value="1" (click)="mostrarEspecialidad(0)" checked>Médico de cabecera
                     <br>
-                    <input type="radio" name="tipoMedicoo" value="2">Especialista
+                    <input type="radio" name="check" id="check" value="2" (click)="mostrarEspecialidad(1)">Especialista
                     <br> 
+                        
             </label>
            
             
@@ -17,64 +18,62 @@
             FALTA CONFIGURAR PARA QUE NO MUESTRE DIAS PASADOS EN EL CALENDARIO NI LAS HORAS EN EL RELOJ-->
             <div class ="form-group">
                 <br>Selecciona la fecha deseada:<br>
-                <!--<input class="form-control" #fecha name="fecha" id="fecha" min="2019-10-29" max="2020-12-31" step="1">
-                -->
                 <input type="date" #fecha name="fecha" step="1" min="1930-01-01" max="2019-12-31" value="2019-01-01" required>
                 <br> Selecciona la hora deseada: <br>
                 <input type="time" #hora name="hora" id="hora" min="07:00" max="21:00" step="300">
             </div>
-            <button type="button" (click)="anadircita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
+            <button type="button" (click)="anadircita(fecha.value, hora.value, especialidad.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
         </div>
          
             
         <div class="columna2">
-            <div class ="form-group" id="especialistas">
-                <select class='form-control' name='medico' placeholder="Seleccione especialista">
+            <div class ="form-group" id="especialistas" display=none>
+                <select class='form-control' #especialidad name='especialidad' id="especialidad" placeholder="Seleccione especialista">
                     <option value="0">Seleccione un especialista</option>                    
                     <optgroup label ="Urología">
-                        <option value="1">Mariano Santillana Rodríguez</option> 
+                        <option value="Urología">Mariano Santillana Rodríguez</option> 
                     </optgroup>
                     <optgroup label="Cardiología">
-                        <option value="2">María Fernández Rodríguez</option>
+                        <option value="Cardiología">María Fernández Rodríguez</option>
                     </optgroup>
                     <optgroup label="Dermatología">
-                        <option value="3">Roberto Ramírez Pacheco</option>
+                        <option value="Dermatología">Roberto Ramírez Pacheco</option>
                     </optgroup>
                     <optgroup label="Endocrinología">
-                            <option value="4">Alejandro Rico Jiménez</option>
+                            <option value="Endocrinología">Alejandro Rico Jiménez</option>
                     </optgroup>
                     <optgroup label="Ginecología">
-                        <option value="5">Sergio Muñoz Cortés</option>
+                        <option value="Ginecología">Sergio Muñoz Cortés</option>
                     </optgroup>
                     <optgroup label="Nefrología">
-                            <option value="6">Carolina Medina Yañez</option>
+                            <option value="Nefrología">Carolina Medina Yañez</option>
                     </optgroup>
                     <optgroup label="Neumología">
-                            <option value="7">Esther Rubio Moreno</option>
+                            <option value="Neumología">Esther Rubio Moreno</option>
                     </optgroup>
                     <optgroup label="Neurología">
-                            <option value="8">Jose Luis Morales Hernández</option>
+                            <option value="Neurología">Jose Luis Morales Hernández</option>
                     </optgroup>
                     <optgroup label="Oncología">
-                            <option value="9">Manuel Blanco Rodríguez</option>
+                            <option value="Oncología">Manuel Blanco Rodríguez</option>
                     </optgroup>
                     <optgroup label="Oftalmología">
-                            <option value="10">Ignacio Úbeda Serrano</option>
+                            <option value="Oftalmología">Ignacio Úbeda Serrano</option>
                     </optgroup>
                     <optgroup label="Otorrinolaringología">
-                            <option value="11">Mercedes González Díaz</option>
+                            <option value="Otorrinolaringología">Mercedes González Díaz</option>
                     </optgroup>
                     <optgroup label="Pediatría">
-                            <option value="12">Gonzalo Rincón Martínez</option>
+                            <option value="Pediatría">Gonzalo Rincón Martínez</option>
                     </optgroup>
                     <optgroup label="Psiquiatría">
-                            <option value="13">Ana Hernández Parra</option>
+                            <option value="Psiquiatría">Ana Hernández Parra</option>
                     </optgroup>
                     <optgroup label="Radiología">
-                            <option value="14">Francisco Ruiz Fernández</option>
+                            <option value="Radiología">Francisco Ruiz Fernández</option>
                     </optgroup>
                     <optgroup label="Traumatología">
-                            <option value="15">Teresa Hernández Montes</option>
+                            <option value="Traumatología">Teresa Hernández Montes</option>
                     </optgroup>
                 </select>
             </div>
