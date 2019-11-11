@@ -11,12 +11,12 @@
                     <br> 
                         
             </label>
-           
-            
+
+
             <!--Elegir fecha y hora. 
             FALTA DISTINGUIR ENTRE MED.CABEC (citas cada 5 minutos) y MED.ESPEC(citas sin duracion fijada)
             FALTA CONFIGURAR PARA QUE NO MUESTRE DIAS PASADOS EN EL CALENDARIO NI LAS HORAS EN EL RELOJ-->
-            <div class ="form-group">
+            <div class="form-group">
                 <br>Selecciona la fecha deseada:<br>
                 <input type="date" #fecha name="fecha" step="1" min="1930-01-01" max="2019-12-31" value="2019-01-01" required>
                 <br> Selecciona la hora deseada: <br>
@@ -24,11 +24,11 @@
             </div>
             <button type="button" (click)="anadircita(fecha.value, hora.value, especialidad.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
         </div>
-         
-            
+
+
         <div class="columna2">
-            <div class ="form-group" id="especialistas" display=none>
-                <select class='form-control' #especialidad name='especialidad' id="especialidad" placeholder="Seleccione especialista">
+            <div class="form-group" id="especialistas" display=none>
+                <select class='form-control' [(ngModel)]="cita.dniMedico" #especialidad name='especialidad' id="especialidad" placeholder="Seleccione especialista">
                     <option value="0">Seleccione un especialista</option>                    
                     <optgroup label ="Urología">
                         <option value="Urología">Mariano Santillana Rodríguez</option> 
@@ -79,5 +79,5 @@
             </div>
         </div>
 
-    </form> 
+    </form>
 </div>
