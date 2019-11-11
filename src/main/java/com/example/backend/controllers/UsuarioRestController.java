@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.IUsuarioService;
 
-@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
-// @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
+// @CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
+@CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
 @RestController
 @RequestMapping("api")
 public class UsuarioRestController {
@@ -47,12 +47,11 @@ public class UsuarioRestController {
 	boolean loginPasado = false;
 	List<Usuario> listaUsuarios = usuarioService.findAll();
 	for (Usuario u : listaUsuarios) {
-
-	    if (u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
-		loginPasado = true;
-		break;
+	    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
+	    	loginPasado = true;
+	    	break;
 	    } else {
-		loginPasado = false;
+	    	loginPasado = false;
 	    }
 	}
 	return loginPasado;

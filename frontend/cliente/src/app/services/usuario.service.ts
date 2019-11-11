@@ -11,8 +11,8 @@ import Swal from 'sweetalert2'
 export class UsuarioService {
 
 
-  private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
-  // private URL_ENDPOINT: string = "http://localhost:8080/api/usuarios";  // PARA CUANDO SE DESARROLLA
+  // private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
+  private URL_ENDPOINT: string = "http://localhost:8080/api/usuarios";  // PARA CUANDO SE DESARROLLA
   private tipo_data: string = '';
 
   // Http Options

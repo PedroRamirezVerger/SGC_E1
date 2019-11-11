@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
-
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -25,17 +25,22 @@ export class LoginComponent implements OnInit {
 
 
   logIn(dni: string, password: string){
-    this.usuarioService.validateLogin(dni, password).subscribe(
-      response => {
-        (this.loginPasado = response)
-        if(this.loginPasado){
-          this.msg = 'Login correcto!';
-          this.router.navigate(['/citas', dni])
-        } else {
-          this.msg = 'Login incorrecto.'
+    this.loginPasado = false;
+    if (dni.length === 0 || password.length === 0){
+      Swal.fire('Error en los campos', "Todos los campos han de estar completos.", 'error');
+    } else {
+      this.usuarioService.validateLogin(dni, password).subscribe(
+        response => {
+          (this.loginPasado = response)
+          if(this.loginPasado){
+            Swal.fire('Login correcto', "Ha iniciado sesión", 'success');
+            this.router.navigate(['/citas', dni])
+          } else {
+            Swal.fire('Error en los campos', "El DNI y/o la contraseña son incorrectos.", 'error');
+          }
         }
-      }
-    );
+      );
+    }
   }
 
   singIn(){

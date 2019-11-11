@@ -1,6 +1,6 @@
 package com.example.backend.models.entity;
 
-import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -13,7 +13,7 @@ public class Cita {
     private ObjectId _id;
     private String dniPaciente;
     private String dniMedico;
-    private SimpleDateFormat fecha;
+    private Date fecha;
     private String consulta;
     private String especialidad;
 
@@ -41,11 +41,11 @@ public class Cita {
 	this.dniMedico = dniMedico;
     }
 
-    public SimpleDateFormat getFecha() {
+    public Date getFecha() {
 	return fecha;
     }
 
-    public void setFecha(SimpleDateFormat fecha) {
+    public void setFecha(Date fecha) {
 	this.fecha = fecha;
     }
 
