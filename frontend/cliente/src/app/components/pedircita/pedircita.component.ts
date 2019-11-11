@@ -17,6 +17,7 @@ export class PedircitaComponent implements OnInit {
   usuario: Usuario = new Usuario;
   constructor(private router:Router, private citaService : CitaService, private activateRoute: ActivatedRoute, private usuarioService: UsuarioService) { }
   id:string;
+  
   ngOnInit() {
     this.activateRoute.params.subscribe(params => {
       this.id = params['id'];
