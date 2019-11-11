@@ -1,51 +1,60 @@
 <div class="container">
     <h1>Registro</h1>
-
+    <p for="Control-registro" id="control-registro" style="color: red;">{{msg}}</p>
     <form class="columnas">
         <div class="columna1">
             <div class="form-group">
                 <label for="Dni">Dni</label>
-                <input class="form-control" id="dni" placeholder="Dni">
+                <input class="form-control" #dni name="dni" id="dni" placeholder="Dni" required>
             </div>
             <div class="form-group">
                 <label for="Password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" #password name="password" id="password" placeholder="Password" required>
             </div>
+        
             <div class="form-group">
                 <label for="Nombre">Nombre</label>
-                <input class="form-control" id="Nombre" placeholder="Nombre">
+                <input class="form-control" #nombre name="nombre" id="Nombre" placeholder="Nombre" required>
             </div>
             <div class="form-group">
                 <label for="Apellidos">Apellidos</label>
-                <input class="form-control" id="Apellidos" placeholder="Apellidos">
+                <input class="form-control" #apellidos name="apellidos" id="Apellidos" placeholder="Apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="Direccion">Direccion</label>
+                <input class="form-control" #direccion name="direccion" id="Direccion" placeholder="Direccion" required>
             </div>
         </div>
         <div class="columna2">
             <div class="form-group">
                 <label for="Email">Email</label>
-                <input class="form-control" id="Email" placeholder="Email">
+                <input class="form-control" #email name="email" id="Email" placeholder="Email" required>
             </div>
             <div class="form-group">
                 <label for="Telefono">Telefono</label>
-                <input class="form-control" id="Telefono" placeholder="Telefono">
+                <input class="form-control" #telefono name="telefono" id="Telefono" placeholder="Telefono" required>
             </div>
             <div class="form-group">
-                <label for="FechaNacimiento">FechaNacimiento</label>
-                <input class="form-control" id="FechaNacimiento" placeholder="FechaNacimiento">
+                <label for="fechaNacimiento">Fecha nacimiento</label>
+                <input type="date" name="fechaNacimiento" step="1" min="1930-01-01" max="2019-12-31" value="2019-01-01" #fechaNacimiento name="fechaNacimiento" required>
             </div>
             <div class="form-group">
                 <label for="Sexo">Sexo</label>
                 <!--input class="form-control" id="Sexo" placeholder="Sexo">-->
-                <select class='form-control' name='Sexo'>
+                <select class='form-control' #sexo name="sexo" name='Sexo'>
                     <option value="1">Hombre</option> 
                     <option value="2">Mujer</option> 
                 </select>
-                <p>
-
-                </p>
-                <!--<button type="button" (click)="singIn(dni.value, password.value, Nombre.value, Apellidos.value, Email.value, Telefono.value, FechaNacimiento.value, Sexo.value,  $event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Registrarse</button>-->
             </div>
-        </div>
+            <p>
 
+            </p>
+            <button type="button" (click)="singUp(nombre.value, apellidos.value, direccion.value, dni.value, password.value, telefono.value, email.value, sexo.value, fechaNacimiento.value, $event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Registrarse</button>
+            <hr>
+                                           
+           
+        </div>
+       
     </form>
+    
 </div>

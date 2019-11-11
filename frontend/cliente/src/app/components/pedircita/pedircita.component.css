@@ -1,0 +1,14 @@
+
+select{
+    width:250px;height:50px;
+}
+
+.columna1{
+    float: left;
+}
+.columna2.especialistas{
+    display: none;
+}
+.right {
+    width: 75%;
+}

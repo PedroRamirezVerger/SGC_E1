@@ -10,13 +10,13 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.3.10-SNAPSHOT</version>
 	<name>backend</name>
 	<description>Spring project for the backend</description>
 
 	<properties>
-		<!--  <basedir>${project.basedir}</basedir>
-		<targetdir>${project.build.directory}</targetdir>-->
+	    <basedir>${project.basedir}</basedir>
+		<targetdir>${project.build.directory}</targetdir>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -35,6 +35,20 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-java</artifactId>
+		    <version>1.2.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-junit</artifactId>
+		    <version>1.2.2</version>
+		    <scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -46,7 +60,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		
 	</dependencies>
+	
+	
 
 	<build>
 		<plugins>
