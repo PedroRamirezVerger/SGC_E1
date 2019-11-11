@@ -3,6 +3,7 @@ import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Usuario } from '../entity/Usuario';
+import Swal from 'sweetalert2'
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ import { Usuario } from '../entity/Usuario';
 export class UsuarioService {
 
 
-   private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
-  //private URL_ENDPOINT: string = "http://localhost:8080/usuarios";  // PARA CUANDO SE DESARROLLA
+  private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
+  // private URL_ENDPOINT: string = "http://localhost:8080/api/usuarios";  // PARA CUANDO SE DESARROLLA
   private tipo_data: string = '';
 
   // Http Options
@@ -32,7 +33,7 @@ export class UsuarioService {
     return this.httpClient.get<boolean>(this.URL_ENDPOINT + this.tipo_data)
       .pipe(
         retry(1),
-        catchError(this.handleError)
+        catchError(this.handleLoginError)
       )
   }
 
@@ -41,13 +42,13 @@ export class UsuarioService {
     return this.httpClient.post<Usuario>(this.URL_ENDPOINT, JSON.stringify(usuario), this.httpOptions)
       .pipe(
         retry(1),
-          catchError(this.handleError)
+          catchError(this.handleRegistroError)
       )
   }
 
 
   // Error handling 
-  handleError(error) {
+  handleRegistroError(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
       // Get client-side error
@@ -56,7 +57,21 @@ export class UsuarioService {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    Swal.fire('Usuario no registrado', errorMessage, 'error')
     return throwError(errorMessage);
  }
+
+ // Error handling 
+ handleLoginError(error) {
+  let errorMessage = '';
+  if(error.error instanceof ErrorEvent) {
+    // Get client-side error
+    errorMessage = error.error.message;
+  } else {
+    // Get server-side error
+    errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+  }
+  Swal.fire('Error al iniciar sesión', errorMessage, 'error')
+  return throwError(errorMessage);
+}
 }

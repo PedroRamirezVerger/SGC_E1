@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
-import { Usuario } from '../entity/Usuario';
-import { Cita } from '../entity/Cita';
 import { RespuestaCitasPaciente } from '../respuesta/respuesta-citas-paciente';
+import { Cita } from '../entity/Cita';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +11,8 @@ import { RespuestaCitasPaciente } from '../respuesta/respuesta-citas-paciente';
 export class CitaService {
 
 
-  private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
-  //private URL_ENDPOINT: string = "http://localhost:8080/citas";  // PARA CUANDO SE DESARROLLA
+  private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/citas";
+  // private URL_ENDPOINT: string = "http://localhost:8080/api/citas";  // PARA CUANDO SE DESARROLLA
   private tipo_data: string = '';
 
   // Http Options

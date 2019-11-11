@@ -1,7 +1,6 @@
 package com.example.backend.models.entity;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -18,7 +17,6 @@ public class Cita {
 	private Date fecha;
 	private String consulta;
 	private String especialidad;
-	
 	
 	public String get_id() {
 		return _id.toHexString();
@@ -45,8 +43,7 @@ public class Cita {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-
-	public String getConsulta() {
+		public String getConsulta() {
 		return consulta;
 	}
 	public void setConsulta(String consulta) {
@@ -58,8 +55,4 @@ public class Cita {
 	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
 	}
-	
-	
-	
-	
 }

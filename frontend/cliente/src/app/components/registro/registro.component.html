@@ -1,60 +1,90 @@
 <div class="container">
-    <h1>Registro</h1>
-    <p for="Control-registro" id="control-registro" style="color: red;">{{msg}}</p>
-    <form class="columnas">
-        <div class="columna1">
+    <br>
+    <h2>Registro usuario</h2>
+    <br>
+    <form class="columnas col-md-12">
+        <div class="columna1 col-md-5">
             <div class="form-group">
                 <label for="Dni">Dni</label>
-                <input class="form-control" #dni name="dni" id="dni" placeholder="Dni" required>
+                <input class="form-control" required [(ngModel)]="usuario.dni" #dni="ngModel" name="dni" id="dni" placeholder="dni ">
+                <div *ngIf="dni.invalid && (dni.dirty || dni.touched) && dni.value === '' " class="alert alert-danger">
+                    El campo dni es obligatorio
+                </div>
             </div>
             <div class="form-group">
-                <label for="Password">Password</label>
-                <input type="password" class="form-control" #password name="password" id="password" placeholder="Password" required>
+                <label for="Password">Contraseña</label>
+                <input type="password" required class="form-control" [(ngModel)]="usuario.password" #password="ngModel" name="password" id="password" placeholder="contraseña">
+                <div *ngIf="password.invalid && (password.dirty || password.touched) && password.value === '' " class="alert alert-danger">
+                    El campo password es obligatorio
+                </div>
             </div>
-        
             <div class="form-group">
                 <label for="Nombre">Nombre</label>
-                <input class="form-control" #nombre name="nombre" id="Nombre" placeholder="Nombre" required>
+                <input class="form-control" required [(ngModel)]="usuario.nombre" #nombre="ngModel" name="nombre" id="Nombre" placeholder="nombre">
+                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched) && nombre.value === '' " class="alert alert-danger">
+                    El campo nombre es obligatorio
+                </div>
             </div>
             <div class="form-group">
                 <label for="Apellidos">Apellidos</label>
-                <input class="form-control" #apellidos name="apellidos" id="Apellidos" placeholder="Apellidos" required>
-            </div>
-            <div class="form-group">
-                <label for="Direccion">Direccion</label>
-                <input class="form-control" #direccion name="direccion" id="Direccion" placeholder="Direccion" required>
-            </div>
-        </div>
-        <div class="columna2">
-            <div class="form-group">
-                <label for="Email">Email</label>
-                <input class="form-control" #email name="email" id="Email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <label for="Telefono">Telefono</label>
-                <input class="form-control" #telefono name="telefono" id="Telefono" placeholder="Telefono" required>
-            </div>
-            <div class="form-group">
-                <label for="fechaNacimiento">Fecha nacimiento</label>
-                <input type="date" name="fechaNacimiento" step="1" min="1930-01-01" max="2019-12-31" value="2019-01-01" #fechaNacimiento name="fechaNacimiento" required>
-            </div>
-            <div class="form-group">
-                <label for="Sexo">Sexo</label>
-                <!--input class="form-control" id="Sexo" placeholder="Sexo">-->
-                <select class='form-control' #sexo name="sexo" name='Sexo'>
-                    <option value="1">Hombre</option> 
-                    <option value="2">Mujer</option> 
-                </select>
-            </div>
-            <p>
+                <input class="form-control" required [(ngModel)]="usuario.apellidos" #apellidos="ngModel" name="apellidos" id="Apellidos" placeholder="apellidos">
+                <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched) && apellidos.value === '' " class="alert alert-danger">
+                    El campo apellidos es obligatorio
+                </div>
 
-            </p>
-            <button type="button" (click)="singUp(nombre.value, apellidos.value, direccion.value, dni.value, password.value, telefono.value, email.value, sexo.value, fechaNacimiento.value, $event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Registrarse</button>
-            <hr>
-                                           
-           
+            </div>
+            <div class="form-group ">
+                <label for="Email ">Email</label>
+                <input class="form-control" required type="email" [(ngModel)]="usuario.email " #email="ngModel" name="email " id="Email" placeholder="email">
+                <div *ngIf="email.invalid && (email.dirty || email.touched) && email.value === '' " class="alert alert-danger">
+                    El campo email es obligatorio
+                </div>
+            </div>
         </div>
-       
+        <div class=" columna2 col-md-5">
+            <div class="form-group ">
+                <label for="Telefono ">Teléfono</label>
+                <input class="form-control " required [(ngModel)]="usuario.telefono" #telefono="ngModel" name="telefono " id="Telefono" placeholder="teléfono">
+                <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched) && telefono.value === '' " class="alert alert-danger">
+                    El campo telefono es obligatorio
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="fechaNacimiento ">Fecha nacimiento
+                </label>
+                <input type="date" required [(ngModel)]="usuario.fechaNacimiento" #fechaNaciento="ngModel" name="fechaNacimiento " step="1 " min="1930-01-01 " max="2019-12-31 " value="2019-01-01 ">
+                <div *ngIf="fechaNaciento.invalid && (fechaNaciento.dirty || fechaNaciento.touched) && fechaNaciento.value === null" class="alert alert-danger">
+                    El campo fechaNaciento es obligatorio
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="direccion ">Dirección</label>
+                <input class="form-control " required [(ngModel)]="usuario.direccion " #direccion="ngModel" name="direccion " id="direccion " placeholder="direccion">
+                <div *ngIf="direccion.invalid && (direccion.dirty || direccion.touched) && direccion.value === '' " class="alert alert-danger">
+                    El campo direccion es obligatorio
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="Localidad ">Localidad</label>
+                <input class="form-control " required [(ngModel)]="usuario.localidad" #localidad="ngModel" name="localidad " id="localidad " placeholder="localidad">
+                <div *ngIf="localidad.invalid && (localidad.dirty || localidad.touched) && localidad.value === '' " class="alert alert-danger">
+                    El campo localidad es obligatorio
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="Sexo ">Sexo</label>
+                <select class="form-control" required [(ngModel)]="usuario.sexo" #sexo="ngModel" name="sexo">
+                    <option>Hombre</option> 
+                    <option>Mujer</option> 
+                </select>
+                <div *ngIf="sexo.invalid && (sexo.dirty || sexo.touched) && sexo.value === '' " class="alert alert-danger">
+                    El campo sexo es obligatorio
+                </div>
+            </div>
+            <div>
+                <button type="button" (click)="singUp($event) " style="margin: 10px " class="btn btn-primary " id="registrarse-button ">Registrarse</button>
+            </div>
+            <div style="height: 50px;"></div>
+        </div>
     </form>
-    
 </div>

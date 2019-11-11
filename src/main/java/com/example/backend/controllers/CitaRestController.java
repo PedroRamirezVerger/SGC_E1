@@ -19,10 +19,11 @@ import com.example.backend.models.respuesta.RespuestaCitasUsuario;
 import com.example.backend.models.services.ICitaService;
 import com.example.backend.models.services.IUsuarioService;
 
-//@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
-@CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
+
+@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
+// @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
 @RestController
-@RequestMapping("")
+@RequestMapping("api")
 public class CitaRestController {
 	
 	
@@ -46,11 +47,9 @@ public class CitaRestController {
 	}
 	
 	@PostMapping("/citas")
-	public Cita añadirCita(@Valid @RequestBody Cita cita) {
+	public Cita addCita(@Valid @RequestBody Cita cita) {
 		cita.set_id(ObjectId.get());
 		citaService.saveCita(cita);
 		return cita;
 	}
-	
-
 }

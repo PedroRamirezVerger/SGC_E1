@@ -1,4 +1,4 @@
-<table class="table" >
+<table class="table">
     <thead class="thead-dark">
         <tr>
             <th scope="col" style="width: 20px;">Identificador</th>
@@ -10,8 +10,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let cita of citas">
-            <td scope="row">{{cita.id}}</td>
-            <td>{{cita.fecha}}</td>
+            <td scope="row">{{cita.fecha | date:"short"}}</td>
             <td>{{cita.consulta}}</td>
             <td>{{cita.dniMedico}}</td>
             <td>{{cita.especialidad}}</td>
@@ -21,7 +20,6 @@
     </tbody>
     <br>
 </table>
-    <button type="button" (click)="pedircita()" style="margin: 10px" class="btn btn-primary" id="registro-button">Pedir Cita</button>
-    <button type="button" (click)="modificardatoscontacto()" style="margin: 10px" class="btn btn-primary" id="registro-button">Modificar Datos Contacto</button>
-    <button type="button" (click)="cambiarcontrasena()" style="margin: 10px" class="btn btn-primary" id="cambiocontrasena-button">Cambiar contraseña</button>
-    
+<button type="button" (click)="pedircita()" style="margin: 10px" class="btn btn-primary" id="registro-button">Pedir Cita</button>
+<button type="button" (click)="modificardatoscontacto()" style="margin: 10px" class="btn btn-primary" id="registro-button">Modificar Datos Contacto</button>
+<button type="button" (click)="cambiarcontrasena()" style="margin: 10px" class="btn btn-primary" id="cambiocontrasena-button">Cambiar contraseña</button>
