@@ -54,7 +54,7 @@ export class PedircitaComponent implements OnInit {
     this.cita.consulta="alguna";
    
     console.log(this.cita);
-    this.citaService.añadirCita(this.cita).subscribe(
+    this.citaService.addCita(this.cita).subscribe(
       response => {
         this.router.navigate(['/citas'])
       }

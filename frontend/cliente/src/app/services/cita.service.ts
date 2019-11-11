@@ -35,7 +35,8 @@ export class CitaService {
         catchError(this.handleError)
       )
   }
-  añadirCita(cita: Cita): Observable<Cita> {
+
+  addCita(cita: Cita): Observable<Cita> {
     return this.httpClient.post<Cita>(this.URL_ENDPOINT, JSON.stringify(cita), this.httpOptions)
       .pipe(
         retry(1),
