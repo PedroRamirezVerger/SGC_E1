@@ -9,4 +9,5 @@ public interface IUsuarioService {
 	public List<Usuario> findAll();
 	public Usuario findUserByDni(String dni);
 	public void saveUser(Usuario usuario);
+	public Usuario findUserById(String id);
 }

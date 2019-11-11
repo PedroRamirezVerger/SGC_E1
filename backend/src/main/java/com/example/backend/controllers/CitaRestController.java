@@ -40,6 +40,14 @@ public class CitaRestController {
 		respuestaCitasUsuario.setListaCitasPaciente(citaService.findCitasByDniPaciente(dniPaciente));
 		return respuestaCitasUsuario;
 	}
+
+	@GetMapping("/citas/{id}")
+	public RespuestaCitasUsuario getCitasPacienteById(@PathVariable ("id") String id){
+		RespuestaCitasUsuario respuestaCitasUsuario = new RespuestaCitasUsuario();
+		respuestaCitasUsuario.setUsuario(usuarioService.findUserById(id));
+		respuestaCitasUsuario.setListaCitasPaciente(citaService.findCitasByDniPaciente(respuestaCitasUsuario.getUsuario().getDni()));
+		return respuestaCitasUsuario;
+	}
 	
 	
 

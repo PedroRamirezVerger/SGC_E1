@@ -45,11 +45,11 @@ public class CitaRestController {
      * @param dniPaciente
      * @return
      */
-	@GetMapping("/citas/{dniPaciente}")
-	public RespuestaCitasUsuario getCitasPacienteByDni(@PathVariable ("dniPaciente") String dniPaciente){
+	@GetMapping("/citas/id")
+	public RespuestaCitasUsuario getCitasPacienteByid(@PathVariable ("id") String id){
 		RespuestaCitasUsuario respuestaCitasUsuario = new RespuestaCitasUsuario();
-		respuestaCitasUsuario.setUsuario(usuarioService.findUserByDni(dniPaciente));
-		respuestaCitasUsuario.setListaCitasPaciente(citaService.findCitasByDniPaciente(dniPaciente));
+		respuestaCitasUsuario.setUsuario(usuarioService.findUserById(id));
+		respuestaCitasUsuario.setListaCitasPaciente(citaService.findCitasByDniPaciente(respuestaCitasUsuario.getUsuario().getDni()));
 		return respuestaCitasUsuario;
 	}
 	

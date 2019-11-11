@@ -77,6 +77,34 @@ public class UsuarioRestController {
 	}
 	return value;
     }
+    /**
+    * Metodo para desencriptar un texto
+    * @param texto Texto encriptado
+    * @return String texto desencriptado
+    */
+       public String desencriptar( String texto ){
+           String str="";        
+           try {
+               byte[] value = new BASE64Decoder().decodeBuffer(texto);                 
+               cipher = Cipher.getInstance( algoritmo );            
+               cipher.init( Cipher.DECRYPT_MODE, key );
+               byte[] cipherbytes = cipher.doFinal( value );
+               str = new String( cipherbytes );                                  
+           } catch (InvalidKeyException ex) {
+               System.err.println( ex.getMessage() );
+           }  catch (IllegalBlockSizeException ex) {
+               System.err.println( ex.getMessage() );
+           } catch (BadPaddingException ex) {
+               System.err.println( ex.getMessage() );            
+           }   catch (IOException ex) {
+               System.err.println( ex.getMessage() );
+           }catch (NoSuchAlgorithmException ex) {
+               System.err.println( ex.getMessage() );
+           } catch (NoSuchPaddingException ex) {
+               System.err.println( ex.getMessage() );
+           }
+           return str;
+       }
 
     @GetMapping("/usuarios")
     public List<Usuario> getAllUsers() {
@@ -104,7 +132,16 @@ public class UsuarioRestController {
 		password = encriptar(password);
 		for (Usuario u : listaUsuarios) {
 		    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
-		    	respuestaLogin.setUsuario(u);
+			u.setDni(desencriptar(u.getDni()));
+			u.setNombre(desencriptar(u.getNombre()));
+			u.setApellidos(desencriptar(u.getApellidos()));
+			u.setTelefono(desencriptar(u.getTelefono()));
+			u.setEmail(desencriptar(u.getEmail()));
+			u.setDireccion(desencriptar(u.getDireccion()));
+			u.setTipo(desencriptar(u.getTipo()));
+			u.setPassword(desencriptar(u.getPassword()));
+			u.setSexo(desencriptar(u.getSexo()));
+			respuestaLogin.setUsuario(u);
 		    	respuestaLogin.setLoginPasado(true); 
 		    	break;
 		    } else {

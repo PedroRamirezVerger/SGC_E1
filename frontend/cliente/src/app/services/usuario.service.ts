@@ -27,7 +27,7 @@ export class UsuarioService {
 
   }
 
-  getUsuaioById(id: string): Observable<Usuario> {
+  getUsuarioById(id: string): Observable<Usuario> {
     this.tipo_data = '/' + id;
     return this.httpClient.get<Usuario>(this.URL_ENDPOINT + this.tipo_data)
       .pipe(

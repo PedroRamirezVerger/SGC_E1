@@ -2,6 +2,7 @@ package com.example.backend.models.services;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,10 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		this.usuarioDao.save(usuario);
 	}
 	
-	
+	@Override
+	public Usuario findUserById(String id){
+		return usuarioDao.findBy_id(_id);
+	}
 
 	
 }
