@@ -52,10 +52,10 @@ export class PedircitaComponent implements OnInit {
     if(this.comprobarfecha(fecha)){
       this.cita.dniPaciente=this.usuario.dni;
       if (tipoMedico=='0') {
-        this.cita.dniMedico=this.usuario.medico;
+        this.cita.dniMedico='Antonio Perez Rodriguez';
         this.cita.especialidad="Médico de cabecera";
       }else{
-        this.cita.dniMedico=this.usuario.medico;
+        this.cita.dniMedico=tipoMedico;
         this.cita.especialidad=tipoMedico;
       }
       this.cita.fecha=fecha;

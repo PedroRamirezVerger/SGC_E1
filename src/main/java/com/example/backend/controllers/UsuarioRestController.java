@@ -1,6 +1,18 @@
 package com.example.backend.controllers;
 
 import java.util.List;
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 import javax.validation.Valid;
 
@@ -25,6 +37,43 @@ public class UsuarioRestController {
 
     @Autowired
     private IUsuarioService usuarioService;
+    private SecretKey key;
+    private Cipher cipher;
+    private String algoritmo = "AES";
+    private int keysize = 16;
+    private String clave = "seguridad";
+
+    /**
+     * Crea la Llave para encriptar/desencriptar
+     * 
+     * @param String value
+     */
+    public void addKey(String value) {
+	byte[] valuebytes = value.getBytes();
+	key = new SecretKeySpec(Arrays.copyOf(valuebytes, keysize), algoritmo);
+    }
+
+    public String encriptar(String texto) {
+	String value = "";
+	try {
+	    cipher = Cipher.getInstance(algoritmo);
+	    cipher.init(Cipher.ENCRYPT_MODE, key);
+	    byte[] textobytes = texto.getBytes();
+	    byte[] cipherbytes = cipher.doFinal(textobytes);
+	    value = new BASE64Encoder().encode(cipherbytes);
+	} catch (NoSuchAlgorithmException ex) {
+	    System.err.println(ex.getMessage());
+	} catch (NoSuchPaddingException ex) {
+	    System.err.println(ex.getMessage());
+	} catch (InvalidKeyException ex) {
+	    System.err.println(ex.getMessage());
+	} catch (IllegalBlockSizeException ex) {
+	    System.err.println(ex.getMessage());
+	} catch (BadPaddingException ex) {
+	    System.err.println(ex.getMessage());
+	}
+	return value;
+    }
 
     @GetMapping("/usuarios")
     public List<Usuario> getAllUsers() {
@@ -38,33 +87,51 @@ public class UsuarioRestController {
 
     /**
      * validar el login del usuario
+     * 
      * @param dni
      * @param password
      * @return
      */
-    @GetMapping("/usuarios/{dni}/{password}") 
+    @GetMapping("/usuarios/{dni}/{password}")
     public boolean validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
 	boolean loginPasado = false;
+	addKey(clave);
+	dni = encriptar(dni);
+	password = encriptar(password);
 	List<Usuario> listaUsuarios = usuarioService.findAll();
+	System.out.println(dni);
 	for (Usuario u : listaUsuarios) {
-	    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
-	    	loginPasado = true;
-	    	break;
+	    if (u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
+		loginPasado = true;
+		break;
 	    } else {
-	    	loginPasado = false;
+		loginPasado = false;
 	    }
 	}
+
 	return loginPasado;
     }
 
     /**
      * registrar al usuario
+     * 
      * @param usuario
      * @return
      */
-    @PostMapping("/usuarios") 
+    @PostMapping("/usuarios")
     public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
+
 	usuario.set_id(ObjectId.get());
+	addKey(clave);
+	usuario.setDni(encriptar(usuario.getDni()));
+	usuario.setNombre(encriptar(usuario.getNombre()));
+	usuario.setApellidos(encriptar(usuario.getApellidos()));
+	usuario.setTelefono(encriptar(usuario.getTelefono()));
+	usuario.setEmail(encriptar(usuario.getEmail()));
+	usuario.setDireccion(encriptar(usuario.getDireccion()));
+	usuario.setTipo(encriptar(usuario.getTipo()));
+	usuario.setPassword(encriptar(usuario.getPassword()));
+	usuario.setSexo(encriptar(usuario.getSexo()));
 	usuarioService.saveUser(usuario);
 	return usuario;
     }
