@@ -115,7 +115,7 @@ public class UsuarioRestController {
     public Usuario getUserById(@PathVariable("id") String id) {
     	return usuarioService.findUserById(id);
     }
-
+    /*hola amigitos*/
     /**
      * validar el login del usuario
      * 
