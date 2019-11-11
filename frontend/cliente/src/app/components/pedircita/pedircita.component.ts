@@ -36,30 +36,41 @@ export class PedircitaComponent implements OnInit {
     let x=document.getElementById("especialistas");
     x.style.display="none";
   }
-
+  comprobarfecha(fecha:Date){
+    let hoy=new Date();
+    let v=fecha.toString()==="Invalid Date";
+    let v2=fecha<hoy;
+    if( v2 || v)
+      return false;
+    return true;
+  }
   anadircita(dia: string, hora: string, tipoMedico: string){
     let horaSeparada=hora.split(':');
     let diaSeparado=dia.split('-');
-    let fecha =new Date(parseInt(diaSeparado[2]),parseInt(diaSeparado[1]), parseInt(diaSeparado[0]),
+    let fecha =new Date(parseInt(diaSeparado[0]),parseInt(diaSeparado[1])-1, parseInt(diaSeparado[2]),
     parseInt(horaSeparada[0]),parseInt(horaSeparada[1]) )
-    this.cita.dniPaciente=this.usuario.dni;
-    if (tipoMedico=='0') {
-      this.cita.dniMedico=this.usuario.medico;
-      this.cita.especialidad="Médico de cabecera";
-    }else{
-      this.cita.dniMedico=this.usuario.medico;
-      this.cita.especialidad=tipoMedico;
-    }
-    this.cita.fecha=fecha;
-    this.cita.consulta="alguna";
-   
-    console.log(this.cita);
-    this.citaService.addCita(this.cita).subscribe(
-      response => {
-        this.router.navigate(['/citas'])
+    if(this.comprobarfecha(fecha)){
+      this.cita.dniPaciente=this.usuario.dni;
+      if (tipoMedico=='0') {
+        this.cita.dniMedico=this.usuario.medico;
+        this.cita.especialidad="Médico de cabecera";
+      }else{
+        this.cita.dniMedico=this.usuario.medico;
+        this.cita.especialidad=tipoMedico;
       }
-    );
+      this.cita.fecha=fecha;
+      this.cita.consulta=Math.floor((Math.random() * 25) + 1);;
     
+      console.log(this.cita);
+      this.citaService.addCita(this.cita).subscribe(
+        response => {
+          this.router.navigate(['/citas', this.usuario.dni])
+        }
+      );
+    }
+    else{
+      alert('La fecha no es correcta.')
+    }
   }
   mostrarEspecialidad(n:number) {
     let x=document.getElementById("especialistas");

@@ -5,7 +5,7 @@ export class Cita {
     dniMedico: string;
     fecha: Date;
     hora: Date;
-    consulta: string;
+    consulta: number;
     especialidad: string;
 
     constructor() {
@@ -13,7 +13,7 @@ export class Cita {
         this.dniMedico = "" ;
         this.fecha = null ;
         this.hora = null ;
-        this.consulta = "" ;
+        this.consulta = null ;
         this.especialidad = "";
     }
 
