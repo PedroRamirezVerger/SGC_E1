@@ -26,7 +26,6 @@ import com.example.backend.models.services.IUsuarioService;
 @RequestMapping("api")
 public class CitaRestController {
 	
-	
 	@Autowired
 	private ICitaService citaService;
 	
@@ -38,6 +37,11 @@ public class CitaRestController {
 		return citaService.findAll();
 	}
 	
+	/**
+     * obtener las citas del usuario en concreto
+     * @param dniPaciente
+     * @return
+     */
 	@GetMapping("/citas/{dniPaciente}")
 	public RespuestaCitasUsuario getCitasPacienteByDni(@PathVariable ("dniPaciente") String dniPaciente){
 		RespuestaCitasUsuario respuestaCitasUsuario = new RespuestaCitasUsuario();
@@ -46,6 +50,11 @@ public class CitaRestController {
 		return respuestaCitasUsuario;
 	}
 	
+	/**
+     * add citas a un usuario
+     * @param cita
+     * @return
+     */
 	@PostMapping("/citas")
 	public Cita addCita(@Valid @RequestBody Cita cita) {
 		cita.set_id(ObjectId.get());

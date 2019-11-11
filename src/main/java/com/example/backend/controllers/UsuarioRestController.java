@@ -17,51 +17,57 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.IUsuarioService;
 
-
 @CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
 // @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
 @RestController
 @RequestMapping("api")
 public class UsuarioRestController {
-	
-	@Autowired
-	private IUsuarioService usuarioService;
 
-	
-	@GetMapping("/usuarios")
-	public List<Usuario> getAllUsers() {
-		return usuarioService.findAll();
+    @Autowired
+    private IUsuarioService usuarioService;
+
+    @GetMapping("/usuarios")
+    public List<Usuario> getAllUsers() {
+	return usuarioService.findAll();
+    }
+
+    @GetMapping("/usuarios/{dni}")
+    public Usuario getUserByDni(@PathVariable("dni") String dni) {
+	return usuarioService.findUserByDni(dni);
+    }
+
+    /**
+     * validar el login del usuario
+     * @param dni
+     * @param password
+     * @return
+     */
+    @GetMapping("/usuarios/{dni}/{password}") 
+    public boolean validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
+	boolean loginPasado = false;
+	List<Usuario> listaUsuarios = usuarioService.findAll();
+	for (Usuario u : listaUsuarios) {
+
+	    if (u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
+		loginPasado = true;
+		break;
+	    } else {
+		loginPasado = false;
+	    }
 	}
-	
-	@GetMapping("/usuarios/{dni}")
-	public Usuario getUserByDni(@PathVariable("dni") String dni) {
-		return usuarioService.findUserByDni(dni);
-	}
-	
-	@GetMapping("/usuarios/{dni}/{password}")
-	public boolean validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
-		boolean loginPasado = false;
-		List<Usuario> listaUsuarios = usuarioService.findAll();
-		for(Usuario u: listaUsuarios) {
-			
-			if(u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
-				loginPasado = true;
-				break;
-			} else {
-				loginPasado = false;
-			}
-		}
-		return loginPasado;
-	}
-	
-	
-	@PostMapping("/usuarios")
-	public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
-		usuario.set_id(ObjectId.get());
-		usuarioService.saveUser(usuario);
-		return usuario;
-	}
-	
-	
-	
+	return loginPasado;
+    }
+
+    /**
+     * registrar al usuario
+     * @param usuario
+     * @return
+     */
+    @PostMapping("/usuarios") 
+    public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
+	usuario.set_id(ObjectId.get());
+	usuarioService.saveUser(usuario);
+	return usuario;
+    }
+
 }
