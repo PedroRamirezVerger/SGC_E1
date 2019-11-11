@@ -13,7 +13,7 @@ public class Cita {
     private ObjectId _id;
     private String dniPaciente;
     private String dniMedico;
-    private Date fecha;
+    private SimpleDateFormat fecha;
     private String consulta;
     private String especialidad;
 
@@ -41,11 +41,11 @@ public class Cita {
 	this.dniMedico = dniMedico;
     }
 
-    public Date getFecha() {
+    public SimpleDateFormat getFecha() {
 	return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(SimpleDateFormat fecha) {
 	this.fecha = fecha;
     }
 
