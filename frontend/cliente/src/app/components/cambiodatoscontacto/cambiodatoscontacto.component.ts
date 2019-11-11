@@ -27,7 +27,7 @@ export class CambiodatoscontactoComponent implements OnInit {
     this.activateRoute.params.subscribe(params => {
       this.id = params['id'];
       if (this.id) {
-        this.usuarioService.getUsuaioById(this.id).subscribe(
+        this.usuarioService.getUsuarioById(this.id).subscribe(
           response => {
             this.usuario = response;
           }

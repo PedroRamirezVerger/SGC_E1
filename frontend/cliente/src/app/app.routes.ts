@@ -15,7 +15,7 @@ const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'citas/:id', component: CitasComponent },
     { path: 'registro', component: RegistroComponent},
-    { path: 'pedircita', component: PedircitaComponent},
+    { path: 'pedircita/:id', component: PedircitaComponent},
     { path: 'cambiodatoscontacto/:id', component: CambiodatoscontactoComponent},
     { path: 'cambiocontrasena', component: CambiocontrasenaComponent},
     { path: 'cambiocita', component: CambiarcitaComponent},
