@@ -11,8 +11,9 @@ import { Usuario } from 'src/app/entity/Usuario';
   styleUrls: ['./pedircita.component.css']
 })
 export class PedircitaComponent implements OnInit {
+  especialidadMostrar: boolean = false;
   cita: Cita = new Cita;
-  usuario: Usuario= new Usuario;
+  usuario: Usuario = new Usuario;
   constructor(private router:Router, private citaService : CitaService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -45,6 +46,7 @@ export class PedircitaComponent implements OnInit {
     return true;
   }
   anadircita(dia: string, hora: string, tipoMedico: string){
+    console.log(this.especialidadMostrar);
     let horaSeparada=hora.split(':');
     let diaSeparado=dia.split('-');
     let fecha =new Date(parseInt(diaSeparado[0]),parseInt(diaSeparado[1])-1, parseInt(diaSeparado[2]),

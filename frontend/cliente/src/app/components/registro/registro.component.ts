@@ -16,9 +16,6 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class RegistroComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
-  
-
-
 
   constructor(private router:Router,
               private usuarioService: UsuarioService,

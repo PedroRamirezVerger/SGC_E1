@@ -16,17 +16,24 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     @Override
     public List<Usuario> findAll() {
-	return usuarioDao.findAll();
+    	return usuarioDao.findAll();
     }
+    
+    @Override
+	public Usuario findUserById(String id) {
+		return usuarioDao.findBy_id(id);
+	}
+
 
     @Autowired(required = false)
     public Usuario findUserByDni(String dni) {
-	return usuarioDao.findByDni(dni);
+    	return usuarioDao.findByDni(dni);
     }
 
     @Override
     public void saveUser(Usuario usuario) {
-	this.usuarioDao.save(usuario);
+    	this.usuarioDao.save(usuario);
     }
 
+	
 }

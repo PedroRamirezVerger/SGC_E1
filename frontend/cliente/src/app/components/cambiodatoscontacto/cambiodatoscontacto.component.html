@@ -2,19 +2,20 @@
     <h1>Cambio Datos Contacto</h1>
 
     <form class="columnas">
-            <div class="form-group">
-                <label for="Email">Email</label>
-                <input class="form-control" #email name="email" id="Email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="Telefono">Telefono</label>
-                <input class="form-control" #telefono name="telefono" id="Telefono" placeholder="Telefono">
-            </div>
-            <p>
-
-            </p>
-            <button type="button" (click)="modificardatoscontacto( telefono.value, email.value, $event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Modificar</button>
-
-
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input class="form-control" [(ngModel)]="usuario.email" name="email" id="Email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="Telefono">Telefono</label>
+            <input class="form-control" [(ngModel)]="usuario.telefono" #telefono=ngModel name="telefono" id="Telefono" placeholder="Telefono">
+        </div>
+        <div class="form-group">
+            <label for="Direccion">Dirección</label>
+            <input class="form-control" [(ngModel)]="usuario.direccion" #direccion=ngModel name="direccion" id="direccion" placeholder="Dirección">
+        </div>
+        <p>
+        </p>
+        <button type="button" (click)="modificardatoscontacto($event)" style="margin: 10px" class="btn btn-primary" id="registrarse-button">Modificar</button>
     </form>
 </div>

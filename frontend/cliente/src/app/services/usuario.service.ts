@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Usuario } from '../entity/Usuario';
 import Swal from 'sweetalert2'
+import { RespuestLogin } from '../respuesta/respuesta-login';
 
 @Injectable({
   providedIn: 'root'
@@ -22,15 +23,22 @@ export class UsuarioService {
     })
   }  
 
-
-
   constructor(private httpClient: HttpClient) { 
 
   }
 
-  validateLogin(nombre: string, password: string): Observable<boolean> {
-    this.tipo_data = '/' + nombre + '/' + password
-    return this.httpClient.get<boolean>(this.URL_ENDPOINT + this.tipo_data)
+  getUsuaioById(id: string): Observable<Usuario> {
+    this.tipo_data = '/' + id;
+    return this.httpClient.get<Usuario>(this.URL_ENDPOINT + this.tipo_data)
+      .pipe(
+        retry(1),
+          catchError(this.handleError)
+      )
+  }
+
+  validateLogin(nombre: string, password: string): Observable<RespuestLogin> {
+    this.tipo_data = '/' + nombre + '/' + password;
+    return this.httpClient.get<RespuestLogin>(this.URL_ENDPOINT + this.tipo_data)
       .pipe(
         retry(1),
         catchError(this.handleLoginError)
@@ -46,6 +54,32 @@ export class UsuarioService {
       )
   }
 
+  modificarDatosContactoUsuario(id: string, usuario: Usuario): Observable<Usuario> {
+    this.tipo_data = '/' + id;
+    return this.httpClient.put<Usuario>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(usuario), this.httpOptions)
+      .pipe(
+        retry(1),
+          catchError(this.handleDatosContactoError)
+      )
+  }
+
+ 
+
+
+
+   // Error handling 
+   handleError(error) {
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    Swal.fire('Error', errorMessage, 'error')
+    return throwError(errorMessage);
+ }
 
   // Error handling 
   handleRegistroError(error) {
@@ -73,5 +107,20 @@ export class UsuarioService {
   }
   Swal.fire('Error al iniciar sesión', errorMessage, 'error')
   return throwError(errorMessage);
-}
+ }
+
+
+  // Error handling 
+  handleDatosContactoError(error) {
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    Swal.fire('Error al cambiar los datos de contacto', errorMessage, 'error')
+    return throwError(errorMessage);
+   }
 }
