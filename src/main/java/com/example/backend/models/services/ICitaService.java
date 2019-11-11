@@ -6,8 +6,11 @@ import com.example.backend.models.entity.Cita;
 
 public interface ICitaService {
 
-	public List<Cita> findAll();
-	public List<Cita> findCitasByDniPaciente(String dniPaciente);
-	public List<Cita> findCitasByDniMedico(String dniMedico);
-	public void saveCita(Cita cita);
+    public List<Cita> findAll();
+
+    public List<Cita> findCitasByDniPaciente(String dniPaciente);
+
+    public List<Cita> findCitasByDniMedico(String dniMedico);
+
+    public void saveCita(Cita cita);
 }

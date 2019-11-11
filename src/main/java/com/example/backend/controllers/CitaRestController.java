@@ -24,33 +24,41 @@ import com.example.backend.models.services.IUsuarioService;
 @RestController
 @RequestMapping("")
 public class CitaRestController {
-	
-	
-	@Autowired
-	private ICitaService citaService;
-	
-	@Autowired 
-	private IUsuarioService usuarioService;
-	
-	@GetMapping("/citas")
-	public List<Cita> getAllCitas() {
-		return citaService.findAll();
-	}
-	
-	@GetMapping("/citas/{dniPaciente}")
-	public RespuestaCitasUsuario getCitasPacienteByDni(@PathVariable ("dniPaciente") String dniPaciente){
-		RespuestaCitasUsuario respuestaCitasUsuario = new RespuestaCitasUsuario();
-		respuestaCitasUsuario.setUsuario(usuarioService.findUserByDni(dniPaciente));
-		respuestaCitasUsuario.setListaCitasPaciente(citaService.findCitasByDniPaciente(dniPaciente));
-		return respuestaCitasUsuario;
-	}
-	
-	@PostMapping("/citas")
-	public Cita añadirCita(@Valid @RequestBody Cita cita) {
-		cita.set_id(ObjectId.get());
-		citaService.saveCita(cita);
-		return cita;
-	}
-	
+
+    @Autowired
+    private ICitaService citaService;
+
+    @Autowired
+    private IUsuarioService usuarioService;
+
+    @GetMapping("/citas")
+    public List<Cita> getAllCitas() {
+	return citaService.findAll();
+    }
+
+    @GetMapping("/citas/{dniPaciente}") 
+    /**
+     * obtener las citas del usuario en concreto
+     * @param dniPaciente
+     * @return
+     */
+    public RespuestaCitasUsuario getCitasPacienteByDni(@PathVariable("dniPaciente") String dniPaciente) {
+	RespuestaCitasUsuario respuestaCitasUsuario = new RespuestaCitasUsuario();
+	respuestaCitasUsuario.setUsuario(usuarioService.findUserByDni(dniPaciente));
+	respuestaCitasUsuario.setListaCitasPaciente(citaService.findCitasByDniPaciente(dniPaciente));
+	return respuestaCitasUsuario;
+    }
+
+    @PostMapping("/citas") 
+    /**
+     * añadir citas a un usuario
+     * @param cita
+     * @return
+     */
+    public Cita añadirCita(@Valid @RequestBody Cita cita) {
+	cita.set_id(ObjectId.get());
+	citaService.saveCita(cita);
+	return cita;
+    }
 
 }

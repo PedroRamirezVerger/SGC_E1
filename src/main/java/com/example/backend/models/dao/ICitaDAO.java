@@ -7,8 +7,9 @@ import java.util.List;
 import com.example.backend.models.entity.Cita;
 
 @Repository
-public interface ICitaDAO extends MongoRepository<Cita, String>{
-	List<Cita> findByDniPaciente(String dniPaciente);
-	List<Cita> findByDniMedico(String dniMedico);
-	
+public interface ICitaDAO extends MongoRepository<Cita, String> {
+    List<Cita> findByDniPaciente(String dniPaciente);
+
+    List<Cita> findByDniMedico(String dniMedico);
+
 }
