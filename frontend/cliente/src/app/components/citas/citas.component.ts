@@ -51,6 +51,7 @@ export class CitasComponent implements OnInit {
   pedircita(){
     this.router.navigate(['/pedircita', this.id])
   }
+  
   modificardatoscontacto(){
     this.router.navigate(['/cambiodatoscontacto', this.id])
   }

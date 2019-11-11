@@ -20,7 +20,7 @@ export class CambiodatoscontactoComponent implements OnInit {
               private usuarioService: UsuarioService,
               private utilsService: UtilsService,
               private activateRoute: ActivatedRoute) { 
-
+              
               }
 
   ngOnInit() {
@@ -30,6 +30,11 @@ export class CambiodatoscontactoComponent implements OnInit {
         this.usuarioService.getUsuarioById(this.id).subscribe(
           response => {
             this.usuario = response;
+            console.log(this.usuario);
+            this.usuario.telefono = '';
+            this.usuario.email = '';
+            this.usuario.direccion = '';
+            console.log(this.usuario);
           }
         )
       }
