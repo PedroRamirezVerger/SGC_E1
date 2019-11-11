@@ -30,7 +30,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaLogin;
 import com.example.backend.models.services.IUsuarioService;
-import com.mongodb.util.JSON;
 
 // @CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
 @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
@@ -115,7 +114,8 @@ public class UsuarioRestController {
     public Usuario getUserById(@PathVariable("id") String id) {
     	return usuarioService.findUserById(id);
     }
-    /*hola amigitos*/
+
+    
     /**
      * validar el login del usuario
      * 
@@ -183,6 +183,10 @@ public class UsuarioRestController {
     @PutMapping("/usuarios/{id}")
     public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
     	usuario.set_id(id);
+		addKey(clave);
+		usuario.setTelefono(encriptar(usuario.getTelefono()));
+		usuario.setEmail(encriptar(usuario.getEmail()));
+		usuario.setDireccion(encriptar(usuario.getDireccion()));
     	usuarioService.saveUser(usuario);
     	return usuario;
     	
