@@ -22,12 +22,15 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Usuario;
+import com.example.backend.models.respuesta.RespuestaLogin;
 import com.example.backend.models.services.IUsuarioService;
+import com.mongodb.util.JSON;
 
 // @CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
 @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
@@ -79,10 +82,10 @@ public class UsuarioRestController {
     public List<Usuario> getAllUsers() {
 	return usuarioService.findAll();
     }
-
-    @GetMapping("/usuarios/{dni}")
-    public Usuario getUserByDni(@PathVariable("dni") String dni) {
-	return usuarioService.findUserByDni(dni);
+    
+    @GetMapping("/usuarios/{id}")
+    public Usuario getUserById(@PathVariable("id") String id) {
+    	return usuarioService.findUserById(id);
     }
 
     /**
@@ -92,24 +95,23 @@ public class UsuarioRestController {
      * @param password
      * @return
      */
-    @GetMapping("/usuarios/{dni}/{password}")
-    public boolean validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
-	boolean loginPasado = false;
-	addKey(clave);
-	dni = encriptar(dni);
-	password = encriptar(password);
-	List<Usuario> listaUsuarios = usuarioService.findAll();
-	System.out.println(dni);
-	for (Usuario u : listaUsuarios) {
-	    if (u.getDni().equalsIgnoreCase(dni) && u.getPassword().equalsIgnoreCase(password)) {
-		loginPasado = true;
-		break;
-	    } else {
-		loginPasado = false;
-	    }
-	}
-
-	return loginPasado;
+    @GetMapping("/usuarios/{dni}/{password}") 
+    public RespuestaLogin validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
+    	RespuestaLogin respuestaLogin = new RespuestaLogin();
+		List<Usuario> listaUsuarios = usuarioService.findAll();
+		addKey(clave);
+		dni = encriptar(dni);
+		password = encriptar(password);
+		for (Usuario u : listaUsuarios) {
+		    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
+		    	respuestaLogin.setUsuario(u);
+		    	respuestaLogin.setLoginPasado(true); 
+		    	break;
+		    } else {
+		    	respuestaLogin.setLoginPasado(false); 
+		    }
+		}
+		return respuestaLogin;
     }
 
     /**
@@ -120,20 +122,34 @@ public class UsuarioRestController {
      */
     @PostMapping("/usuarios")
     public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
-
-	usuario.set_id(ObjectId.get());
-	addKey(clave);
-	usuario.setDni(encriptar(usuario.getDni()));
-	usuario.setNombre(encriptar(usuario.getNombre()));
-	usuario.setApellidos(encriptar(usuario.getApellidos()));
-	usuario.setTelefono(encriptar(usuario.getTelefono()));
-	usuario.setEmail(encriptar(usuario.getEmail()));
-	usuario.setDireccion(encriptar(usuario.getDireccion()));
-	usuario.setTipo(encriptar(usuario.getTipo()));
-	usuario.setPassword(encriptar(usuario.getPassword()));
-	usuario.setSexo(encriptar(usuario.getSexo()));
-	usuarioService.saveUser(usuario);
-	return usuario;
+		usuario.set_id(ObjectId.get());
+		addKey(clave);
+		usuario.setDni(encriptar(usuario.getDni()));
+		usuario.setNombre(encriptar(usuario.getNombre()));
+		usuario.setApellidos(encriptar(usuario.getApellidos()));
+		usuario.setTelefono(encriptar(usuario.getTelefono()));
+		usuario.setEmail(encriptar(usuario.getEmail()));
+		usuario.setDireccion(encriptar(usuario.getDireccion()));
+		usuario.setTipo(encriptar(usuario.getTipo()));
+		usuario.setPassword(encriptar(usuario.getPassword()));
+		usuario.setSexo(encriptar(usuario.getSexo()));
+		usuarioService.saveUser(usuario);
+		return usuario;
     }
+    
+   
+    /** 
+     * Modificar los datos de contacto del usuario
+     * @param teléfono
+     * @param modificarDatosContacto
+     */
+    @PutMapping("/usuarios/{id}")
+    public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
+    	usuario.set_id(id);
+    	usuarioService.saveUser(usuario);
+    	return usuario;
+    	
+    }
+    
 
 }

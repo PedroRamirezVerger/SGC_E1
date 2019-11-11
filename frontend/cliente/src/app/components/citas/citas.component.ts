@@ -20,7 +20,7 @@ export class CitasComponent implements OnInit {
 
   citas: Cita[] = [];
   usuario: Usuario = new Usuario();
-  dni: string = '';
+  id: string = '';
 
 
   constructor(private router:Router,
@@ -31,14 +31,14 @@ export class CitasComponent implements OnInit {
 
   ngOnInit() {
     this.activateRoute.params.subscribe(params => {
-      this.dni = params['dni'];
-      if(this.dni)
+      this.id = params['id'];
+      if(this.id)
         this.mostrarListaCitas();
     });
   }
 
   mostrarListaCitas(){
-    this.citaService.getCitasUsuario(this.dni).subscribe(
+    this.citaService.getCitasUsuario(this.id).subscribe(
       response => {
         this.respuestaCitasPaciente = response;
         this.usuario = this.respuestaCitasPaciente.usuario;
@@ -52,7 +52,7 @@ export class CitasComponent implements OnInit {
     this.router.navigate(['/pedircita', this.dni])
   }
   modificardatoscontacto(){
-    this.router.navigate(['/cambiodatoscontacto'])
+    this.router.navigate(['/cambiodatoscontacto', this.id])
   }
  
   eliminarcita(cita){

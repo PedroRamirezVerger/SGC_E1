@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,8 @@ import com.example.backend.models.entity.Cita;
 import com.example.backend.models.respuesta.RespuestaCitasUsuario;
 import com.example.backend.models.services.ICitaService;
 import com.example.backend.models.services.IUsuarioService;
+
+import lombok.Delegate;
 
 
 // @CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
@@ -61,4 +64,5 @@ public class CitaRestController {
 		citaService.saveCita(cita);
 		return cita;
 	}
+	
 }
