@@ -45,7 +45,7 @@ public class CitaRestController {
      * @param dniPaciente
      * @return
      */
-	@GetMapping("/citas/id")
+	@GetMapping("/citas/{id}")
 	public RespuestaCitasUsuario getCitasPacienteByid(@PathVariable ("id") String id){
 		RespuestaCitasUsuario respuestaCitasUsuario = new RespuestaCitasUsuario();
 		respuestaCitasUsuario.setUsuario(usuarioService.findUserById(id));
