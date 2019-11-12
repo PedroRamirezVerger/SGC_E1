@@ -3,11 +3,14 @@
 
     <form class="columnas">
         <div class="form-group">
-            <br>Selecciona la fecha deseada:<br>
-            <input type="date" name="fecha" min="2019-10-29" max="2020-12-31" step="1">
-            <br> Selecciona la hora deseada: <br>
-            <input type="time" name="hora" min="07:00" max="21:00" step="300">
+
+            <div class="form-group">
+                <br>Selecciona la fecha deseada:<br>
+                <input type="date" #fecha name="fecha" step="1" min="2019-01-01" max="2020-12-31" value="2019-11-12" required>
+                <br> Selecciona la hora deseada: <br>
+                <input type="time" #hora name="hora" id="hora" min="07:00" max="21:00" step="300">
+            </div>
+            <button type="button" (click)="cambiarCita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar cita</button>
         </div>
-        <!--<button type="button" (click)="cambiarcita( fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar cita</button>-->
     </form>
 </div>

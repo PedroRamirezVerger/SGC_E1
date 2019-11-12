@@ -18,7 +18,7 @@ const APP_ROUTES: Routes = [
     { path: 'pedircita/:id', component: PedircitaComponent},
     { path: 'cambiodatoscontacto/:id', component: CambiodatoscontactoComponent},
     { path: 'cambiocontrasena/:id', component: CambiocontrasenaComponent},
-    { path: 'cambiocita', component: CambiarcitaComponent},
+    { path: 'cambiocita/:idUsuario/:idCita', component: CambiarcitaComponent},
     { path: '**', pathMatch: 'full', redirectTo:'login' },
    
 

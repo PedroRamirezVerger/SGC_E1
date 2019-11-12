@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Cita;
+import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaCitasUsuario;
 import com.example.backend.models.services.ICitaService;
 import com.example.backend.models.services.IUsuarioService;
 
-import lombok.Delegate;
 
 
 // @CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
@@ -42,7 +43,17 @@ public class CitaRestController {
 	
 	/**
      * obtener las citas del usuario en concreto
-     * @param dniPaciente
+     * @param id
+     * @return
+     */
+	@GetMapping("/citas/fecha/{id}")
+	public Cita getCitaByid(@PathVariable ("id") String id){
+		return citaService.findCitaById(id);
+	}
+	
+	/**
+     * obtener las citas del usuario en concreto
+     * @param id
      * @return
      */
 	@GetMapping("/citas/{id}")
@@ -72,4 +83,19 @@ public class CitaRestController {
 	public void deleteCita(@PathVariable ("id") String id) {
 		citaService.deleteCita(id);
 	}
+	
+	   
+    /** 
+     * Modificar la fecha de la cita
+     * @param teléfono
+     * @param modificarDatosContacto
+     */
+    @PutMapping("/citas/{id}")
+    public Cita modificarFechaCita(@PathVariable("id") ObjectId id, @Valid @RequestBody Cita cita) {
+    	cita.set_id(id);
+    	citaService.saveCita(cita);
+    	return cita;
+    	
+    }
+	
 }

@@ -11,7 +11,7 @@ import { Cita } from '../entity/Cita';
 export class CitaService {
 
 
-  // private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/citas";
+  //private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/citas";
   private URL_ENDPOINT: string = "http://localhost:8080/api/citas";  // PARA CUANDO SE DESARROLLA
   private tipo_data: string = '';
 
@@ -36,6 +36,17 @@ export class CitaService {
       )
   }
 
+
+  getCitasById(id: string): Observable<Cita> {
+    this.tipo_data = '/fecha/' + id;
+    return this.httpClient.get<Cita>(this.URL_ENDPOINT + this.tipo_data)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+
   addCita(cita: Cita): Observable<Cita> {
     return this.httpClient.post<Cita>(this.URL_ENDPOINT, JSON.stringify(cita), this.httpOptions)
       .pipe(
@@ -43,6 +54,16 @@ export class CitaService {
           catchError(this.handleError)
       )
   }
+
+  modifyCita(id: string, cita: Cita): Observable<Cita> {
+    this.tipo_data = '/' + id
+    return this.httpClient.put<Cita>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(cita), this.httpOptions)
+      .pipe(
+        retry(1),
+          catchError(this.handleError)
+      )
+  }
+
   deleteCita(id: string): Observable<Cita> {
     this.tipo_data = '/' + id;
     return this.httpClient.delete<Cita>(this.URL_ENDPOINT + this.tipo_data)
@@ -51,6 +72,7 @@ export class CitaService {
           catchError(this.handleError)
       )
   }
+ 
     // Error handling 
     handleError(error) {
       let errorMessage = '';

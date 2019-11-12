@@ -5,6 +5,8 @@
             <th scope="col" style="width: 100px;">Consulta</th>
             <th scope="col" style="width: 300px;">Médico</th>
             <th scope="col" style="width: 200px;">Especialidad</th>
+            <th scope="col" style="width: 200px;">Borrar</th>
+            <th scope="col" style="width: 200px;">Modificar</th>
         </tr>
     </thead>
     <tbody>
@@ -13,8 +15,8 @@
             <td>{{cita.consulta}}</td>
             <td>{{cita.dniMedico}}</td>
             <td>{{cita.especialidad}}</td>
-            <button type="button" (click)="eliminarcita(cita)" style="margin: 10px" class="btn btn-primary" id="registro-button">Eliminar Cita</button>
-            <button type="button" (click)="cambiarcita()" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar Cita</button>
+            <td><button type="button" (click)="eliminarcita(cita)" style="margin: 10px" class="btn btn-primary" id="registro-button">Eliminar Cita</button></td>
+            <td><button type="button" (click)="cambiarcita(cita, $event)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar Cita</button></td>
         </tr>
     </tbody>
     <br>
