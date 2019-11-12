@@ -64,6 +64,6 @@ export class CitasComponent implements OnInit {
     this.router.navigate(['/cambiocita'])
   }
   cambiarcontrasena(){
-    this.router.navigate(['/cambiocontrasena'])
+    this.router.navigate(['/cambiocontrasena', this.id])
   }
 }

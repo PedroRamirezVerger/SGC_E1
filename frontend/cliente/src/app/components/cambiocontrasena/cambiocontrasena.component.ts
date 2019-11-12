@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Usuario } from 'src/app/entity/Usuario';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-cambiocontrasena',
@@ -8,32 +12,46 @@ import { Router } from '@angular/router';
 })
 export class CambiocontrasenaComponent implements OnInit {
 
-  /*msg:string = ''
-  mismacontrasena:boolean;
-  iguales:boolean;*/
+  id: string;
+  usuario: Usuario = new Usuario;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, 
+    private usuarioService: UsuarioService,
+    private utilsService: UtilsService,
+    private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    
+    this.activateRoute.params.subscribe(params => {
+      this.id = params['id'];
+      if (this.id) {
+        this.usuarioService.getUsuarioById(this.id).subscribe(
+          response => {
+            this.usuario = response;
+            console.log(this.usuario);
+          }
+        )
+      }
+    });
   }
 
-  /*cambiocontrasena(cactual: string, cnueva: string,cconfirm:string){
-    // Comprobar que cactual es igual a la contraseña del usuario en la BD. Si no es igual, error.
-    if((cactual == cnueva) && (cactual == cconfirm)){ //Si la contraseña antigua y la contraseña nueva coinciden,error.
-      this.mismacontrasena = true;
-      this.msg = 'La contraseña actual y la contraseña nueva no pueden coincidir. Introduzca otra contraseña nueva';
-    }else{ //Si no coinciden las contraseñas, entonces dos casos:
-      if(cnueva == cconfirm){ //Si la contraseña nueva y la confirmacion son iguales
-      this.msg = 'Contraseña actualizada con éxito.';
-      //Guardar contraseña nueva en BBDD
-      this.router.navigate(['/citas']);
-      }else{ //Si la contraseña nueva y la confirmación no son iguales
-      this.msg = 'La contraseña nueva y su confirmación no coinciden. Introduzca la misma contraseña en ambos campos.'
+  
+    cambiarpassword(){
+      this.usuario;
+      if (this.usuario.password.length == 0){
+      Swal.fire('Error en los campos', "Todos los campos han de estar completos.", 'error');
+    } else {
+      if( this.utilsService.comprobarpassword(this.usuario.password)){
+        this.usuarioService.modificarPassword(this.id, this.usuario).subscribe(
+          response => {
+            console.log(response);
+            console.log(this.usuario);
+            this.router.navigate(['/citas', this.id])
+            Swal.fire('Contraseña actualizada', 'Su contraseña ha sido actualizada con éxito', 'success');
+          }
+        );
       }
     }
-  }*/
-    confirmarcambio(){
-      this.router.navigate(['/citas'])
   }
 
 }
