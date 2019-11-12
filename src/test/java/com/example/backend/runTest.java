@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 plugin = {"html:target/cucumber-html-report", "json:target/cucumber-json-report.json"},
-features = "src/test/resource/Login.feature"
+features = "src/test/resource/Cita.feature"
 )
 public class runTest {
 }
