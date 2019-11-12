@@ -4,45 +4,57 @@
     "elements": [
       {
         "line": 5,
-        "name": "Login exitoso con credenciales validas",
+        "name": "Peticion cita correcta con datos correctos",
         "description": "",
-        "id": "logeo-al-sistema;login-exitoso-con-credenciales-validas",
+        "id": "pedir-cita;peticion-cita-correcta-con-datos-correctos",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 43538400,
+              "duration": 31896000,
               "status": "passed"
             },
             "line": 6,
-            "name": "Usuario en pagina de login",
+            "name": "Usuario en pagina de pedir cita",
             "match": {
-              "location": "LoginTest.Usuario_en_pagina_de_login()"
+              "location": "CitaTest.usuario_en_pagina_de_pedir_cita()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 170300,
+              "duration": 91500,
               "status": "passed"
             },
             "line": 7,
-            "name": "Credenciales correctas",
+            "name": "Medico correcto",
             "match": {
-              "location": "LoginTest.Credenciales_correctas()"
+              "location": "CitaTest.medico_correcto()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 89600,
+              "duration": 43600,
               "status": "passed"
             },
             "line": 8,
-            "name": "Mensaje de bienvenida al login",
+            "name": "Fecha correcta",
             "match": {
-              "location": "LoginTest.Mensaje_de_bienvenida_al_login()"
+              "location": "CitaTest.fecha_correcta()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Mensaje de cita creada correctamente",
+            "match": {
+              "location": "CitaTest.mensaje_de_cita_creada_correctamente()"
             },
             "keyword": "Then "
           }
@@ -54,46 +66,58 @@
         ]
       },
       {
-        "line": 11,
-        "name": "Login fallido por nombre invalido",
+        "line": 12,
+        "name": "Peticion cita incorrecta con fecha incorrecta",
         "description": "",
-        "id": "logeo-al-sistema;login-fallido-por-nombre-invalido",
+        "id": "pedir-cita;peticion-cita-incorrecta-con-fecha-incorrecta",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 187100,
+              "duration": 194100,
               "status": "passed"
             },
-            "line": 12,
-            "name": "Usuario en pagina de login",
+            "line": 13,
+            "name": "Usuario en pagina de pedir cita",
             "match": {
-              "location": "LoginTest.Usuario_en_pagina_de_login()"
+              "location": "CitaTest.usuario_en_pagina_de_pedir_cita()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 83000,
+              "duration": 58300,
               "status": "passed"
             },
-            "line": 13,
-            "name": "Nombre de usuario incorrecto",
+            "line": 14,
+            "name": "Medico correcto",
             "match": {
-              "location": "LoginTest.Nombre_de_usuario_incorrecto()"
+              "location": "CitaTest.medico_correcto()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 49700,
+              "duration": 53800,
               "status": "passed"
             },
-            "line": 14,
-            "name": "Mensaje de error al login",
+            "line": 15,
+            "name": "Fecha incorrecta",
             "match": {
-              "location": "LoginTest.Mensaje_de_error_al_login()"
+              "location": "CitaTest.fecha_incorrecta()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 50100,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Mensaje de cita creada incorrectamente",
+            "match": {
+              "location": "CitaTest.mensaje_de_cita_creada_incorrectamente()"
             },
             "keyword": "Then "
           }
@@ -103,64 +127,13 @@
             "name": "@Scenario2"
           }
         ]
-      },
-      {
-        "line": 17,
-        "name": "Login fallido por password invalido",
-        "description": "",
-        "id": "logeo-al-sistema;login-fallido-por-password-invalido",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 173300,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "Usuario en pagina de login",
-            "match": {
-              "location": "LoginTest.Usuario_en_pagina_de_login()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 72200,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "Password incorrecta",
-            "match": {
-              "location": "LoginTest.Contrase_a_incorrecta()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 40500,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "Mensaje de error al login",
-            "match": {
-              "location": "LoginTest.Mensaje_de_error_al_login()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Scenario3"
-          }
-        ]
       }
     ],
-    "name": "Logeo al sistema",
+    "name": "Pedir Cita",
     "description": "",
-    "id": "logeo-al-sistema",
+    "id": "pedir-cita",
     "keyword": "Feature",
-    "uri": "src/test/resource/Login.feature",
+    "uri": "src/test/resource/Cita.feature",
     "tags": []
   }
 ]
