@@ -4,709 +4,163 @@
     "elements": [
       {
         "line": 5,
-        "name": "Registro en el sistema",
+        "name": "Login exitoso con credenciales validas",
         "description": "",
-        "id": "registrar-ususario;registro-en-el-sistema",
+        "id": "logeo-al-sistema;login-exitoso-con-credenciales-validas",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 43997500,
+              "duration": 43538400,
               "status": "passed"
             },
             "line": 6,
-            "name": "Usuario en pagina de registro",
+            "name": "Usuario en pagina de login",
             "match": {
-              "location": "RegistroTest.usuario_en_pagina_de_registro()"
+              "location": "LoginTest.Usuario_en_pagina_de_login()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 88500,
+              "duration": 170300,
               "status": "passed"
             },
             "line": 7,
-            "name": "dni correcto",
+            "name": "Credenciales correctas",
             "match": {
-              "location": "RegistroTest.dni_correcto()"
+              "location": "LoginTest.Credenciales_correctas()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 37900,
+              "duration": 89600,
               "status": "passed"
             },
             "line": 8,
-            "name": "contraseña correcta",
+            "name": "Mensaje de bienvenida al login",
             "match": {
-              "location": "RegistroTest.contraseña_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 64400,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "nombre correcto",
-            "match": {
-              "location": "RegistroTest.nombre_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 50900,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "apellidos correctos",
-            "match": {
-              "location": "RegistroTest.apellidos_correctos()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 47900,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "fecha de nacimiento correcta",
-            "match": {
-              "location": "RegistroTest.fecha_de_nacimiento_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 46300,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "sexo correcto",
-            "match": {
-              "location": "RegistroTest.sexo_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 47400,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "telefono correcto",
-            "match": {
-              "location": "RegistroTest.telefono_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 47200,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "email correcto",
-            "match": {
-              "location": "RegistroTest.email_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 43000,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "usuario registrado",
-            "match": {
-              "location": "RegistroTest.usuario_registrado()"
+              "location": "LoginTest.Mensaje_de_bienvenida_al_login()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
-          {
-            "name": "@Scenario"
-          },
           {
             "name": "@Scenario1"
           }
         ]
       },
       {
-        "line": 18,
-        "name": "Registro contraseña erronea",
+        "line": 11,
+        "name": "Login fallido por nombre invalido",
         "description": "",
-        "id": "registrar-ususario;registro-contraseña-erronea",
+        "id": "logeo-al-sistema;login-fallido-por-nombre-invalido",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 206600,
+              "duration": 187100,
               "status": "passed"
             },
-            "line": 19,
-            "name": "Usuario en pagina de registro",
+            "line": 12,
+            "name": "Usuario en pagina de login",
             "match": {
-              "location": "RegistroTest.usuario_en_pagina_de_registro()"
+              "location": "LoginTest.Usuario_en_pagina_de_login()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 96900,
+              "duration": 83000,
               "status": "passed"
             },
-            "line": 20,
-            "name": "dni correcto",
+            "line": 13,
+            "name": "Nombre de usuario incorrecto",
             "match": {
-              "location": "RegistroTest.dni_correcto()"
+              "location": "LoginTest.Nombre_de_usuario_incorrecto()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 57100,
+              "duration": 49700,
               "status": "passed"
             },
-            "line": 21,
-            "name": "contraseña incorrecta",
+            "line": 14,
+            "name": "Mensaje de error al login",
             "match": {
-              "location": "RegistroTest.contraseña_incorrecta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 44200,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "nombre correcto",
-            "match": {
-              "location": "RegistroTest.nombre_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 41800,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "apellidos correctos",
-            "match": {
-              "location": "RegistroTest.apellidos_correctos()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 45900,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "fecha de nacimiento correcta",
-            "match": {
-              "location": "RegistroTest.fecha_de_nacimiento_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 146200,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "sexo correcto",
-            "match": {
-              "location": "RegistroTest.sexo_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 49000,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "telefono correcto",
-            "match": {
-              "location": "RegistroTest.telefono_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 45000,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "email correcto",
-            "match": {
-              "location": "RegistroTest.email_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 46600,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "usuario no registrado",
-            "match": {
-              "location": "RegistroTest.usuario_no_registrado()"
+              "location": "LoginTest.Mensaje_de_error_al_login()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
-          {
-            "name": "@Scenario"
-          },
           {
             "name": "@Scenario2"
           }
         ]
       },
       {
-        "line": 31,
-        "name": "Registro dni incorrecto",
+        "line": 17,
+        "name": "Login fallido por password invalido",
         "description": "",
-        "id": "registrar-ususario;registro-dni-incorrecto",
+        "id": "logeo-al-sistema;login-fallido-por-password-invalido",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 151400,
+              "duration": 173300,
               "status": "passed"
             },
-            "line": 32,
-            "name": "Usuario en pagina de registro",
+            "line": 18,
+            "name": "Usuario en pagina de login",
             "match": {
-              "location": "RegistroTest.usuario_en_pagina_de_registro()"
+              "location": "LoginTest.Usuario_en_pagina_de_login()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 63400,
+              "duration": 72200,
               "status": "passed"
             },
-            "line": 33,
-            "name": "dni incorrecto",
+            "line": 19,
+            "name": "Password incorrecta",
             "match": {
-              "location": "RegistroTest.dni_incorrecto()"
+              "location": "LoginTest.Contrase_a_incorrecta()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 46000,
+              "duration": 40500,
               "status": "passed"
             },
-            "line": 34,
-            "name": "contraseña correcta",
+            "line": 20,
+            "name": "Mensaje de error al login",
             "match": {
-              "location": "RegistroTest.contraseña_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 40800,
-              "status": "passed"
-            },
-            "line": 35,
-            "name": "nombre correcto",
-            "match": {
-              "location": "RegistroTest.nombre_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 37200,
-              "status": "passed"
-            },
-            "line": 36,
-            "name": "apellidos correctos",
-            "match": {
-              "location": "RegistroTest.apellidos_correctos()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 49100,
-              "status": "passed"
-            },
-            "line": 37,
-            "name": "fecha de nacimiento correcta",
-            "match": {
-              "location": "RegistroTest.fecha_de_nacimiento_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 37800,
-              "status": "passed"
-            },
-            "line": 38,
-            "name": "sexo correcto",
-            "match": {
-              "location": "RegistroTest.sexo_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 42900,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "telefono correcto",
-            "match": {
-              "location": "RegistroTest.telefono_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 38500,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "email correcto",
-            "match": {
-              "location": "RegistroTest.email_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 38100,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "usuario no registrado",
-            "match": {
-              "location": "RegistroTest.usuario_no_registrado()"
+              "location": "LoginTest.Mensaje_de_error_al_login()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
-          {
-            "name": "@Scenario"
-          },
           {
             "name": "@Scenario3"
           }
         ]
-      },
-      {
-        "line": 44,
-        "name": "Registro email incorrecto",
-        "description": "",
-        "id": "registrar-ususario;registro-email-incorrecto",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 181600,
-              "status": "passed"
-            },
-            "line": 45,
-            "name": "Usuario en pagina de registro",
-            "match": {
-              "location": "RegistroTest.usuario_en_pagina_de_registro()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 69800,
-              "status": "passed"
-            },
-            "line": 46,
-            "name": "dni correcto",
-            "match": {
-              "location": "RegistroTest.dni_correcto()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 42900,
-              "status": "passed"
-            },
-            "line": 47,
-            "name": "contraseña correcta",
-            "match": {
-              "location": "RegistroTest.contraseña_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 57700,
-              "status": "passed"
-            },
-            "line": 48,
-            "name": "nombre correcto",
-            "match": {
-              "location": "RegistroTest.nombre_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 41100,
-              "status": "passed"
-            },
-            "line": 49,
-            "name": "apellidos correctos",
-            "match": {
-              "location": "RegistroTest.apellidos_correctos()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 39500,
-              "status": "passed"
-            },
-            "line": 50,
-            "name": "fecha de nacimiento correcta",
-            "match": {
-              "location": "RegistroTest.fecha_de_nacimiento_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 39600,
-              "status": "passed"
-            },
-            "line": 51,
-            "name": "sexo correcto",
-            "match": {
-              "location": "RegistroTest.sexo_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 48400,
-              "status": "passed"
-            },
-            "line": 52,
-            "name": "telefono correcto",
-            "match": {
-              "location": "RegistroTest.telefono_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 46800,
-              "status": "passed"
-            },
-            "line": 53,
-            "name": "email incorrecto",
-            "match": {
-              "location": "RegistroTest.email_incorrecto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 41800,
-              "status": "passed"
-            },
-            "line": 54,
-            "name": "usuario no registrado",
-            "match": {
-              "location": "RegistroTest.usuario_no_registrado()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Scenario"
-          },
-          {
-            "name": "@Scenario4"
-          }
-        ]
-      },
-      {
-        "line": 57,
-        "name": "Registro telefono incorrecto",
-        "description": "",
-        "id": "registrar-ususario;registro-telefono-incorrecto",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 151900,
-              "status": "passed"
-            },
-            "line": 58,
-            "name": "Usuario en pagina de registro",
-            "match": {
-              "location": "RegistroTest.usuario_en_pagina_de_registro()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 58700,
-              "status": "passed"
-            },
-            "line": 59,
-            "name": "dni correcto",
-            "match": {
-              "location": "RegistroTest.dni_correcto()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 49400,
-              "status": "passed"
-            },
-            "line": 60,
-            "name": "contraseña correcta",
-            "match": {
-              "location": "RegistroTest.contraseña_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 36500,
-              "status": "passed"
-            },
-            "line": 61,
-            "name": "nombre correcto",
-            "match": {
-              "location": "RegistroTest.nombre_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 37000,
-              "status": "passed"
-            },
-            "line": 62,
-            "name": "apellidos correctos",
-            "match": {
-              "location": "RegistroTest.apellidos_correctos()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 38700,
-              "status": "passed"
-            },
-            "line": 63,
-            "name": "fecha de nacimiento correcta",
-            "match": {
-              "location": "RegistroTest.fecha_de_nacimiento_correcta()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 38600,
-              "status": "passed"
-            },
-            "line": 64,
-            "name": "sexo correcto",
-            "match": {
-              "location": "RegistroTest.sexo_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 42900,
-              "status": "passed"
-            },
-            "line": 65,
-            "name": "telefono incorrecto",
-            "match": {
-              "location": "RegistroTest.telefono_incorrecto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 40000,
-              "status": "passed"
-            },
-            "line": 66,
-            "name": "email correcto",
-            "match": {
-              "location": "RegistroTest.email_correcto()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 34200,
-              "status": "passed"
-            },
-            "line": 67,
-            "name": "usuario no registrado",
-            "match": {
-              "location": "RegistroTest.usuario_no_registrado()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@Scenario"
-          },
-          {
-            "name": "@Scenario5"
-          }
-        ]
       }
     ],
-    "name": "Registrar ususario",
+    "name": "Logeo al sistema",
     "description": "",
-    "id": "registrar-ususario",
+    "id": "logeo-al-sistema",
     "keyword": "Feature",
-    "uri": "src/test/resource/Registro.feature",
-    "tags": [
-      {
-        "name": "@Scenario",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 1
-        }
-      }
-    ]
+    "uri": "src/test/resource/Login.feature",
+    "tags": []
   }
 ]
