@@ -44,6 +44,7 @@ export class CambiocontrasenaComponent implements OnInit {
       if( this.utilsService.comprobarpassword(this.usuario.password)){
         this.usuarioService.modificarPassword(this.id, this.usuario).subscribe(
           response => {
+            console.log(response);
             console.log(this.usuario);
             this.router.navigate(['/citas', this.id])
             Swal.fire('Contraseña actualizada', 'Su contraseña ha sido actualizada con éxito', 'success');

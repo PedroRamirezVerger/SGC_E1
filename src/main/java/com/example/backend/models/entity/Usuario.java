@@ -31,7 +31,6 @@ public class Usuario {
     @Indexed(unique = true)
     private String telefono;
 
-    @Email
     @Indexed(unique = true)
     private String email;
 

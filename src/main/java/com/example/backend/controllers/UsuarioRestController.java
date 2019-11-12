@@ -175,9 +175,8 @@ public class UsuarioRestController {
     }
     
     /** 
-     * Modificar los datos de contacto del usuario
-     * @param teléfono
-     * @param modificarDatosContacto
+     * Modificar la contraseña del usuario
+     * @param password
      */
     @PutMapping("/usuarios/password/{id}")
     public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
@@ -188,6 +187,7 @@ public class UsuarioRestController {
     	return usuario;
     	
     }
+    
     /** 
      * Modificar los datos de contacto del usuario
      * @param teléfono
