@@ -5,6 +5,8 @@ import { Cita } from 'src/app/entity/Cita';
 import { CitaService } from 'src/app/services/cita.service';
 import { Usuario } from 'src/app/entity/Usuario';
 import { RespuestaCitasPaciente } from 'src/app/respuesta/respuesta-citas-paciente';
+import Swal from 'sweetalert2';
+
 
 
 
@@ -56,9 +58,15 @@ export class CitasComponent implements OnInit {
     this.router.navigate(['/cambiodatoscontacto', this.id])
   }
  
-  eliminarcita(cita){
+  eliminarcita(cita: Cita){
+    console.log(cita);
     var index=this.citas.indexOf(cita);
     this.citas.splice(index, 1);
+    this.citaService.deleteCita(cita._id).subscribe(
+      response => {
+        Swal.fire('Cita eliminada', `Cita eliminada con éxito!`, 'success');
+      }
+    );
   }
   cambiarcita(){
     this.router.navigate(['/cambiocita'])

@@ -64,5 +64,12 @@ public class CitaRestController {
 		citaService.saveCita(cita);
 		return cita;
 	}
-	
+	/**
+     * borra citas a un usuario
+     * @param cita
+     */
+	@DeleteMapping("/citas/{id}")
+	public void deleteCita(@PathVariable ("id") String id) {
+		citaService.deleteCita(id);
+	}
 }

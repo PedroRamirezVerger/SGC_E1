@@ -43,7 +43,14 @@ export class CitaService {
           catchError(this.handleError)
       )
   }
- 
+  deleteCita(id: string): Observable<Cita> {
+    this.tipo_data = '/' + id;
+    return this.httpClient.delete<Cita>(this.URL_ENDPOINT + this.tipo_data)
+      .pipe(
+        retry(1),
+          catchError(this.handleError)
+      )
+  }
     // Error handling 
     handleError(error) {
       let errorMessage = '';
