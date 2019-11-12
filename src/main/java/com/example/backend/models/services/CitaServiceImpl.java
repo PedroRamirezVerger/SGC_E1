@@ -2,6 +2,8 @@ package com.example.backend.models.services;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,4 +36,12 @@ public class CitaServiceImpl implements ICitaService{
 	public void saveCita(Cita cita) {
 		this.citaDao.save(cita);
 	}
+
+
+	@Override
+	public void deleteCita(@Valid String id) {
+		this.citaDao.deleteById(id);
+		
+	}
 }
+
