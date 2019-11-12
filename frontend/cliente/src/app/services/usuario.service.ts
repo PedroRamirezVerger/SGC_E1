@@ -63,7 +63,14 @@ export class UsuarioService {
       )
   }
 
- 
+  modificarPassword(id: string, usuario: Usuario): Observable<Usuario> {
+    this.tipo_data = '/'+'password/' + id;
+    return this.httpClient.put<Usuario>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(usuario), this.httpOptions)
+      .pipe(
+        retry(1),
+          catchError(this.handlePasswordError)
+      )
+  }
 
 
 
@@ -121,6 +128,18 @@ export class UsuarioService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     Swal.fire('Error al cambiar los datos de contacto', errorMessage, 'error')
+    return throwError(errorMessage);
+   }
+   handlePasswordError(error) {
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    Swal.fire('Error al cambiar el password', errorMessage, 'error')
     return throwError(errorMessage);
    }
 }
