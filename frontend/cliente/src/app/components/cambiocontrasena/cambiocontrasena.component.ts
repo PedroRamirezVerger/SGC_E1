@@ -21,12 +21,14 @@ export class CambiocontrasenaComponent implements OnInit {
     private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    
     this.activateRoute.params.subscribe(params => {
       this.id = params['id'];
       if (this.id) {
-        this.usuarioService.getUsuaioById(this.id).subscribe(
+        this.usuarioService.getUsuarioById(this.id).subscribe(
           response => {
             this.usuario = response;
+            console.log(this.usuario);
           }
         )
       }
@@ -34,13 +36,13 @@ export class CambiocontrasenaComponent implements OnInit {
   }
 
   
-    cambiarcontrasena(){
+    cambiarpassword(){
       this.usuario;
       if (this.usuario.password.length == 0){
       Swal.fire('Error en los campos', "Todos los campos han de estar completos.", 'error');
     } else {
       if( this.utilsService.comprobarpassword(this.usuario.password)){
-        this.usuarioService.modificarDatosContactoUsuario(this.id, this.usuario).subscribe(
+        this.usuarioService.modificarPassword(this.id, this.usuario).subscribe(
           response => {
             console.log(this.usuario);
             this.router.navigate(['/citas', this.id])

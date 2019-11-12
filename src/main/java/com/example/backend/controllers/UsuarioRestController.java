@@ -174,7 +174,20 @@ public class UsuarioRestController {
 		return usuario;
     }
     
-   
+    /** 
+     * Modificar los datos de contacto del usuario
+     * @param teléfono
+     * @param modificarDatosContacto
+     */
+    @PutMapping("/usuarios/password/{id}")
+    public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
+    	usuario.set_id(id);
+		addKey(clave);
+		usuario.setPassword(encriptar(usuario.getPassword()));
+    	usuarioService.saveUser(usuario);
+    	return usuario;
+    	
+    }
     /** 
      * Modificar los datos de contacto del usuario
      * @param teléfono
@@ -191,6 +204,6 @@ public class UsuarioRestController {
     	return usuario;
     	
     }
-    
+   
 
 }
