@@ -20,6 +20,11 @@ public class CitaServiceImpl implements ICitaService{
 	}
 	
 	@Override
+	public Cita findCitaById(String id) {
+		return citaDao.findBy_id(id);
+	}
+	
+	@Override
 	@Autowired(required = false)
 	public List<Cita> findCitasByDniPaciente(String dniPaciente) {
 		return citaDao.findByDniPaciente(dniPaciente);
@@ -34,4 +39,6 @@ public class CitaServiceImpl implements ICitaService{
 	public void saveCita(Cita cita) {
 		this.citaDao.save(cita);
 	}
+
+	
 }
