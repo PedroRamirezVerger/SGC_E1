@@ -26,6 +26,9 @@ import { FormsModule } from '@angular/forms';
 import { CitaService } from './services/cita.service';
 import { UsuarioService } from './services/usuario.service';
 import { UtilsService } from './services/utils.service';
+import { CookieService } from 'ngx-cookie-service';
+
+
 
 
 
@@ -52,7 +55,8 @@ import { UtilsService } from './services/utils.service';
   providers: [
     CitaService,
     UsuarioService,
-    UtilsService
+    UtilsService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
