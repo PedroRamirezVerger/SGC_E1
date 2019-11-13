@@ -6,6 +6,8 @@ import { PedircitaComponent } from './components/pedircita/pedircita.component';
 import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/cambiodatoscontacto.component';
 import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambiocontrasena.component';
 import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.component';
+import { PanelgestorComponent } from './components/panelgestor/panelgestor.component';
+import { CambiodatospersonalesComponent } from './components/cambiodatospersonales/cambiodatospersonales.component';
 
 
 
@@ -19,7 +21,9 @@ const APP_ROUTES: Routes = [
     { path: 'cambiodatoscontacto/:id', component: CambiodatoscontactoComponent},
     { path: 'cambiocontrasena/:id', component: CambiocontrasenaComponent},
     { path: 'cambiocita/:idUsuario/:idCita', component: CambiarcitaComponent},
-    { path: '**', pathMatch: 'full', redirectTo:'login' },
+    { path: 'panelgestor', component:PanelgestorComponent},
+    { path: 'cambiodatospersonales/:id', component: CambiodatospersonalesComponent},
+    { path: '**', pathMatch: 'full', redirectTo:'login' }
    
 
 ];

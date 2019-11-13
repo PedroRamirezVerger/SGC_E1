@@ -1,0 +1,25 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="width: 200px;">DNI</th>
+            <th scope="col" style="width: 100px;">Nombre</th>
+            <th scope="col" style="width: 300px;">Apellidos</th>
+            <th scope="col" style="width: 100px;">Sexo</th>
+            <th scope="col" style="width: 100px;">Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <td scope="row">{{usuario.dni}}</td>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellidos}}</td>
+            <td>{{usuario.sexo}}</td>
+            <td>{{usuario.tipo}}</td>
+            <td><button type="button" (click)="modificardatospersonales(usuario.id)" style="margin: 10px" class="btn btn-primary" id="datospersonales-button">Modificar datos personales</button></td>
+            <td><button type="button" (click)="modificardatoscontacto(usuario.id)" style="margin: 10px" class="btn btn-primary" id="datoscontacto-button">Modificar datos contacto</button></td>
+            <td><button type="button" (click)="historialcitas(usuario.id)" style="margin: 10px" class="btn btn-primary" id="historialcitas-button">Historial Citas</button></td>
+        </tr>
+    
+    </tbody>
+    <br>
+</table>

@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { CitaService } from './services/cita.service';
 import { UsuarioService } from './services/usuario.service';
 import { UtilsService } from './services/utils.service';
+import { PanelgestorComponent } from './components/panelgestor/panelgestor.component';
+import { CambiodatospersonalesComponent } from './components/cambiodatospersonales/cambiodatospersonales.component';
 
 
 
@@ -41,7 +43,9 @@ import { UtilsService } from './services/utils.service';
     CambiarcitaComponent,
     PedircitaComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PanelgestorComponent,
+    CambiodatospersonalesComponent
   ],
   imports: [
     BrowserModule, 

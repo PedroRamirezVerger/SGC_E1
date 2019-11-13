@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Cambio Datos Personales</h1>
+
+    <form class="columnas">
+        <div class="form-group">
+            <label for="Nombre">Nombre</label>
+            <input class="form-control" [(ngModel)]="usuario.nombre" #email=ngModel name="nombre" id="nombre" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+            <label for="Apellidos">Apellidos</label>
+            <input class="form-control" [(ngModel)]="usuario.apellidos" #telefono=ngModel name="apellidos" id="apellidos" placeholder="Apellidos">
+        </div>
+        <div class="form-group ">
+            <label for="Sexo ">Sexo</label>
+            <select class="form-control" required [(ngModel)]="usuario.sexo" #sexo="ngModel" name="sexo">
+            <option>Hombre</option> 
+            <option>Mujer</option> 
+            </select>
+        </div>
+        <div class="form-group ">
+            <label for="Tipo">Tipo</label>
+            <select class="form-control" required [(ngModel)]="usuario.tipo" #tipo="ngModel" name="tipo">
+            <option>Medico</option>
+            <option>Paciente</option>
+            <option>Gerente</option>
+            </select>
+        </div>
+        <p>
+        </p>
+        <button type="button" (click)="modificardatospersonales($event)" style="margin: 10px" class="btn btn-primary" id="cambiardatospersonales-button">Cambiar Datos Personales</button>
+    </form>
+</div>

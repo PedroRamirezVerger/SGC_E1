@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, from } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Usuario } from '../entity/Usuario';
 import Swal from 'sweetalert2'
 import { RespuestLogin } from '../respuesta/respuesta-login';
+import { RespuestaUsuariosGestor} from '../respuesta/respuesta-usuarios-gestor';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ import { RespuestLogin } from '../respuesta/respuesta-login';
 export class UsuarioService {
 
 
-  private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
-  // private URL_ENDPOINT: string = "http://localhost:8080/api/usuarios";  // PARA CUANDO SE DESARROLLA
+  //private URL_ENDPOINT: string = "https://sistemacitasbackend.herokuapp.com/api/usuarios";
+  private URL_ENDPOINT: string = "http://localhost:8080/api/usuarios";  // PARA CUANDO SE DESARROLLA
   private tipo_data: string = '';
 
   // Http Options
@@ -26,7 +27,14 @@ export class UsuarioService {
   constructor(private httpClient: HttpClient) { 
 
   }
-
+  getAllUsers(): Observable<RespuestaUsuariosGestor>{
+    this.tipo_data = '/';
+    return this.httpClient.get<RespuestaUsuariosGestor>(this.URL_ENDPOINT + this.tipo_data)
+      .pipe(
+        retry(1),
+        catchError(this.handleLoginError)
+      )
+  }
   getUsuarioById(id: string): Observable<Usuario> {
     this.tipo_data = '/' + id;
     return this.httpClient.get<Usuario>(this.URL_ENDPOINT + this.tipo_data)
@@ -55,6 +63,15 @@ export class UsuarioService {
   }
 
   modificarDatosContactoUsuario(id: string, usuario: Usuario): Observable<Usuario> {
+    this.tipo_data = '/' + id;
+    return this.httpClient.put<Usuario>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(usuario), this.httpOptions)
+      .pipe(
+        retry(1),
+          catchError(this.handleDatosContactoError)
+      )
+  }
+  
+  modificarDatosPersonalesUsuario(id:string, usuario:Usuario): Observable<Usuario> {
     this.tipo_data = '/' + id;
     return this.httpClient.put<Usuario>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(usuario), this.httpOptions)
       .pipe(

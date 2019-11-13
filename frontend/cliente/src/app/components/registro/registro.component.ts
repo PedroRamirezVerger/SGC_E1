@@ -32,7 +32,7 @@ export class RegistroComponent implements OnInit {
 
     // TODO CUANDO TENGAMOS EL ADMIN, ESTO LO HARA EL.
 
-    this.usuario.tipo = 'paciente';
+    this.usuario.tipo = 'Paciente';
     this.usuario.centroMedico = 'Sanitas CR';
     this.usuario.medico = 'Antonio Perez Rodriguez';
     this.usuario.especialidad = 'Pediatría'

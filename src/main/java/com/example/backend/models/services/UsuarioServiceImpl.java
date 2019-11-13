@@ -7,13 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.example.backend.models.dao.IUsuarioDAO;
 import com.example.backend.models.entity.Usuario;
+import com.example.backend.controllers.UsuarioRestController;
 
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
 
     @Autowired
     private IUsuarioDAO usuarioDao;
-
+    
     @Override
     public List<Usuario> findAll() {
     	return usuarioDao.findAll();

@@ -8,7 +8,6 @@ export class UtilsService {
 
   constructor() { }
 
-
   validardni(dni:string) {
     const nifRegex = /^[0-9]{8}[QWERTYUIOPÑLKJHGFDSAZXCVBNM]$/i;
     console.log(nifRegex.test(dni));
