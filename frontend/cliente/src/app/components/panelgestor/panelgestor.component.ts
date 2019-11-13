@@ -27,14 +27,11 @@ export class PanelgestorComponent implements OnInit {
       }
     )
   }
-  modificardatospersonales(id:string){
-    this.router.navigate(['/cambiodatospersonales', id])
+  modificardatospersonales(usuario:Usuario){
+    this.router.navigate(['/cambiodatospersonales', usuario._id])
   }
-  modificardatoscontacto(id:string){
-    this.router.navigate(['/cambiodatoscontacto', id])
-  }
-  historialcitas(id:string){
-    this.router.navigate(['/citas', id])
+  historialcitas(usuario:Usuario){
+    this.router.navigate(['/citas', usuario._id])
   }
 
 }

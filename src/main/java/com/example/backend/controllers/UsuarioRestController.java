@@ -12,9 +12,9 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
+//import sun.misc.BASE64Decoder;
+//import sun.misc.BASE64Encoder;
+import java.util.Base64;
 import javax.validation.Valid;
 
 import org.bson.types.ObjectId;
@@ -64,7 +64,8 @@ public class UsuarioRestController {
 	    cipher.init(Cipher.ENCRYPT_MODE, key);
 	    byte[] textobytes = texto.getBytes();
 	    byte[] cipherbytes = cipher.doFinal(textobytes);
-	    value = new BASE64Encoder().encode(cipherbytes);
+	    //value = new BASE64Encoder().encode(cipherbytes);
+	    value= Base64.getEncoder().encodeToString(cipherbytes);
 	} catch (NoSuchAlgorithmException ex) {
 	    System.err.println(ex.getMessage());
 	} catch (NoSuchPaddingException ex) {
@@ -88,7 +89,8 @@ public class UsuarioRestController {
     public String desencriptar(String texto) {
 	String str = "";
 	try {
-	    byte[] value = new BASE64Decoder().decodeBuffer(texto);
+	    //byte[] value = new BASE64Decoder().decodeBuffer(texto);
+	    byte[] value= Base64.getDecoder().decode(texto);
 	    cipher = Cipher.getInstance(algoritmo);
 	    cipher.init(Cipher.DECRYPT_MODE, key);
 	    byte[] cipherbytes = cipher.doFinal(value);
@@ -99,8 +101,6 @@ public class UsuarioRestController {
 	    System.err.println(ex.getMessage());
 	} catch (BadPaddingException ex) {
 	    System.err.println(ex.getMessage());
-	} catch (IOException ex) {
-	    System.err.println(ex.getMessage());
 	} catch (NoSuchAlgorithmException ex) {
 	    System.err.println(ex.getMessage());
 	} catch (NoSuchPaddingException ex) {
@@ -109,6 +109,7 @@ public class UsuarioRestController {
 	return str;
     }
     public Usuario desencriptarUsuario(Usuario usuario) {
+	addKey(clave);
 	usuario.setDni(desencriptar(usuario.getDni()));
 	usuario.setNombre(desencriptar(usuario.getNombre()));
 	usuario.setApellidos(desencriptar(usuario.getApellidos()));
