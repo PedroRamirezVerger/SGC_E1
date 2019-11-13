@@ -2,6 +2,7 @@ package com.example.backend.controllers;
 
 import java.util.List;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -57,12 +58,12 @@ public class UsuarioRestController {
 	key = new SecretKeySpec(Arrays.copyOf(valuebytes, keysize), algoritmo);
     }
 
-    public String encriptar(String texto) {
+    public String encriptar(String texto) throws UnsupportedEncodingException {
 	String value = "";
 	try {
 	    cipher = Cipher.getInstance(algoritmo);
 	    cipher.init(Cipher.ENCRYPT_MODE, key);
-	    byte[] textobytes = texto.getBytes();
+	    byte[] textobytes = texto.getBytes( "utf-8" );
 	    byte[] cipherbytes = cipher.doFinal(textobytes);
 	    //value = new BASE64Encoder().encode(cipherbytes);
 	    value= Base64.getEncoder().encodeToString(cipherbytes);
@@ -85,12 +86,13 @@ public class UsuarioRestController {
      * 
      * @param texto Texto encriptado
      * @return String texto desencriptado
+     * @throws UnsupportedEncodingException 
      */
-    public String desencriptar(String texto) {
+    public String desencriptar(String texto) throws UnsupportedEncodingException {
 	String str = "";
 	try {
 	    //byte[] value = new BASE64Decoder().decodeBuffer(texto);
-	    byte[] value= Base64.getDecoder().decode(texto);
+	    byte[] value= Base64.getDecoder().decode(texto.getBytes( "utf-8" ));
 	    cipher = Cipher.getInstance(algoritmo);
 	    cipher.init(Cipher.DECRYPT_MODE, key);
 	    byte[] cipherbytes = cipher.doFinal(value);
@@ -108,7 +110,7 @@ public class UsuarioRestController {
 	}
 	return str;
     }
-    public Usuario desencriptarUsuario(Usuario usuario) {
+    public Usuario desencriptarUsuario(Usuario usuario) throws UnsupportedEncodingException {
 	addKey(clave);
 	usuario.setDni(desencriptar(usuario.getDni()));
 	usuario.setNombre(desencriptar(usuario.getNombre()));
@@ -119,7 +121,7 @@ public class UsuarioRestController {
     }
 
     @GetMapping("/usuarios")
-    public RespuestaUsuariosGestor getAllUsers() { //devuelve los usuarios desencriptados
+    public RespuestaUsuariosGestor getAllUsers() throws UnsupportedEncodingException { //devuelve los usuarios desencriptados
 	RespuestaUsuariosGestor respuestausuariosgestor=new RespuestaUsuariosGestor();
 	List<Usuario> usuariosencriptados=usuarioService.findAll();
 	List<Usuario> usuariosdesencriptados=new ArrayList<Usuario>();
@@ -144,9 +146,10 @@ public class UsuarioRestController {
      * @param dni
      * @param password
      * @return
+     * @throws UnsupportedEncodingException 
      */
     @GetMapping("/usuarios/{dni}/{password}")
-    public RespuestaLogin validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
+    public RespuestaLogin validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) throws UnsupportedEncodingException {
 	RespuestaLogin respuestaLogin = new RespuestaLogin();
 	List<Usuario> listaUsuarios = usuarioService.findAll();
 	addKey(clave);
@@ -178,9 +181,10 @@ public class UsuarioRestController {
      * 
      * @param usuario
      * @return
+     * @throws UnsupportedEncodingException 
      */
     @PostMapping("/usuarios")
-    public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
+    public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 	usuario.set_id(ObjectId.get());
 	addKey(clave);
 	usuario.setDni(encriptar(usuario.getDni()));
@@ -200,9 +204,10 @@ public class UsuarioRestController {
      * Modificar la contraseña del usuario
      * 
      * @param password
+     * @throws UnsupportedEncodingException 
      */
     @PutMapping("/usuarios/password/{id}")
-    public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
+    public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 	usuario.set_id(id);
 	addKey(clave);
 	usuario.setPassword(encriptar(usuario.getPassword()));
@@ -216,14 +221,33 @@ public class UsuarioRestController {
      * 
      * @param teléfono
      * @param modificarDatosContacto
+     * @throws UnsupportedEncodingException 
      */
     @PutMapping("/usuarios/{id}")
-    public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
+    public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 	usuario.set_id(id);
 	addKey(clave);
 	usuario.setTelefono(encriptar(usuario.getTelefono()));
 	usuario.setEmail(encriptar(usuario.getEmail()));
 	usuario.setDireccion(encriptar(usuario.getDireccion()));
+	usuarioService.saveUser(usuario);
+	return usuario;
+
+    }
+    /**
+     * Modificar los datos de personales del usuario
+     * 
+     * @param modificarDatosPersonales
+     * @throws UnsupportedEncodingException 
+     */
+    @PutMapping("/usuarios/datospersonales/{id}")
+    public Usuario modificarDatosPersonales(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
+	usuario.set_id(id);
+	addKey(clave);
+	usuario.setNombre(encriptar(usuario.getNombre()));
+	usuario.setApellidos(encriptar(usuario.getApellidos()));
+	usuario.setSexo(encriptar(usuario.getSexo()));
+	usuario.setTipo(encriptar(usuario.getTipo()));
 	usuarioService.saveUser(usuario);
 	return usuario;
 
