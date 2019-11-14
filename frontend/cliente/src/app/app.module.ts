@@ -28,6 +28,9 @@ import { UsuarioService } from './services/usuario.service';
 import { UtilsService } from './services/utils.service';
 import { PanelgestorComponent } from './components/panelgestor/panelgestor.component';
 import { CambiodatospersonalesComponent } from './components/cambiodatospersonales/cambiodatospersonales.component';
+import { CookieService } from 'ngx-cookie-service';
+
+
 
 
 
@@ -56,7 +59,8 @@ import { CambiodatospersonalesComponent } from './components/cambiodatospersonal
   providers: [
     CitaService,
     UsuarioService,
-    UtilsService
+    UtilsService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

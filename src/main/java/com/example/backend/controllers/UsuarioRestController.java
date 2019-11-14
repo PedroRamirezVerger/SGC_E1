@@ -121,23 +121,32 @@ public class UsuarioRestController {
     }
 
     @GetMapping("/usuarios")
-    public RespuestaUsuariosGestor getAllUsers() throws UnsupportedEncodingException { //devuelve los usuarios desencriptados
-	RespuestaUsuariosGestor respuestausuariosgestor=new RespuestaUsuariosGestor();
-	List<Usuario> usuariosencriptados=usuarioService.findAll();
-	List<Usuario> usuariosdesencriptados=new ArrayList<Usuario>();
-	Usuario usuario= new Usuario();
-	
-    	for(int i=0; i<usuariosencriptados.size();i++) {
-    	    usuario=desencriptarUsuario(usuariosencriptados.get(i));
-    	    usuariosdesencriptados.add(usuario);
-    	}
-    	respuestausuariosgestor.setListaUsuarios(usuariosdesencriptados);
-	return respuestausuariosgestor;
+    public List<Usuario> getAllUsers() {
+		List<Usuario> listaUsuarios = usuarioService.findAll();
+		List<Usuario> listaUsuariosDesencriptados = new List<Usuario>;
+		for(Usuario u : listaUsuarios){
+			u.setDni(desencriptar(u.getDni()));
+			// TODO crear metodo para encriptar y desencriptar usuarios
+				u.setNombre(desencriptar(u.getNombre()));
+				u.setApellidos(desencriptar(u.getApellidos()));
+				u.setTelefono(desencriptar(u.getTelefono()));
+				u.setEmail(desencriptar(u.getEmail()));
+				u.setDireccion(desencriptar(u.getDireccion()));
+				u.setTipo(desencriptar(u.getTipo()));
+				u.setPassword(desencriptar(u.getPassword()));
+				u.setSexo(desencriptar(u.getSexo()));
+				u.setMedico(desencriptar(u.getMedico()));
+				u.setLocalidad(desencriptar(u.getLocalidad()));
+				u.setEspecialidad(desencriptar(u.getEspecialidad()));
+				u.setCentroMedico(desencriptar(u.getCentroMedico()));
+				listaUsuariosDesencriptados.add(u);
+		}
+    	return listaUsuariosDesencriptados;
     }
 
     @GetMapping("/usuarios/{id}")
     public Usuario getUserById(@PathVariable("id") String id) {
-	return usuarioService.findUserById(id);
+		return usuarioService.findUserById(id);
     }
 
     /**
@@ -148,32 +157,36 @@ public class UsuarioRestController {
      * @return
      * @throws UnsupportedEncodingException 
      */
-    @GetMapping("/usuarios/{dni}/{password}")
-    public RespuestaLogin validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) throws UnsupportedEncodingException {
-	RespuestaLogin respuestaLogin = new RespuestaLogin();
-	List<Usuario> listaUsuarios = usuarioService.findAll();
-	addKey(clave);
-	dni = encriptar(dni);
-	password = encriptar(password);
-	for (Usuario u : listaUsuarios) {
-	    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
-		u.setDni(desencriptar(u.getDni()));
-		u.setNombre(desencriptar(u.getNombre()));
-		u.setApellidos(desencriptar(u.getApellidos()));
-		u.setTelefono(desencriptar(u.getTelefono()));
-		u.setEmail(desencriptar(u.getEmail()));
-		u.setDireccion(desencriptar(u.getDireccion()));
-		u.setTipo(desencriptar(u.getTipo()));
-		u.setPassword(desencriptar(u.getPassword()));
-		u.setSexo(desencriptar(u.getSexo()));
-		respuestaLogin.setUsuario(u);
-		respuestaLogin.setLoginPasado(true);
-		break;
-	    } else {
-		respuestaLogin.setLoginPasado(false);
-	    }
-	}
-	return respuestaLogin;
+    @GetMapping("/usuarios/{dni}/{password}") 
+    public RespuestaLogin validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) {
+    	RespuestaLogin respuestaLogin = new RespuestaLogin();
+		List<Usuario> listaUsuarios = usuarioService.findAll();
+		addKey(clave);
+		dni = encriptar(dni);
+		password = encriptar(password);
+		for (Usuario u : listaUsuarios) {
+		    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
+		    	u.setDni(desencriptar(u.getDni()));
+				u.setNombre(desencriptar(u.getNombre()));
+				u.setApellidos(desencriptar(u.getApellidos()));
+				u.setTelefono(desencriptar(u.getTelefono()));
+				u.setEmail(desencriptar(u.getEmail()));
+				u.setDireccion(desencriptar(u.getDireccion()));
+				u.setTipo(desencriptar(u.getTipo()));
+				u.setPassword(desencriptar(u.getPassword()));
+				u.setSexo(desencriptar(u.getSexo()));
+				u.setMedico(desencriptar(u.getMedico()));
+				u.setLocalidad(desencriptar(u.getLocalidad()));
+				u.setEspecialidad(desencriptar(u.getEspecialidad()));
+				u.setCentroMedico(desencriptar(u.getCentroMedico()));
+				respuestaLogin.setUsuario(u);
+		    	respuestaLogin.setLoginPasado(true); 
+		    	break;
+		    } else {
+		    	respuestaLogin.setLoginPasado(false); 
+		    }
+		}
+		return respuestaLogin;
     }
 
     /**
@@ -183,21 +196,26 @@ public class UsuarioRestController {
      * @return
      * @throws UnsupportedEncodingException 
      */
+    // TODO Encriptar los dotos que faltan
     @PostMapping("/usuarios")
-    public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
-	usuario.set_id(ObjectId.get());
-	addKey(clave);
-	usuario.setDni(encriptar(usuario.getDni()));
-	usuario.setNombre(encriptar(usuario.getNombre()));
-	usuario.setApellidos(encriptar(usuario.getApellidos()));
-	usuario.setTelefono(encriptar(usuario.getTelefono()));
-	usuario.setEmail(encriptar(usuario.getEmail()));
-	usuario.setDireccion(encriptar(usuario.getDireccion()));
-	usuario.setTipo(encriptar(usuario.getTipo()));
-	usuario.setPassword(encriptar(usuario.getPassword()));
-	usuario.setSexo(encriptar(usuario.getSexo()));
-	usuarioService.saveUser(usuario);
-	return usuario;
+    public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
+		usuario.set_id(ObjectId.get());
+		addKey(clave);
+		usuario.setDni(encriptar(usuario.getDni()));
+		usuario.setNombre(encriptar(usuario.getNombre()));
+		usuario.setApellidos(encriptar(usuario.getApellidos()));
+		usuario.setTelefono(encriptar(usuario.getTelefono()));
+		usuario.setEmail(encriptar(usuario.getEmail()));
+		usuario.setDireccion(encriptar(usuario.getDireccion()));
+		usuario.setTipo(encriptar(usuario.getTipo()));
+		usuario.setPassword(encriptar(usuario.getPassword()));
+		usuario.setSexo(encriptar(usuario.getSexo()));
+		usuario.setMedico(encriptar(usuario.getMedico()));
+		usuario.setLocalidad(encriptar(usuario.getLocalidad()));
+		usuario.setEspecialidad(encriptar(usuario.getEspecialidad()));
+		usuario.setCentroMedico(encriptar(usuario.getCentroMedico()));
+		usuarioService.saveUser(usuario);
+		return usuario;
     }
 
     /**
@@ -223,18 +241,17 @@ public class UsuarioRestController {
      * @param modificarDatosContacto
      * @throws UnsupportedEncodingException 
      */
-    @PutMapping("/usuarios/{id}")
-    public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
-	usuario.set_id(id);
-	addKey(clave);
-	usuario.setTelefono(encriptar(usuario.getTelefono()));
-	usuario.setEmail(encriptar(usuario.getEmail()));
-	usuario.setDireccion(encriptar(usuario.getDireccion()));
-	usuarioService.saveUser(usuario);
-	return usuario;
+    @PutMapping("/usuarios/datosContacto/{id}")
+    public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
+    	usuario.set_id(id);
+		addKey(clave);
+		usuario.setTelefono(encriptar(usuario.getTelefono()));
+		usuario.setEmail(encriptar(usuario.getEmail()));
+		usuario.setDireccion(encriptar(usuario.getDireccion()));
+    	usuarioService.saveUser(usuario);
+    	return usuario;
 
-    }
-    /**
+	/**
      * Modificar los datos de personales del usuario
      * 
      * @param modificarDatosPersonales
@@ -250,7 +267,7 @@ public class UsuarioRestController {
 	usuario.setTipo(encriptar(usuario.getTipo()));
 	usuarioService.saveUser(usuario);
 	return usuario;
-
+    	
     }
 
 }

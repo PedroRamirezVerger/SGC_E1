@@ -15,15 +15,15 @@ import { CambiodatospersonalesComponent } from './components/cambiodatospersonal
 
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: 'citas/:id', component: CitasComponent },
+    { path: 'citas', component: CitasComponent },
     { path: 'registro', component: RegistroComponent},
-    { path: 'pedircita/:id', component: PedircitaComponent},
-    { path: 'cambiodatoscontacto/:id', component: CambiodatoscontactoComponent},
-    { path: 'cambiocontrasena/:id', component: CambiocontrasenaComponent},
-    { path: 'cambiocita/:idUsuario/:idCita', component: CambiarcitaComponent},
+    { path: 'pedircita', component: PedircitaComponent},
+    { path: 'cambiodatoscontacto', component: CambiodatoscontactoComponent},
+    { path: 'cambiocontrasena', component: CambiocontrasenaComponent},
+    { path: 'cambiocita', component: CambiarcitaComponent},
     { path: 'panelgestor', component:PanelgestorComponent},
     { path: 'cambiodatospersonales/:id', component: CambiodatospersonalesComponent},
-    { path: '**', pathMatch: 'full', redirectTo:'login' }
+    { path: '**', pathMatch: 'full', redirectTo:'login' },
    
 
 ];

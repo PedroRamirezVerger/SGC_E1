@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
 import Swal from 'sweetalert2';
 import { RespuestLogin } from 'src/app/respuesta/respuesta-login';
+import { CookieService } from 'ngx-cookie-service';
+import { $ } from 'protractor';
+import { settings } from 'cluster';
 
 
 @Component({
@@ -17,7 +20,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private router:Router,
-              private usuarioService: UsuarioService
+              private usuarioService: UsuarioService,
+              private cookieService: CookieService
               ) { 
   }
 
@@ -26,6 +30,10 @@ export class LoginComponent implements OnInit {
 
 
   logIn(dni: string, password: string){
+    const ajustes = {
+      secure: true
+
+    }
     if (dni.length === 0 || password.length === 0){
       Swal.fire('Error en los campos', "Todos los campos han de estar completos.", 'error');
     } else {
@@ -35,7 +43,8 @@ export class LoginComponent implements OnInit {
           console.log(this.respuestaLogin);
           if(this.respuestaLogin.loginPasado){
             Swal.fire('Login correcto', "Ha iniciado sesión", 'success');
-            this.router.navigate(['/citas', this.respuestaLogin.usuario._id])
+            this.cookieService.set('usuario', JSON.stringify(this.respuestaLogin.usuario));
+            this.router.navigate(['/citas'])
           } else {
             Swal.fire('Error en los campos', "El DNI y/o la contraseña son incorrectos.", 'error');
           }

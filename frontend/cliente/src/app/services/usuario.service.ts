@@ -63,7 +63,7 @@ export class UsuarioService {
   }
 
   modificarDatosContactoUsuario(id: string, usuario: Usuario): Observable<Usuario> {
-    this.tipo_data = '/' + id;
+    this.tipo_data = '/datosContacto/' + id;
     return this.httpClient.put<Usuario>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(usuario), this.httpOptions)
       .pipe(
         retry(1),
