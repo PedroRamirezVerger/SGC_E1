@@ -13,12 +13,12 @@ import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.compo
 
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: 'citas/:id', component: CitasComponent },
+    { path: 'citas', component: CitasComponent },
     { path: 'registro', component: RegistroComponent},
-    { path: 'pedircita/:id', component: PedircitaComponent},
-    { path: 'cambiodatoscontacto/:id', component: CambiodatoscontactoComponent},
-    { path: 'cambiocontrasena/:id', component: CambiocontrasenaComponent},
-    { path: 'cambiocita/:idUsuario/:idCita', component: CambiarcitaComponent},
+    { path: 'pedircita', component: PedircitaComponent},
+    { path: 'cambiodatoscontacto', component: CambiodatoscontactoComponent},
+    { path: 'cambiocontrasena', component: CambiocontrasenaComponent},
+    { path: 'cambiocita', component: CambiarcitaComponent},
     { path: '**', pathMatch: 'full', redirectTo:'login' },
    
 

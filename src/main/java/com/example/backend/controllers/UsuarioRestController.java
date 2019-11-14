@@ -107,7 +107,7 @@ public class UsuarioRestController {
 
     @GetMapping("/usuarios")
     public List<Usuario> getAllUsers() {
-	return usuarioService.findAll();
+    	return usuarioService.findAll();
     }
     
     @GetMapping("/usuarios/{id}")
@@ -132,16 +132,20 @@ public class UsuarioRestController {
 		password = encriptar(password);
 		for (Usuario u : listaUsuarios) {
 		    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
-			u.setDni(desencriptar(u.getDni()));
-			u.setNombre(desencriptar(u.getNombre()));
-			u.setApellidos(desencriptar(u.getApellidos()));
-			u.setTelefono(desencriptar(u.getTelefono()));
-			u.setEmail(desencriptar(u.getEmail()));
-			u.setDireccion(desencriptar(u.getDireccion()));
-			u.setTipo(desencriptar(u.getTipo()));
-			u.setPassword(desencriptar(u.getPassword()));
-			u.setSexo(desencriptar(u.getSexo()));
-			respuestaLogin.setUsuario(u);
+		    	u.setDni(desencriptar(u.getDni()));
+				u.setNombre(desencriptar(u.getNombre()));
+				u.setApellidos(desencriptar(u.getApellidos()));
+				u.setTelefono(desencriptar(u.getTelefono()));
+				u.setEmail(desencriptar(u.getEmail()));
+				u.setDireccion(desencriptar(u.getDireccion()));
+				u.setTipo(desencriptar(u.getTipo()));
+				u.setPassword(desencriptar(u.getPassword()));
+				u.setSexo(desencriptar(u.getSexo()));
+				u.setMedico(desencriptar(u.getMedico()));
+				u.setLocalidad(desencriptar(u.getLocalidad()));
+				u.setEspecialidad(desencriptar(u.getEspecialidad()));
+				u.setCentroMedico(desencriptar(u.getCentroMedico()));
+				respuestaLogin.setUsuario(u);
 		    	respuestaLogin.setLoginPasado(true); 
 		    	break;
 		    } else {
@@ -157,6 +161,7 @@ public class UsuarioRestController {
      * @param usuario
      * @return
      */
+    // TODO Encriptar los dotos que faltan
     @PostMapping("/usuarios")
     public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) {
 		usuario.set_id(ObjectId.get());
@@ -170,6 +175,10 @@ public class UsuarioRestController {
 		usuario.setTipo(encriptar(usuario.getTipo()));
 		usuario.setPassword(encriptar(usuario.getPassword()));
 		usuario.setSexo(encriptar(usuario.getSexo()));
+		usuario.setMedico(encriptar(usuario.getMedico()));
+		usuario.setLocalidad(encriptar(usuario.getLocalidad()));
+		usuario.setEspecialidad(encriptar(usuario.getEspecialidad()));
+		usuario.setCentroMedico(encriptar(usuario.getCentroMedico()));
 		usuarioService.saveUser(usuario);
 		return usuario;
     }
@@ -193,7 +202,7 @@ public class UsuarioRestController {
      * @param teléfono
      * @param modificarDatosContacto
      */
-    @PutMapping("/usuarios/{id}")
+    @PutMapping("/usuarios/datosContacto/{id}")
     public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) {
     	usuario.set_id(id);
 		addKey(clave);

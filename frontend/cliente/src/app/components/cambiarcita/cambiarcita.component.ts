@@ -3,10 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UtilsService } from 'src/app/services/utils.service';
 import { CitaService } from 'src/app/services/cita.service';
 import { Cita } from 'src/app/entity/Cita';
-import { RespuestaCitasPaciente } from 'src/app/respuesta/respuesta-citas-paciente';
 import Swal from 'sweetalert2';
 import { Usuario } from 'src/app/entity/Usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { CookieService } from 'ngx-cookie-service';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-cambiarcita',
@@ -15,34 +16,19 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class CambiarcitaComponent implements OnInit {
 
-  respuestaCitasPaciente: RespuestaCitasPaciente = new RespuestaCitasPaciente;
   cita: Cita = new Cita;
   usuario: Usuario = new Usuario;
-  idCita: string;
-  idUsuario: string;
 
   constructor(private router:Router, 
               private citaService: CitaService,
-              private usuarioService: UsuarioService,
-              private utilsService: UtilsService,
-              private activateRoute: ActivatedRoute) { 
+              private cookieService: CookieService) { 
                 
               }
 
   ngOnInit() {
-    this.activateRoute.params.subscribe(params => {
-      console.log(params);
-      this.idCita = params['idCita'];
-      this.idUsuario = params['idUsuario'];
-      if (this.idCita) {
-        this.citaService.getCitasById(this.idCita).subscribe(
-          response => {
-            this.cita = response;
-          }
-        )
-      }
-    });
-
+    this.usuario = JSON.parse(this.cookieService.get('usuario'));
+    this.cita = JSON.parse(this.cookieService.get('cita'));
+    console.log(this.cita);
   }
 
 
@@ -53,9 +39,9 @@ export class CambiarcitaComponent implements OnInit {
     let fecha = new Date(parseInt(diaSeparado[0]),parseInt(diaSeparado[1])-1, parseInt(diaSeparado[2]), parseInt(horaSeparada[0]),parseInt(horaSeparada[1]) )
     if(this.comprobarfecha(fecha)){
       this.cita.fecha = fecha;
-      this.citaService.modifyCita(this.idCita, this.cita).subscribe(
+      this.citaService.modifyCita(this.cita._id, this.cita).subscribe(
         response => {
-          this.router.navigate(['/citas', this.idUsuario])
+          this.router.navigate(['/citas'])
           Swal.fire('Cita modificada', `Cita modificada con éxito!`, 'success');
         }
       );

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
-import { RespuestaCitasPaciente } from '../respuesta/respuesta-citas-paciente';
 import { Cita } from '../entity/Cita';
 
 @Injectable({
@@ -27,9 +26,9 @@ export class CitaService {
   }
 
 
-  getCitasUsuario(id: string): Observable<RespuestaCitasPaciente> {
-    this.tipo_data = '/' + id;
-    return this.httpClient.get<RespuestaCitasPaciente>(this.URL_ENDPOINT + this.tipo_data)
+  getCitasUsuario(dni: string): Observable<Cita[]> {
+    this.tipo_data = '/paciente/' + dni;
+    return this.httpClient.get<Cita[]>(this.URL_ENDPOINT + this.tipo_data)
       .pipe(
         retry(1),
         catchError(this.handleError)

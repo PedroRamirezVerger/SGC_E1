@@ -5,6 +5,7 @@ import { CitaService } from 'src/app/services/cita.service';
 import { Usuario } from 'src/app/entity/Usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
+import { CookieService } from 'ngx-cookie-service';
 //import { timingSafeEqual } from 'crypto';
 
 @Component({
@@ -16,28 +17,25 @@ export class PedircitaComponent implements OnInit {
   especialidadMostrar: boolean = false;
   cita: Cita = new Cita;
   usuario: Usuario = new Usuario;
-  constructor(private router:Router, private citaService : CitaService, private activateRoute: ActivatedRoute, private usuarioService: UsuarioService) { }
-  id:string;
   esMedicoCabecera: boolean;
+
+  constructor(private router:Router, 
+              private citaService : CitaService, 
+              private cookieService: CookieService, 
+              private usuarioService: UsuarioService) { }
+  
   
   ngOnInit() {
-    this.activateRoute.params.subscribe(params => {
-      this.id = params['id'];
-      if (this.id) {
-        this.usuarioService.getUsuarioById(this.id).subscribe(
-          response => {
-            this.usuario = response;
-            console.log(this.usuario);
-          }
-        )
-      }
-    });
+    this.usuario = JSON.parse(this.cookieService.get('usuario'));
+
     let x=document.getElementById("especialistas");
     let y=document.getElementById("medicos");
     x.style.display="none";
     y.style.display="none";
     this.esMedicoCabecera = true;
   }
+
+
   comprobarfecha(fecha:Date){
     let hoy=new Date();
     let v=fecha.toString()==="Invalid Date";
@@ -46,6 +44,8 @@ export class PedircitaComponent implements OnInit {
       return false;
     return true;
   }
+
+
   anadircita(dia: string, hora: string){
     console.log(this.especialidadMostrar);
     let horaSeparada = hora.split(':');
@@ -67,7 +67,7 @@ export class PedircitaComponent implements OnInit {
         console.log(this.cita);
         this.citaService.addCita(this.cita).subscribe(
           response => {
-            this.router.navigate(['/citas', this.usuario._id])
+            this.router.navigate(['/citas'])
             Swal.fire('Nueva cita', `Cita creada con éxito!`, 'success');
           }
         );

@@ -43,9 +43,8 @@ export class LoginComponent implements OnInit {
           console.log(this.respuestaLogin);
           if(this.respuestaLogin.loginPasado){
             Swal.fire('Login correcto', "Ha iniciado sesión", 'success');
-            this.cookieService.set('usuario', JSON.stringify(this.respuestaLogin.usuario._id));
-            console.log(JSON.parse(this.cookieService.get('usuario')));
-            this.router.navigate(['/citas', this.respuestaLogin.usuario._id])
+            this.cookieService.set('usuario', JSON.stringify(this.respuestaLogin.usuario));
+            this.router.navigate(['/citas'])
           } else {
             Swal.fire('Error en los campos', "El DNI y/o la contraseña son incorrectos.", 'error');
           }
