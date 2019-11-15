@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 
 import javax.crypto.BadPaddingException;
@@ -15,9 +16,10 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import com.example.backend.models.entity.Cita;
 import com.example.backend.models.entity.Usuario;
 
-public class Encriptar {
+public class Encriptador {
 	private SecretKey key;
 	private Cipher cipher;
 	private String algoritmo = "AES";
@@ -87,7 +89,7 @@ public class Encriptar {
 		return str;
 	}
 
-	public Usuario encriptarUsuarios(Usuario usuario) throws UnsupportedEncodingException {
+	public void encriptarUsuarios(Usuario usuario) throws UnsupportedEncodingException {
 		addKey(clave);
 		usuario.setDni(encriptar(usuario.getDni()));
 		usuario.setNombre(encriptar(usuario.getNombre()));
@@ -102,11 +104,11 @@ public class Encriptar {
 		usuario.setLocalidad(encriptar(usuario.getLocalidad()));
 		usuario.setEspecialidad(encriptar(usuario.getEspecialidad()));
 		usuario.setCentroMedico(encriptar(usuario.getCentroMedico()));
-		//usuario.setFechaNacimiento(encriptar(usuario.getFechaNacimiento().toString()));
-		return usuario;
+		// usuario.setFechaNacimiento(encriptar(usuario.getFechaNacimiento().toString()));
 	}
 
-	public Usuario desencriptarUsuarios(Usuario usuario) throws UnsupportedEncodingException {
+	public void desencriptarUsuarios(Usuario usuario) throws UnsupportedEncodingException {
+		addKey(clave);
 		usuario.setDni(desencriptar(usuario.getDni()));
 		usuario.setNombre(desencriptar(usuario.getNombre()));
 		usuario.setApellidos(desencriptar(usuario.getApellidos()));
@@ -120,7 +122,64 @@ public class Encriptar {
 		usuario.setLocalidad(desencriptar(usuario.getLocalidad()));
 		usuario.setEspecialidad(desencriptar(usuario.getEspecialidad()));
 		usuario.setCentroMedico(desencriptar(usuario.getCentroMedico()));
-		return usuario;
 
+	}
+
+	public void encriptarContraseña(Usuario usuario) throws UnsupportedEncodingException {
+		addKey(clave);
+		usuario.setPassword(encriptar(usuario.getPassword()));
+	}
+
+	public void encriptarDatosContacto(Usuario usuario) throws UnsupportedEncodingException {
+		addKey(clave);
+		usuario.setTelefono(encriptar(usuario.getTelefono()));
+		usuario.setEmail(encriptar(usuario.getEmail()));
+		usuario.setDireccion(encriptar(usuario.getDireccion()));
+	}
+
+	public void encriptarDatosPersonales(Usuario usuario) throws UnsupportedEncodingException {
+		addKey(clave);
+		usuario.setNombre(encriptar(usuario.getNombre()));
+		usuario.setApellidos(encriptar(usuario.getApellidos()));
+		usuario.setSexo(encriptar(usuario.getSexo()));
+		usuario.setTipo(encriptar(usuario.getTipo()));
+	}
+
+	public void desencriptarDatosPersonales(Usuario usuario) throws UnsupportedEncodingException {
+		addKey(clave);
+		usuario.setDni(desencriptar(usuario.getDni()));
+		usuario.setNombre(desencriptar(usuario.getNombre()));
+		usuario.setApellidos(desencriptar(usuario.getApellidos()));
+		usuario.setSexo(desencriptar(usuario.getSexo()));
+		usuario.setTipo(desencriptar(usuario.getTipo()));
+	}
+
+	public String encriptarDni(String dni) throws UnsupportedEncodingException {
+		addKey(clave);
+		dni = encriptar(dni);
+		return dni;
+	}
+
+	public String encriptarPassword(String password) throws UnsupportedEncodingException {
+		addKey(clave);
+		password = encriptar(password);
+		return password;
+	}
+
+	public void encriptarCitas(Cita cita) throws UnsupportedEncodingException {
+		cita.setDniPaciente(encriptar(cita.getDniPaciente()));
+		cita.setDniMedico(encriptar(cita.getDniMedico()));
+		//cita.getFecha().toString();
+		//cita.setFecha(encriptar(cita.getFecha().toString()));
+		cita.setConsulta(encriptar(cita.getConsulta()));
+		cita.setEspecialidad(encriptar(cita.getEspecialidad()));
+	}
+	
+	public void desencriptarCitas(Cita cita) throws UnsupportedEncodingException {
+		cita.setDniPaciente(desencriptar(cita.getDniPaciente()));
+		cita.setDniMedico(desencriptar(cita.getDniMedico()));
+		cita.setConsulta(desencriptar(cita.getConsulta()));
+		cita.setEspecialidad(desencriptar(cita.getEspecialidad()));
+		
 	}
 }

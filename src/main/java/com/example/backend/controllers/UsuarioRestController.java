@@ -33,7 +33,7 @@ import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaLogin;
 import com.example.backend.models.respuesta.RespuestaUsuariosGestor;
 import com.example.backend.models.services.IUsuarioService;
-import com.example.backend.models.utiles.Encriptar;
+import com.example.backend.models.utiles.Encriptador;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
 @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
@@ -43,25 +43,15 @@ public class UsuarioRestController {
 
     @Autowired
     private IUsuarioService usuarioService;
-    private Encriptar encriptado;
+    private Encriptador encriptador;
     
-
-    public Usuario desencriptarUsuario(Usuario usuario) throws UnsupportedEncodingException {
-	addKey(clave);
-	usuario.setDni(desencriptar(usuario.getDni()));
-	usuario.setNombre(desencriptar(usuario.getNombre()));
-	usuario.setApellidos(desencriptar(usuario.getApellidos()));
-	usuario.setSexo(desencriptar(usuario.getSexo()));
-	usuario.setTipo(desencriptar(usuario.getTipo()));
-	return usuario;
-    }
 
     @GetMapping("/usuarios")
     public List<Usuario> getAllUsers() throws UnsupportedEncodingException {
 		List<Usuario> listaUsuarios = usuarioService.findAll();
 		List<Usuario> listaUsuariosDesencriptados = new ArrayList<Usuario>();
 		for(Usuario u : listaUsuarios){
-				encriptado.desencriptarUsuarios(u);
+				encriptador.desencriptarUsuarios(u);
 				listaUsuariosDesencriptados.add(u);
 		}
     	return listaUsuariosDesencriptados;
@@ -84,24 +74,11 @@ public class UsuarioRestController {
     public RespuestaLogin validateLogin(@PathVariable("dni") String dni, @PathVariable("password") String password) throws UnsupportedEncodingException {
 	RespuestaLogin respuestaLogin = new RespuestaLogin();
 	List<Usuario> listaUsuarios = usuarioService.findAll();
-	addKey(clave);
-	dni = encriptar(dni);
-	password = encriptar(password);
+	dni = encriptador.encriptarDni(dni);
+	password = encriptador.encriptarPassword(password);
 	for (Usuario u : listaUsuarios) {
 	    if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
-		u.setDni(desencriptar(u.getDni()));
-		u.setNombre(desencriptar(u.getNombre()));
-		u.setApellidos(desencriptar(u.getApellidos()));
-		u.setTelefono(desencriptar(u.getTelefono()));
-		u.setEmail(desencriptar(u.getEmail()));
-		u.setDireccion(desencriptar(u.getDireccion()));
-		u.setTipo(desencriptar(u.getTipo()));
-		u.setPassword(desencriptar(u.getPassword()));
-		u.setSexo(desencriptar(u.getSexo()));
-		u.setMedico(desencriptar(u.getMedico()));
-		u.setLocalidad(desencriptar(u.getLocalidad()));
-		u.setEspecialidad(desencriptar(u.getEspecialidad()));
-		u.setCentroMedico(desencriptar(u.getCentroMedico()));
+		encriptador.desencriptarUsuarios(u);
 		respuestaLogin.setUsuario(u);
 		respuestaLogin.setLoginPasado(true);
 		break;
@@ -119,11 +96,11 @@ public class UsuarioRestController {
      * @return
      * @throws UnsupportedEncodingException
      */
-    // TODO Encriptar los dotos que faltan
+    // TODO Encriptar los datos que faltan
     @PostMapping("/usuarios")
     public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 	usuario.set_id(ObjectId.get());
-	encriptado.encriptarUsuarios(usuario);
+	encriptador.encriptarUsuarios(usuario);
 	usuarioService.saveUser(usuario);
 	return usuario;
     }
@@ -138,8 +115,7 @@ public class UsuarioRestController {
     public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 	    throws UnsupportedEncodingException {
 	usuario.set_id(id);
-	addKey(clave);
-	usuario.setPassword(encriptar(usuario.getPassword()));
+	encriptador.encriptarContraseña(usuario);
 	usuarioService.saveUser(usuario);
 	return usuario;
 
@@ -155,10 +131,7 @@ public class UsuarioRestController {
     @PutMapping("/usuarios/datosContacto/{id}")
     public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 	usuario.set_id(id);
-	addKey(clave);
-	usuario.setTelefono(encriptar(usuario.getTelefono()));
-	usuario.setEmail(encriptar(usuario.getEmail()));
-	usuario.setDireccion(encriptar(usuario.getDireccion()));
+	encriptador.encriptarDatosContacto(usuario);
 	usuarioService.saveUser(usuario);
 	return usuario;
     }
@@ -173,11 +146,7 @@ public class UsuarioRestController {
     public Usuario modificarDatosPersonales(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 	    throws UnsupportedEncodingException {
 	usuario.set_id(id);
-	addKey(clave);
-	usuario.setNombre(encriptar(usuario.getNombre()));
-	usuario.setApellidos(encriptar(usuario.getApellidos()));
-	usuario.setSexo(encriptar(usuario.getSexo()));
-	usuario.setTipo(encriptar(usuario.getTipo()));
+	encriptador.encriptarDatosPersonales(usuario);
 	usuarioService.saveUser(usuario);
 	return usuario;
 
