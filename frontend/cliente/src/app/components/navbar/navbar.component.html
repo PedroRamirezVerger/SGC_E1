@@ -11,7 +11,7 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button *ngIf="!loginPasado" class="btn btn-light my-2 my-sm-0" type="submit">LogOut</button>
+            <button *ngIf="!loginPasado" (click)="cerrarsesion($event)" class="btn btn-light my-2 my-sm-0" type="submit">LogOut</button>
         </form>
     </div>
 </nav>

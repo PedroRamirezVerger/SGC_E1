@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,8 @@ export class NavbarComponent implements OnInit {
 
   
   constructor(private router:Router,
-              private activateRoute: ActivatedRoute) {
+              private activateRoute: ActivatedRoute,
+              private cookieService: CookieService) {
 
   }
 
@@ -28,6 +30,10 @@ export class NavbarComponent implements OnInit {
       else
         this.loginPasado = false;
     });
+  }
+  cerrarsesion(){
+    this.cookieService.delete('usuario')
+    this.router.navigate(['login'])
   }
 
 }
