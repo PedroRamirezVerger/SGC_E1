@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Cita;
 import com.example.backend.models.entity.Usuario;
-import com.example.backend.models.respuesta.RespuestaCitasUsuario;
 import com.example.backend.models.services.ICitaService;
 import com.example.backend.models.services.IUsuarioService;
 
