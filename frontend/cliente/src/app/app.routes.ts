@@ -22,7 +22,7 @@ const APP_ROUTES: Routes = [
     { path: 'cambiocontrasena', component: CambiocontrasenaComponent},
     { path: 'cambiocita', component: CambiarcitaComponent},
     { path: 'panelgestor', component:PanelgestorComponent},
-    { path: 'cambiodatospersonales/:id', component: CambiodatospersonalesComponent},
+    { path: 'cambiodatospersonales', component: CambiodatospersonalesComponent},
     { path: '**', pathMatch: 'full', redirectTo:'login' },
    
 

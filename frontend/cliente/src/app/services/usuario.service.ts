@@ -5,7 +5,6 @@ import { retry, catchError } from 'rxjs/operators';
 import { Usuario } from '../entity/Usuario';
 import Swal from 'sweetalert2'
 import { RespuestLogin } from '../respuesta/respuesta-login';
-import { RespuestaUsuariosGestor} from '../respuesta/respuesta-usuarios-gestor';
 
 @Injectable({
   providedIn: 'root'
@@ -27,9 +26,9 @@ export class UsuarioService {
   constructor(private httpClient: HttpClient) { 
 
   }
-  getAllUsers(): Observable<RespuestaUsuariosGestor>{
+  getAllUsers(): Observable<Usuario[]>{
     this.tipo_data = '/';
-    return this.httpClient.get<RespuestaUsuariosGestor>(this.URL_ENDPOINT + this.tipo_data)
+    return this.httpClient.get<Usuario[]>(this.URL_ENDPOINT + this.tipo_data)
       .pipe(
         retry(1),
         catchError(this.handleLoginError)
@@ -71,8 +70,8 @@ export class UsuarioService {
       )
   }
   
-  modificarDatosPersonalesUsuario(id:string, usuario:Usuario): Observable<Usuario> {
-    this.tipo_data = '/datospersonales/' + id;
+  modificarDatosPersonalesUsuario(usuario:Usuario): Observable<Usuario> {
+    this.tipo_data = '/datospersonales/' + usuario._id;
     return this.httpClient.put<Usuario>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(usuario), this.httpOptions)
       .pipe(
         retry(1),

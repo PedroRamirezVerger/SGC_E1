@@ -31,7 +31,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaLogin;
-import com.example.backend.models.respuesta.RespuestaUsuariosGestor;
 import com.example.backend.models.services.IUsuarioService;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
@@ -126,21 +125,8 @@ public class UsuarioRestController {
 		List<Usuario> listaUsuarios = usuarioService.findAll();
 		List<Usuario> listaUsuariosDesencriptados = new ArrayList<Usuario>();
 		for(Usuario u : listaUsuarios){
-			u.setDni(desencriptar(u.getDni()));
-			// TODO crear metodo para encriptar y desencriptar usuarios
-				u.setNombre(desencriptar(u.getNombre()));
-				u.setApellidos(desencriptar(u.getApellidos()));
-				u.setTelefono(desencriptar(u.getTelefono()));
-				u.setEmail(desencriptar(u.getEmail()));
-				u.setDireccion(desencriptar(u.getDireccion()));
-				u.setTipo(desencriptar(u.getTipo()));
-				u.setPassword(desencriptar(u.getPassword()));
-				u.setSexo(desencriptar(u.getSexo()));
-				u.setMedico(desencriptar(u.getMedico()));
-				u.setLocalidad(desencriptar(u.getLocalidad()));
-				u.setEspecialidad(desencriptar(u.getEspecialidad()));
-				u.setCentroMedico(desencriptar(u.getCentroMedico()));
-				listaUsuariosDesencriptados.add(u);
+			u=desencriptarUsuario(u);
+			listaUsuariosDesencriptados.add(u);
 		}
     	return listaUsuariosDesencriptados;
     }
@@ -263,8 +249,8 @@ public class UsuarioRestController {
     @PutMapping("/usuarios/datospersonales/{id}")
     public Usuario modificarDatosPersonales(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 	    throws UnsupportedEncodingException {
-	usuario.set_id(id);
 	addKey(clave);
+	usuario.setDni(encriptar(usuario.getDni()));
 	usuario.setNombre(encriptar(usuario.getNombre()));
 	usuario.setApellidos(encriptar(usuario.getApellidos()));
 	usuario.setSexo(encriptar(usuario.getSexo()));
