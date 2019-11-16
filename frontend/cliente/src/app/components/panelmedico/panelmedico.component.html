@@ -1,0 +1,21 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="width: 200px;">Fecha</th>
+            <th scope="col" style="width: 100px;">Nombre</th>
+            <th scope="col" style="width: 300px;">Apellidos</th>
+            <th scope="col" style="width: 100px;">Consulta</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cita of Citas">
+            <td scope="row">{{cita.Fecha | date:"short"}}</td>
+            <td>{{cita.dniPaciente}}</td>
+        <!--<td>{{cita.Nombre}}</td>
+            <td>{{cita.Apellidos}}</td> !-->
+            <td>{{cita.Consulta}}</td>
+        </tr>
+    
+    </tbody>
+    <br>
+</table>

@@ -59,6 +59,11 @@ public class CitaRestController {
 	public List<Cita> getCitasPacienteByid(@PathVariable ("dni") String dni){
 		return citaService.findCitasByDniPaciente(dni);
 	}
+
+	@GetMapping("/citas/medico/{dni}")
+	public List<Cita> getCitasMedicoByid(@PathVariable ("dni") String dni){
+		return citaService.findCitasByDniMedico(dni);
+	}
 	
 	/**
      * add citas a un usuario
