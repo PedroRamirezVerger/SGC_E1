@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaLogin;
 import com.example.backend.models.services.IUsuarioService;
+import com.example.backend.models.utiles.Encriptador;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
 @CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
@@ -46,141 +47,19 @@ public class UsuarioRestController {
 	private String algoritmo = "AES";
 	private int keysize = 16;
 	private String clave = "seguridad";
-
-	/**
-	 * Crea la Llave para encriptar/desencriptar
-	 * 
-	 * @param String value
-	 */
-	public void addKey(String value) {
-		byte[] valuebytes = value.getBytes();
-		key = new SecretKeySpec(Arrays.copyOf(valuebytes, keysize), algoritmo);
-	}
-
-	public String encriptar(String texto) throws UnsupportedEncodingException {
-		String value = "";
-		try {
-			cipher = Cipher.getInstance(algoritmo);
-			cipher.init(Cipher.ENCRYPT_MODE, key);
-			byte[] textobytes = texto.getBytes("utf-8");
-			byte[] cipherbytes = cipher.doFinal(textobytes);
-			// value = new BASE64Encoder().encode(cipherbytes);
-			value = Base64.getEncoder().encodeToString(cipherbytes);
-		} catch (NoSuchAlgorithmException ex) {
-			System.err.println(ex.getMessage());
-		} catch (NoSuchPaddingException ex) {
-			System.err.println(ex.getMessage());
-		} catch (InvalidKeyException ex) {
-			System.err.println(ex.getMessage());
-		} catch (IllegalBlockSizeException ex) {
-			System.err.println(ex.getMessage());
-		} catch (BadPaddingException ex) {
-			System.err.println(ex.getMessage());
-		}
-		return value;
-	}
-
-	/**
-	 * Metodo para desencriptar un texto
-	 * 
-	 * @param texto Texto encriptado
-	 * @return String texto desencriptado
-	 * @throws UnsupportedEncodingException
-	 */
-	public String desencriptar(String texto) throws UnsupportedEncodingException {
-		String str = "";
-		try {
-			// byte[] value = new BASE64Decoder().decodeBuffer(texto);
-			byte[] value = Base64.getDecoder().decode(texto.getBytes("utf-8"));
-			cipher = Cipher.getInstance(algoritmo);
-			cipher.init(Cipher.DECRYPT_MODE, key);
-			byte[] cipherbytes = cipher.doFinal(value);
-			str = new String(cipherbytes);
-		} catch (InvalidKeyException ex) {
-			System.err.println(ex.getMessage());
-		} catch (IllegalBlockSizeException ex) {
-			System.err.println(ex.getMessage());
-		} catch (BadPaddingException ex) {
-			System.err.println(ex.getMessage());
-		} catch (NoSuchAlgorithmException ex) {
-			System.err.println(ex.getMessage());
-		} catch (NoSuchPaddingException ex) {
-			System.err.println(ex.getMessage());
-		}
-		return str;
-	}
-
-	public Usuario encriptarUsuario(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setDni(encriptar(usuario.getDni()));
-		usuario.setNombre(encriptar(usuario.getNombre()));
-		usuario.setApellidos(encriptar(usuario.getApellidos()));
-		usuario.setTelefono(encriptar(usuario.getTelefono()));
-		usuario.setEmail(encriptar(usuario.getEmail()));
-		usuario.setDireccion(encriptar(usuario.getDireccion()));
-		usuario.setTipo(encriptar(usuario.getTipo()));
-		usuario.setPassword(encriptar(usuario.getPassword()));
-		usuario.setSexo(encriptar(usuario.getSexo()));
-		usuario.setMedico(encriptar(usuario.getMedico()));
-		usuario.setLocalidad(encriptar(usuario.getLocalidad()));
-		usuario.setEspecialidad(encriptar(usuario.getEspecialidad()));
-		usuario.setCentroMedico(encriptar(usuario.getCentroMedico()));
-		return usuario;
-
-	}
-
-	public Usuario desencriptarDatosPersonales(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setDni(desencriptar(usuario.getDni()));
-		usuario.setNombre(desencriptar(usuario.getNombre()));
-		usuario.setApellidos(desencriptar(usuario.getApellidos()));
-		usuario.setSexo(desencriptar(usuario.getSexo()));
-		usuario.setTipo(desencriptar(usuario.getTipo()));
-		return usuario;
-	}
 	
-	public Usuario desencriptarUsuario(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setDni(desencriptar(usuario.getDni()));
-		usuario.setNombre(desencriptar(usuario.getNombre()));
-		usuario.setApellidos(desencriptar(usuario.getApellidos()));
-		usuario.setTelefono(desencriptar(usuario.getTelefono()));
-		usuario.setEmail(desencriptar(usuario.getEmail()));
-		usuario.setDireccion(desencriptar(usuario.getDireccion()));
-		usuario.setTipo(desencriptar(usuario.getTipo()));
-		usuario.setPassword(desencriptar(usuario.getPassword()));
-		usuario.setSexo(desencriptar(usuario.getSexo()));
-		usuario.setMedico(desencriptar(usuario.getMedico()));
-		usuario.setLocalidad(desencriptar(usuario.getLocalidad()));
-		usuario.setEspecialidad(desencriptar(usuario.getEspecialidad()));
-		usuario.setCentroMedico(desencriptar(usuario.getCentroMedico()));
-		return usuario;
-		
-	}
-	public Usuario encriptarDatosPersonales(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setDni(encriptar(usuario.getDni()));
-		usuario.setNombre(encriptar(usuario.getNombre()));
-		usuario.setApellidos(encriptar(usuario.getApellidos()));
-		usuario.setSexo(encriptar(usuario.getSexo()));
-		usuario.setTipo(encriptar(usuario.getTipo()));
-		return usuario;
-	}
+	private Encriptador encriptador=new Encriptador(key,cipher,algoritmo,keysize,clave);
 
-	public Usuario encriptarDatosContacto(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setTelefono(encriptar(usuario.getTelefono()));
-		usuario.setEmail(encriptar(usuario.getEmail()));
-		usuario.setDireccion(encriptar(usuario.getDireccion()));
-		return usuario;
-	}
+	
+
+	
 	
 	@GetMapping("/usuarios")
 	public List<Usuario> getAllUsers() throws UnsupportedEncodingException {
 		List<Usuario> listaUsuarios = usuarioService.findAll();
 		List<Usuario> listaUsuariosDesencriptados = new ArrayList<Usuario>();
 		for (Usuario u : listaUsuarios) {
-			u = desencriptarDatosPersonales(u);
+			u = encriptador.desencriptarDatosPersonales(u);
 			listaUsuariosDesencriptados.add(u);
 		}
 		return listaUsuariosDesencriptados;
@@ -204,12 +83,11 @@ public class UsuarioRestController {
 			throws UnsupportedEncodingException {
 		RespuestaLogin respuestaLogin = new RespuestaLogin();
 		List<Usuario> listaUsuarios = usuarioService.findAll();
-		addKey(clave);
-		dni = encriptar(dni);
-		password = encriptar(password);
+		dni = encriptador.encriptarDni(dni);
+		password = encriptador.encriptarPassword(password);
 		for (Usuario u : listaUsuarios) {
 			if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
-				
+				u=encriptador.desencriptarUsuario(u);
 				respuestaLogin.setUsuario(u);
 				respuestaLogin.setLoginPasado(true);
 				break;
@@ -231,7 +109,7 @@ public class UsuarioRestController {
 	@PostMapping("/usuarios")
 	public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 		usuario.set_id(ObjectId.get());
-		encriptarUsuario(usuario);
+		usuario=encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 	}
@@ -246,8 +124,7 @@ public class UsuarioRestController {
 	public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
 		usuario.set_id(id);
-		addKey(clave);
-		usuario.setPassword(encriptar(usuario.getPassword()));
+		usuario.setPassword(encriptador.encriptarPassword(usuario.getPassword()));
 		usuarioService.saveUser(usuario);
 		return usuario;
 
@@ -264,7 +141,7 @@ public class UsuarioRestController {
 	public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
 		usuario.set_id(id);
-		encriptarDatosContacto(usuario);
+		encriptador.encriptarDatosContacto(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 	}
@@ -278,7 +155,7 @@ public class UsuarioRestController {
 	@PutMapping("/usuarios/datospersonales/{id}")
 	public Usuario modificarDatosPersonales(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
-		encriptarDatosPersonales(usuario);
+		encriptador.encriptarDatosPersonales(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 
