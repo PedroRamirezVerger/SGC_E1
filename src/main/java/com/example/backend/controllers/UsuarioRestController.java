@@ -59,7 +59,7 @@ public class UsuarioRestController {
 		List<Usuario> listaUsuarios = usuarioService.findAll();
 		List<Usuario> listaUsuariosDesencriptados = new ArrayList<Usuario>();
 		for (Usuario u : listaUsuarios) {
-			u = encriptador.desencriptarDatosPersonales(u);
+			u = encriptador.desencriptarUsuario(u);
 			listaUsuariosDesencriptados.add(u);
 		}
 		return listaUsuariosDesencriptados;
@@ -83,8 +83,10 @@ public class UsuarioRestController {
 			throws UnsupportedEncodingException {
 		RespuestaLogin respuestaLogin = new RespuestaLogin();
 		List<Usuario> listaUsuarios = usuarioService.findAll();
+		
 		dni = encriptador.encriptarDni(dni);
 		password = encriptador.encriptarPassword(password);
+		
 		for (Usuario u : listaUsuarios) {
 			if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
 				u=encriptador.desencriptarUsuario(u);
@@ -124,6 +126,7 @@ public class UsuarioRestController {
 	public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
 		usuario.set_id(id);
+		usuario=encriptador.encriptarUsuario(usuario);
 		usuario.setPassword(encriptador.encriptarPassword(usuario.getPassword()));
 		usuarioService.saveUser(usuario);
 		return usuario;
@@ -141,7 +144,7 @@ public class UsuarioRestController {
 	public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
 		usuario.set_id(id);
-		encriptador.encriptarDatosContacto(usuario);
+		usuario=encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 	}
@@ -155,7 +158,7 @@ public class UsuarioRestController {
 	@PutMapping("/usuarios/datospersonales/{id}")
 	public Usuario modificarDatosPersonales(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
-		encriptador.encriptarDatosPersonales(usuario);
+		usuario=encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 

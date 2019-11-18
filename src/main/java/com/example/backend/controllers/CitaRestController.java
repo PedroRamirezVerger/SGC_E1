@@ -1,7 +1,11 @@
 package com.example.backend.controllers;
 
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
 import javax.validation.Valid;
 
 import org.bson.types.ObjectId;
@@ -20,6 +24,7 @@ import com.example.backend.models.entity.Cita;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.ICitaService;
 import com.example.backend.models.services.IUsuarioService;
+import com.example.backend.models.utiles.Encriptador;
 
 
 
@@ -34,6 +39,14 @@ public class CitaRestController {
 	
 	@Autowired 
 	private IUsuarioService usuarioService;
+	
+	private SecretKey key;
+	private Cipher cipher;
+	private String algoritmo = "AES";
+	private int keysize = 16;
+	private String clave = "seguridad";
+	
+	private Encriptador encriptador=new Encriptador(key,cipher,algoritmo,keysize,clave);
 	
 	@GetMapping("/citas")
 	public List<Cita> getAllCitas() {
@@ -54,20 +67,29 @@ public class CitaRestController {
      * obtener las citas del usuario en concreto
      * @param id
      * @return
+	 * @throws UnsupportedEncodingException 
      */
 	@GetMapping("/citas/paciente/{dni}")
-	public List<Cita> getCitasPacienteByid(@PathVariable ("dni") String dni){
-		return citaService.findCitasByDniPaciente(dni);
+	public List<Cita> getCitasPacienteByid(@PathVariable ("dni") String dni) throws UnsupportedEncodingException{
+		List <Cita> listaCitas=new ArrayList<Cita>();
+		dni=encriptador.encriptarDni(dni);
+		listaCitas= citaService.findCitasByDniPaciente(dni);
+		for(Cita cita : listaCitas) {
+			encriptador.desencriptarCita(cita);
+		}
+		return listaCitas;
 	}
 	
 	/**
      * add citas a un usuario
      * @param cita
      * @return
+	 * @throws UnsupportedEncodingException 
      */
 	@PostMapping("/citas")
-	public Cita addCita(@Valid @RequestBody Cita cita) {
+	public Cita addCita(@Valid @RequestBody Cita cita) throws UnsupportedEncodingException {
 		cita.set_id(ObjectId.get());
+		encriptador.encriptarCita(cita);
 		citaService.saveCita(cita);
 		return cita;
 	}
@@ -85,10 +107,12 @@ public class CitaRestController {
      * Modificar la fecha de la cita
      * @param teléfono
      * @param modificarDatosContacto
+     * @throws UnsupportedEncodingException 
      */
     @PutMapping("/citas/{id}")
-    public Cita modificarFechaCita(@PathVariable("id") ObjectId id, @Valid @RequestBody Cita cita) {
+    public Cita modificarFechaCita(@PathVariable("id") ObjectId id, @Valid @RequestBody Cita cita) throws UnsupportedEncodingException {
     	cita.set_id(id);
+    	cita=encriptador.encriptarCita(cita);
     	citaService.saveCita(cita);
     	return cita;
     	

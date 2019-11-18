@@ -116,15 +116,6 @@ public class Encriptador {
 
 	}
 
-	public Usuario desencriptarDatosPersonales(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setDni(desencriptar(usuario.getDni()));
-		usuario.setNombre(desencriptar(usuario.getNombre()));
-		usuario.setApellidos(desencriptar(usuario.getApellidos()));
-		usuario.setSexo(desencriptar(usuario.getSexo()));
-		usuario.setTipo(desencriptar(usuario.getTipo()));
-		return usuario;
-	}
 
 	public Usuario desencriptarUsuario(Usuario usuario) throws UnsupportedEncodingException {
 		addKey(clave);
@@ -145,23 +136,6 @@ public class Encriptador {
 
 	}
 
-	public Usuario encriptarDatosPersonales(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setDni(encriptar(usuario.getDni()));
-		usuario.setNombre(encriptar(usuario.getNombre()));
-		usuario.setApellidos(encriptar(usuario.getApellidos()));
-		usuario.setSexo(encriptar(usuario.getSexo()));
-		usuario.setTipo(encriptar(usuario.getTipo()));
-		return usuario;
-	}
-
-	public Usuario encriptarDatosContacto(Usuario usuario) throws UnsupportedEncodingException {
-		addKey(clave);
-		usuario.setTelefono(encriptar(usuario.getTelefono()));
-		usuario.setEmail(encriptar(usuario.getEmail()));
-		usuario.setDireccion(encriptar(usuario.getDireccion()));
-		return usuario;
-	}
 
 	public String encriptarDni(String dni) throws UnsupportedEncodingException {
 		addKey(clave);
