@@ -13,8 +13,10 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import javax.validation.Valid;
 
 import com.example.backend.models.entity.Cita;
+import com.example.backend.models.entity.Medico;
 import com.example.backend.models.entity.Usuario;
 
 public class Encriptador {
@@ -110,7 +112,6 @@ public class Encriptador {
 		usuario.setSexo(encriptar(usuario.getSexo()));
 		usuario.setMedico(encriptar(usuario.getMedico()));
 		usuario.setLocalidad(encriptar(usuario.getLocalidad()));
-		usuario.setEspecialidad(encriptar(usuario.getEspecialidad()));
 		usuario.setCentroMedico(encriptar(usuario.getCentroMedico()));
 		return usuario;
 
@@ -130,7 +131,6 @@ public class Encriptador {
 		usuario.setSexo(desencriptar(usuario.getSexo()));
 		usuario.setMedico(desencriptar(usuario.getMedico()));
 		usuario.setLocalidad(desencriptar(usuario.getLocalidad()));
-		usuario.setEspecialidad(desencriptar(usuario.getEspecialidad()));
 		usuario.setCentroMedico(desencriptar(usuario.getCentroMedico()));
 		return usuario;
 
@@ -167,5 +167,24 @@ public class Encriptador {
 		cita.setConsulta(desencriptar(cita.getConsulta()));
 		cita.setEspecialidad(desencriptar(cita.getEspecialidad()));
 		return cita;
+	}
+
+	public @Valid Medico encriptarMedico(@Valid Medico medico) throws UnsupportedEncodingException {
+		addKey(clave);
+		medico.setDni(desencriptar(medico.getDni()));
+		medico.setNombre(desencriptar(medico.getNombre()));
+		medico.setApellidos(desencriptar(medico.getApellidos()));
+		medico.setTelefono(desencriptar(medico.getTelefono()));
+		medico.setEmail(desencriptar(medico.getEmail()));
+		medico.setDireccion(desencriptar(medico.getDireccion()));
+		medico.setTipo(desencriptar(medico.getTipo()));
+		medico.setPassword(desencriptar(medico.getPassword()));
+		medico.setSexo(desencriptar(medico.getSexo()));
+		medico.setMedico(desencriptar(medico.getMedico()));
+		medico.setLocalidad(desencriptar(medico.getLocalidad()));
+		medico.setEspecialidad(desencriptar(medico.getEspecialidad()));
+		medico.setCentroMedico(desencriptar(medico.getCentroMedico()));
+		return medico;
+
 	}
 }

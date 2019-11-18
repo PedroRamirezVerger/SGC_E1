@@ -33,6 +33,7 @@ export class CitasComponent implements OnInit {
   ngOnInit() {
     this.usuario = JSON.parse(this.cookieService.get('usuario'));
     console.log(JSON.parse(this.cookieService.get('usuario')));
+    
     this.mostrarListaCitas();
   }
 

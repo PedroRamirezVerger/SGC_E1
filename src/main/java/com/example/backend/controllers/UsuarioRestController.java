@@ -125,15 +125,11 @@ public class UsuarioRestController {
     @PutMapping("/usuarios/registrarMedico/{id}")
     public Medico registrarMedico(@PathVariable("id") ObjectId id, @Valid @RequestBody Medico medico)
 	    throws UnsupportedEncodingException {
- 
     	medico.set_id(id);
-		addKey(clave);
-		medico.setTipo(encriptar("medico"));
-		
-		//medico.setEspecialidad(encriptar(medico.getEspecialidad()));
-		//medico.setCentroMedico(encriptar(medico.getCentroMedico()));
-		medico.setEspecialidad(encriptar("urologia"));
-		//medico.setCentroMedico(encriptar("Centro Ultra Salud"));
+    	medico.setTipo("medico");
+    	//coger especialidad desde el front
+		medico.setEspecialidad("urologia");
+    	medico=encriptador.encriptarMedico(medico);
 		usuarioService.saveUser(medico);
 		return medico;
 
