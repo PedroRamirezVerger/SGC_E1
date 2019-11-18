@@ -35,7 +35,7 @@ export class RegistroComponent implements OnInit {
     this.usuario.tipo = 'Paciente';
     this.usuario.centroMedico = 'Sanitas CR';
     this.usuario.medico = 'Antonio Perez Rodriguez';
-    this.usuario.especialidad = 'Pediatría'
+    //this.usuario.especialidad = 'Pediatría'
 
     if( this.usuario.dni.length === 0 || this.usuario.password.length === 0 || this.usuario.nombre.length === 0 || this.usuario.apellidos.length === 0 || 
         this.usuario.email.length === 0 || this.usuario.telefono.length === 0 || this.usuario.fechaNacimiento === null  || this.usuario.direccion.length === 0 || 

@@ -12,7 +12,6 @@ export class Usuario {
     localidad: string;
     centroMedico: string;
     medico: string;
-    especialidad: string;
     fechaNacimiento: Date;
 
     constructor() {
@@ -28,7 +27,6 @@ export class Usuario {
         this.localidad = "" ;
         this.centroMedico = "" ;
         this.medico = "" ;
-        this.especialidad = "" ;
         this.fechaNacimiento = null;
 
     }

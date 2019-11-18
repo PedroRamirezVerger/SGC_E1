@@ -2,6 +2,7 @@ package com.example.backend.models.services;
 
 import java.util.List;
 
+import com.example.backend.models.entity.Medico;
 import com.example.backend.models.entity.Usuario;
 
 public interface IUsuarioService {
@@ -13,4 +14,5 @@ public interface IUsuarioService {
     public Usuario findUserByDni(String dni);
 
     public void saveUser(Usuario usuario);
+    public void saveMedico(Medico medico);
 }
