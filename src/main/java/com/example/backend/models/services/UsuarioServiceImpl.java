@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.backend.models.dao.IUsuarioDAO;
+import com.example.backend.models.entity.Medico;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.controllers.UsuarioRestController;
 
@@ -34,6 +35,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
     @Override
     public void saveUser(Usuario usuario) {
     	this.usuarioDao.save(usuario);
+    }
+    
+    @Override
+    public void saveMedico(Medico medico) {
+    	this.usuarioDao.save(medico);
     }
 
 	

@@ -3,6 +3,7 @@ import { Observable, throwError, from } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Usuario } from '../entity/Usuario';
+import {Medico} from '../entity/Medico';
 import Swal from 'sweetalert2'
 import { RespuestLogin } from '../respuesta/respuesta-login';
 
@@ -78,7 +79,14 @@ export class UsuarioService {
           catchError(this.handleDatosContactoError)
       )
   }
-
+  modificarMedico(medico:Medico): Observable<Medico> {
+    this.tipo_data = '/registrarMedico/' + medico._id;
+    return this.httpClient.put<Medico>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(medico), this.httpOptions)
+      .pipe(
+        retry(1),
+          catchError(this.handleDatosContactoError)
+      )
+  }
   modificarPassword(id: string, usuario: Usuario): Observable<Usuario> {
     this.tipo_data = '/'+'password/' + id;
     return this.httpClient.put<Usuario>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(usuario), this.httpOptions)

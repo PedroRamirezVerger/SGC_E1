@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.backend.models.entity.Medico;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaLogin;
 import com.example.backend.models.services.IUsuarioService;
@@ -115,6 +116,28 @@ public class UsuarioRestController {
 		usuarioService.saveUser(usuario);
 		return usuario;
 	}
+	/**
+     * Modificar un usuario para hacerlo médico
+     * 
+     * @param 
+     * @throws UnsupportedEncodingException
+     */
+    @PutMapping("/usuarios/registrarMedico/{id}")
+    public Medico registrarMedico(@PathVariable("id") ObjectId id, @Valid @RequestBody Medico medico)
+	    throws UnsupportedEncodingException {
+ 
+    	medico.set_id(id);
+		addKey(clave);
+		medico.setTipo(encriptar("medico"));
+		
+		//medico.setEspecialidad(encriptar(medico.getEspecialidad()));
+		//medico.setCentroMedico(encriptar(medico.getCentroMedico()));
+		medico.setEspecialidad(encriptar("urologia"));
+		//medico.setCentroMedico(encriptar("Centro Ultra Salud"));
+		usuarioService.saveUser(medico);
+		return medico;
+
+    }
 
 	/**
 	 * Modificar la contraseña del usuario

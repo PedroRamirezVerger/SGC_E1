@@ -7,6 +7,7 @@ import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/c
 import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambiocontrasena.component';
 import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.component';
 import { PanelgestorComponent } from './components/panelgestor/panelgestor.component';
+import { PanelmedicoComponent } from './components/panelmedico/panelmedico.component';
 import { CambiodatospersonalesComponent } from './components/cambiodatospersonales/cambiodatospersonales.component';
 
 
@@ -22,6 +23,7 @@ const APP_ROUTES: Routes = [
     { path: 'cambiocontrasena', component: CambiocontrasenaComponent},
     { path: 'cambiocita', component: CambiarcitaComponent},
     { path: 'panelgestor', component:PanelgestorComponent},
+    { path: 'panelmedico', component:PanelmedicoComponent},
     { path: 'cambiodatospersonales', component: CambiodatospersonalesComponent},
     { path: '**', pathMatch: 'full', redirectTo:'login' },
    

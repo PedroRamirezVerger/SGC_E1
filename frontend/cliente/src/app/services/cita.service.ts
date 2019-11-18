@@ -35,6 +35,15 @@ export class CitaService {
       )
   }
 
+  getCitasMedico(dni:string): Observable<Cita[]> {
+    this.tipo_data = '/medico/' + dni;
+    return this.httpClient.get<Cita[]>(this.URL_ENDPOINT + this.tipo_data)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
 
   getCitasById(id: string): Observable<Cita> {
     this.tipo_data = '/fecha/' + id;

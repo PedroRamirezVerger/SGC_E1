@@ -42,8 +42,6 @@ public class Usuario {
 
     private String medico;
 
-    private String especialidad;
-
     private Date fechaNacimiento;
 
     public String get_id() {
@@ -150,13 +148,6 @@ public class Usuario {
 	this.medico = medico;
     }
 
-    public String getEspecialidad() {
-	return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-	this.especialidad = especialidad;
-    }
 
     public Date getFechaNacimiento() {
 	return fechaNacimiento;

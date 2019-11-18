@@ -4,6 +4,8 @@ import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { Cita } from 'src/app/entity/Cita';
 import { CitaService } from 'src/app/services/cita.service';
 import { Usuario } from 'src/app/entity/Usuario';
+import { Medico } from 'src/app/entity/Medico';
+import { UsuarioService} from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -19,10 +21,12 @@ export class CitasComponent implements OnInit {
 
   citas: Cita[] = [];
   usuario: Usuario = new Usuario();
+  medico: Medico= new Medico();
 
   constructor(private router:Router,
               private citaService: CitaService,
-              private cookieService: CookieService) {
+              private cookieService: CookieService,
+              private usuarioService: UsuarioService) {
 
   }
 
@@ -66,8 +70,30 @@ export class CitasComponent implements OnInit {
   modificardatoscontacto(){
     this.router.navigate(['/cambiodatoscontacto'])
   }
-
+  modificarMedico(){
+    this.crearmedico();
+    this.usuarioService.modificarMedico(this.medico).subscribe(
+      response => {
+        //Swal.fire('Cita eliminada', `Cita eliminada con éxito!`, 'success');
+      }
+    );
+  }
   cambiarcontrasena(){
     this.router.navigate(['/cambiocontrasena'])
+  }
+  crearmedico(){
+    this.medico._id=this.usuario._id;
+    this.medico.apellidos=this.usuario.apellidos;
+    this.medico.centroMedico=this.usuario.centroMedico;
+    this.medico.direccion=this.usuario.direccion;
+    this.medico.dni=this.usuario.dni;
+    this.medico.email=this.usuario.email;
+    this.medico.fechaNacimiento=this.usuario.fechaNacimiento;
+    this.medico.localidad=this.usuario.localidad;
+    this.medico.medico=this.usuario.medico;
+    this.medico.nombre=this.usuario.nombre;
+    this.medico.password=this.usuario.password;
+    this.medico.sexo=this.usuario.sexo;
+    this.medico.telefono=this.usuario.telefono;
   }
 }

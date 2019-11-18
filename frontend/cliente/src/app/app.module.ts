@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/cambiodatoscontacto.component';
 import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambiocontrasena.component';
 import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.component';
+import { PanelmedicoComponent} from './components/panelmedico/panelmedico.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -48,6 +49,7 @@ import { CookieService } from 'ngx-cookie-service';
     NavbarComponent,
     FooterComponent,
     PanelgestorComponent,
+    PanelmedicoComponent,
     CambiodatospersonalesComponent
   ],
   imports: [
