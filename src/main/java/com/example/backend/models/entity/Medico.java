@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 
-public class Medico extends Usuario { // extends Usuario{
+public class Medico extends Usuario {
 
     private String especialidad;
     //calendario
@@ -14,7 +14,6 @@ public class Medico extends Usuario { // extends Usuario{
 	super();
 	this.especialidad = especialidad;
     }
-
 
 	public Medico() {
 		// TODO Auto-generated constructor stub

@@ -26,7 +26,7 @@ export class CitaService {
   }
 
 
-  getCitasUsuario(dni: string): Observable<Cita[]> {
+  getCitasPaciente(dni: string): Observable<Cita[]> {
     this.tipo_data = '/paciente/' + dni;
     return this.httpClient.get<Cita[]>(this.URL_ENDPOINT + this.tipo_data)
       .pipe(

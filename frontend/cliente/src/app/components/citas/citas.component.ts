@@ -33,19 +33,60 @@ export class CitasComponent implements OnInit {
   ngOnInit() {
     this.usuario = JSON.parse(this.cookieService.get('usuario'));
     console.log(JSON.parse(this.cookieService.get('usuario')));
-    
-    this.mostrarListaCitas();
+    this.habilitarBotones(this.usuario.tipo);
+    this.mostrarListaCitas(this.usuario.tipo);
   }
 
-  mostrarListaCitas(){
-    this.citaService.getCitasUsuario(this.usuario.dni).subscribe(
-      response => {
-        this.citas = response;
-        console.log(this.citas);
-      }
-    );
-  }
+  mostrarListaCitas(tipo: String){
+    switch (tipo) {
+      case "PACIENTE":
+        this.citaService.getCitasPaciente(this.usuario.dni).subscribe(
+          response => {
+            this.citas = response;
+            console.log(this.citas);
+          }
+        );
+        break;
 
+      case "MEDICO":
+        this.citaService.getCitasMedico(this.usuario.dni).subscribe(
+          response => {
+            this.citas = response;
+            console.log(this.citas);
+          }
+        );
+        break;
+
+      default:
+        break;
+    }
+   
+  }
+  habilitarBotones(tipo: String){
+    switch (tipo) {
+      case "PACIENTE":
+        document.getElementById("modificardatos-button").style.display="block";
+         //document.getElementById("cambiarcita-button").style.display="block";
+        document.getElementById("pedircita-button").style.display="block";
+        //document.getElementById("eliminarcita-button").style.display="block";
+        document.getElementById("cambiocontrasena-button").style.display="block";
+        break;
+      case "MEDICO":
+          document.getElementById("modificardatos-button").style.display="block";
+        //  document.getElementById("cambiarcita-button").style.display="none";
+          document.getElementById("pedircita-button").style.display="none";
+         // document.getElementById("eliminarcita-button").style.display="none";
+          document.getElementById("cambiocontrasena-button").style.display="block";
+          console.log(this.cookieService.get('gestor'));
+          if (this.cookieService.get('gestor')==='true') {
+            document.getElementById("pedircita-button").style.display="block";
+          }
+        break;
+
+      default:
+        break;
+    }
+  }
 
   pedircita(){
     this.router.navigate(['/pedircita'])
@@ -71,11 +112,14 @@ export class CitasComponent implements OnInit {
   modificardatoscontacto(){
     this.router.navigate(['/cambiodatoscontacto'])
   }
+  modificardatosPersonales(){
+    this.router.navigate(['/cambiodatospersonales'])
+  }
   modificarMedico(){
     this.crearmedico();
     this.usuarioService.modificarMedico(this.medico).subscribe(
       response => {
-        //Swal.fire('Cita eliminada', `Cita eliminada con éxito!`, 'success');
+        Swal.fire('MIR Aprobado', `Ya eres Médico!`, 'success');
       }
     );
   }

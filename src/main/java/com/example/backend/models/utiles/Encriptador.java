@@ -171,6 +171,25 @@ public class Encriptador {
 
 	public @Valid Medico encriptarMedico(@Valid Medico medico) throws UnsupportedEncodingException {
 		addKey(clave);
+		medico.setDni(encriptar(medico.getDni()));
+		medico.setNombre(encriptar(medico.getNombre()));
+		medico.setApellidos(encriptar(medico.getApellidos()));
+		medico.setTelefono(encriptar(medico.getTelefono()));
+		medico.setEmail(encriptar(medico.getEmail()));
+		medico.setDireccion(encriptar(medico.getDireccion()));
+		medico.setTipo(encriptar(medico.getTipo()));
+		medico.setPassword(encriptar(medico.getPassword()));
+		medico.setSexo(encriptar(medico.getSexo()));
+		medico.setMedico(encriptar(medico.getMedico()));
+		medico.setLocalidad(encriptar(medico.getLocalidad()));
+		medico.setEspecialidad(encriptar(medico.getEspecialidad()));
+		medico.setCentroMedico(encriptar(medico.getCentroMedico()));
+		return medico;
+
+	}
+
+	public Medico desencriptarMedico(@Valid Medico medico) throws UnsupportedEncodingException {
+		addKey(clave);
 		medico.setDni(desencriptar(medico.getDni()));
 		medico.setNombre(desencriptar(medico.getNombre()));
 		medico.setApellidos(desencriptar(medico.getApellidos()));
@@ -185,6 +204,6 @@ public class Encriptador {
 		medico.setEspecialidad(desencriptar(medico.getEspecialidad()));
 		medico.setCentroMedico(desencriptar(medico.getCentroMedico()));
 		return medico;
-
+		
 	}
 }

@@ -15,12 +15,14 @@
             <td>{{cita.consulta}}</td>
             <td>{{cita.dniMedico}}</td>
             <td>{{cita.especialidad}}</td>
-            <td><button type="button" (click)="eliminarcita(cita)" style="margin: 10px" class="btn btn-primary" id="registro-button">Eliminar Cita</button></td>
+            <td><button type="button" (click)="eliminarcita(cita)" style="margin: 10px" class="btn btn-primary" id="eliminarcita-button">Eliminar Cita</button></td>
             <td><button type="button" (click)="cambiarcita(cita, $event)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar Cita</button></td>
         </tr>
     </tbody>
     <br>
 </table>
-<button type="button" (click)="pedircita()" style="margin: 10px" class="btn btn-primary" id="registro-button">Pedir Cita</button>
-<button type="button" (click)="modificardatoscontacto()" style="margin: 10px" class="btn btn-primary" id="registro-button">Modificar Datos Contacto</button>
+<button type="button" (click)="pedircita()" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir Cita</button>
+<button type="button" (click)="modificardatoscontacto()" style="margin: 10px" class="btn btn-primary" id="modificardatos-button">Modificar Datos Contacto</button>
 <button type="button" (click)="cambiarcontrasena()" style="margin: 10px" class="btn btn-primary" id="cambiocontrasena-button">Cambiar contraseña</button>
+<button type="button" (click)="modificarMedico()" style="margin: 10px" class="btn btn-primary" id="modificar-medico-button">Aprobar el MIR</button>
+<button type="button" (click)="modificardatosPersonales()" style="margin: 10px" class="btn btn-primary" id="modificardatosPersonales-button">Modificar Datos Personales</button>

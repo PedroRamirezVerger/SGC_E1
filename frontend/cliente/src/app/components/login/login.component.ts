@@ -44,7 +44,10 @@ export class LoginComponent implements OnInit {
           if(this.respuestaLogin.loginPasado){
             Swal.fire('Login correcto', "Ha iniciado sesión", 'success');
             this.cookieService.set('usuario', JSON.stringify(this.respuestaLogin.usuario));
-            this.router.navigate(['/citas'])
+            if (this.respuestaLogin.usuario.tipo==='GESTOR')
+              this.router.navigate(['/panelgestor'])
+            else
+              this.router.navigate(['/citas'])
           } else {
             Swal.fire('Error en los campos', "El DNI y/o la contraseña son incorrectos.", 'error');
           }
