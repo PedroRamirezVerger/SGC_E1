@@ -3,7 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Cita } from 'src/app/entity/Cita';
 import { CitaService } from 'src/app/services/cita.service';
 import { Usuario } from 'src/app/entity/Usuario';
+import { Especialidad } from 'src/app/entity/Especialidad';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import {EspecialidadService} from 'src/app/services/especialidad.service';
 import Swal from 'sweetalert2';
 import { CookieService } from 'ngx-cookie-service';
 //import { timingSafeEqual } from 'crypto';
@@ -18,11 +20,13 @@ export class PedircitaComponent implements OnInit {
   cita: Cita = new Cita;
   usuario: Usuario = new Usuario;
   esMedicoCabecera: boolean;
+  especialidades: Especialidad[] = [];
 
   constructor(private router:Router, 
               private citaService : CitaService, 
               private cookieService: CookieService, 
-              private usuarioService: UsuarioService) { }
+              private usuarioService: UsuarioService,
+              private especialidadService: EspecialidadService) { }
   
   
   ngOnInit() {
@@ -34,6 +38,17 @@ export class PedircitaComponent implements OnInit {
     y.style.display="none";
     this.esMedicoCabecera = true;
   }
+
+  obtenerespecialidades() {
+    return this.especialidadService.getAllEspecialidades().subscribe(
+      response => {
+        this.especialidades = response;
+        console.log(this.especialidades);
+      }
+    );
+
+  }
+
 
 
   comprobarfecha(fecha:Date){

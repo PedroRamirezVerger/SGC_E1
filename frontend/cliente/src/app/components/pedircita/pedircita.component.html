@@ -3,7 +3,6 @@
 
     <form class="columnas">
         <div class="columna1">
-            <!--Elegir tipo de médico COMPLETADO-->
             <label class="container">
                     <input type="radio" name="check" id="check" value="1" (click)="mostrarEspecialidad(0)" checked>Médico de cabecera
                     <br>
@@ -13,9 +12,6 @@
             </label>
 
 
-            <!--Elegir fecha y hora. 
-            FALTA DISTINGUIR ENTRE MED.CABEC (citas cada 5 minutos) y MED.ESPEC(citas sin duracion fijada)
-            FALTA CONFIGURAR PARA QUE NO MUESTRE DIAS PASADOS EN EL CALENDARIO NI LAS HORAS EN EL RELOJ-->
             <div class="form-group">
                 <br>Selecciona la fecha deseada:<br>
                 <input type="date" #fecha name="fecha" step="1" min="2019-01-01" max="2020-12-31" value="2019-11-12" required>
@@ -28,23 +24,9 @@
 
         <div class="columna2">
             <div class="form-group" id="especialistas" display=none>
-                <select class='form-control' [(ngModel)]="cita.especialidad" #especialidad name='especialidad' id="especialidad" placeholder="Seleccione especialista">
-                    <!--<option value="0">Seleccione un especialista</option>     -->               
-                        <option value="Urología">Urología</option> 
-                        <option value="Cardiología">Cardiología</option>
-                        <option value="Dermatología">Dermatología</option>
-                        <option value="Endocrinología">Endocrinología</option>
-                        <option value="Ginecología">Ginecología</option>
-                        <option value="Nefrología">Nefrología</option>
-                        <option value="Neumología">Neumología</option>
-                        <option value="Neurología">Neumología</option>
-                        <option value="Oncología">Oncología</option>
-                        <option value="Oftalmología">Oftalmología</option>
-                        <option value="Otorrinolaringología">Otorrinolaringología</option>
-                        <option value="Pediatría">Pediatría</option>
-                        <option value="Psiquiatría">Psiquiatría</option>
-                        <option value="Radiología">Radiología</option>
-                        <option value="Traumatología">Traumatología</option>
+                <!--<select class='form-control' [(ngModel)]="cita.especialidad" #especialidad name='especialidad' id="especialidad" placeholder="Seleccione especialista">   !-->          
+                <select fromControlName="especialidadControl">
+                    <option [value]="especialidad" *ngFor="let especialidad of especialidades">{{especialidad.nombre}}</option>
                 </select>
             </div>
         </div>
