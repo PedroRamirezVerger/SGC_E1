@@ -8,6 +8,7 @@ import { Medico } from 'src/app/entity/Medico';
 import { UsuarioService} from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 import { CookieService } from 'ngx-cookie-service';
+import { Rol } from 'src/app/entity/Rol';
 
 
 
@@ -33,12 +34,12 @@ export class CitasComponent implements OnInit {
   ngOnInit() {
     this.usuario = JSON.parse(this.cookieService.get('usuario'));
     console.log(JSON.parse(this.cookieService.get('usuario')));
-    this.habilitarBotones(this.usuario.tipo);
-    this.mostrarListaCitas(this.usuario.tipo);
+    this.habilitarBotones(JSON.parse(this.cookieService.get('rol')));
+    this.mostrarListaCitas(JSON.parse(this.cookieService.get('rol')));
   }
 
-  mostrarListaCitas(tipo: String){
-    switch (tipo) {
+  mostrarListaCitas(rol: Rol){
+    switch (rol.nombre) {
       case "PACIENTE":
         this.citaService.getCitasPaciente(this.usuario.dni).subscribe(
           response => {
@@ -62,8 +63,8 @@ export class CitasComponent implements OnInit {
     }
    
   }
-  habilitarBotones(tipo: String){
-    switch (tipo) {
+  habilitarBotones(rol: Rol){
+    switch (rol.nombre) {
       case "PACIENTE":
         document.getElementById("modificardatos-button").style.display="block";
          //document.getElementById("cambiarcita-button").style.display="block";

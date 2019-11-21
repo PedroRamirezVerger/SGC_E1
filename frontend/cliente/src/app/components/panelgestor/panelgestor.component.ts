@@ -32,8 +32,8 @@ export class PanelgestorComponent implements OnInit {
   historialcitas(usuario:Usuario){
     this.cookieService.delete('usuario');
     this.cookieService.set('usuario', JSON.stringify(usuario));
-    this.cookieService.set('gestor', "true");
-    console.log(this.cookieService.get('gestor'));
+    this.cookieService.set('rol', "GESTOR");
+    console.log(this.cookieService.get('rol'));
     this.router.navigate(['/citas'])
   }
 

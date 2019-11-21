@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
           if(this.respuestaLogin.loginPasado){
             Swal.fire('Login correcto', "Ha iniciado sesión", 'success');
             this.cookieService.set('usuario', JSON.stringify(this.respuestaLogin.usuario));
+            this.cookieService.set('rol', JSON.stringify(this.respuestaLogin.rol));
             if (this.respuestaLogin.usuario.tipo==='GESTOR')
               this.router.navigate(['/panelgestor'])
             else

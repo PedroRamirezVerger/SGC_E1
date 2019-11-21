@@ -30,8 +30,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Medico;
+import com.example.backend.models.entity.Rol;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaLogin;
+import com.example.backend.models.services.IRolService;
 import com.example.backend.models.services.IUsuarioService;
 import com.example.backend.models.utiles.Encriptador;
 
@@ -43,6 +45,10 @@ public class UsuarioRestController {
 
 	@Autowired
 	private IUsuarioService usuarioService;
+	
+	@Autowired
+	private IRolService rolService;
+	
 	private SecretKey key;
 	private Cipher cipher;
 	private String algoritmo = "AES";
@@ -50,10 +56,6 @@ public class UsuarioRestController {
 	private String clave = "seguridad";
 	
 	private Encriptador encriptador=new Encriptador(key,cipher,algoritmo,keysize,clave);
-
-	
-
-	
 	
 	@GetMapping("/usuarios")
 	public List<Usuario> getAllUsers() throws UnsupportedEncodingException {
@@ -73,7 +75,6 @@ public class UsuarioRestController {
 
 	/**
 	 * validar el login del usuario
-	 * 
 	 * @param dni
 	 * @param password
 	 * @return
@@ -84,6 +85,7 @@ public class UsuarioRestController {
 			throws UnsupportedEncodingException {
 		RespuestaLogin respuestaLogin = new RespuestaLogin();
 		List<Usuario> listaUsuarios = usuarioService.findAll();
+		Rol rol=new Rol();
 		
 		dni = encriptador.encriptarDni(dni);
 		password = encriptador.encriptarPassword(password);
@@ -91,7 +93,9 @@ public class UsuarioRestController {
 		for (Usuario u : listaUsuarios) {
 			if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
 				u=encriptador.desencriptarUsuario(u);
+				rol=rolService.findRolByNombre(u.getTipo());
 				respuestaLogin.setUsuario(u);
+				respuestaLogin.setRol(rol);
 				respuestaLogin.setLoginPasado(true);
 				break;
 			} else {
@@ -120,17 +124,17 @@ public class UsuarioRestController {
      * Modificar un usuario para hacerlo médico
      * 
      * @param 
-     * @throws UnsupportedEncodingException
+	 * @throws Exception 
      */
     @PutMapping("/usuarios/registrarMedico/{id}")
     public Medico registrarMedico(@PathVariable("id") ObjectId id, @Valid @RequestBody Medico medico)
 	    throws UnsupportedEncodingException {
-    	medico.set_id(id);
-    	medico.setTipo("MEDICO");
-    	//coger especialidad desde el front
-		medico.setEspecialidad("urologia");
-    	medico=encriptador.encriptarMedico(medico);
-		usuarioService.saveUser(medico);
+    		medico.set_id(id);
+        	medico.setTipo("MEDICO");
+        	//coger especialidad desde el front
+    		medico.setEspecialidad("urologia");
+        	medico=encriptador.encriptarMedico(medico);
+    		usuarioService.saveUser(medico);   	
 		
 		return encriptador.desencriptarMedico(medico);
 		
