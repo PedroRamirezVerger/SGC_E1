@@ -16,11 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.backend.models.entity.Cita;
-import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.entity.Especialidad;
-import com.example.backend.models.services.ICitaService;
-import com.example.backend.models.services.IUsuarioService;
 import com.example.backend.models.services.IEspecialidadService;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
@@ -29,12 +25,6 @@ import com.example.backend.models.services.IEspecialidadService;
 @RequestMapping("api")
 public class EspecialidadRestController {
 	
-	@Autowired
-	private ICitaService citaService;
-	
-	@Autowired 
-	private IUsuarioService usuarioService;
-
     @Autowired 
 	private IEspecialidadService especialidadService;
 	
