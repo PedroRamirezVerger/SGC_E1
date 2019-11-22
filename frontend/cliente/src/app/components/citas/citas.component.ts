@@ -23,6 +23,7 @@ export class CitasComponent implements OnInit {
   citas: Cita[] = [];
   usuario: Usuario = new Usuario();
   medico: Medico= new Medico();
+  rol: Rol = new Rol();
 
   constructor(private router:Router,
               private citaService: CitaService,
@@ -33,13 +34,16 @@ export class CitasComponent implements OnInit {
 
   ngOnInit() {
     this.usuario = JSON.parse(this.cookieService.get('usuario'));
+    this.rol=JSON.parse(this.cookieService.get('rol'));
+    console.log(this.cookieService.get('rol')); 
     console.log(JSON.parse(this.cookieService.get('usuario')));
-    this.habilitarBotones(JSON.parse(this.cookieService.get('rol')));
-    this.mostrarListaCitas(JSON.parse(this.cookieService.get('rol')));
+    //console.log(JSON.parse(this.cookieService.get('rol')));
+    this.habilitarBotones(this.rol.nombre);
+    this.mostrarListaCitas(this.usuario.tipo);
   }
 
-  mostrarListaCitas(rol: Rol){
-    switch (rol.nombre) {
+  mostrarListaCitas(tipo: String){
+    switch (tipo) {
       case "PACIENTE":
         this.citaService.getCitasPaciente(this.usuario.dni).subscribe(
           response => {
@@ -63,8 +67,8 @@ export class CitasComponent implements OnInit {
     }
    
   }
-  habilitarBotones(rol: Rol){
-    switch (rol.nombre) {
+  habilitarBotones(tipo: String){
+    switch (tipo) {
       case "PACIENTE":
         document.getElementById("modificardatos-button").style.display="block";
          //document.getElementById("cambiarcita-button").style.display="block";
@@ -78,12 +82,11 @@ export class CitasComponent implements OnInit {
           document.getElementById("pedircita-button").style.display="none";
          // document.getElementById("eliminarcita-button").style.display="none";
           document.getElementById("cambiocontrasena-button").style.display="block";
-          console.log(this.cookieService.get('gestor'));
-          if (this.cookieService.get('gestor')==='true') {
-            document.getElementById("pedircita-button").style.display="block";
-          }
         break;
-
+        case "GESTOR":
+            document.getElementById("modificardatos-button").style.display="block";
+            document.getElementById("pedircita-button").style.display="block";
+            document.getElementById("cambiocontrasena-button").style.display="block";
       default:
         break;
     }

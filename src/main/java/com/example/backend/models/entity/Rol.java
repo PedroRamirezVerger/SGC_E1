@@ -12,7 +12,7 @@ public class Rol {
 	@Id
 	private ObjectId _id;
 	private String nombre;
-	private List<Privilegio> privilegios;
+	private List<String> privilegios;
 
 	public String get_id() {
 		return _id.toHexString();
@@ -27,10 +27,10 @@ public class Rol {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public List<Privilegio> getPrivilegios() {
+	public List<String> getPrivilegios() {
 		return privilegios;
 	}
-	public void setPrivilegios(List<Privilegio> privilegios) {
+	public void setPrivilegios(List<String> privilegios) {
 		this.privilegios = privilegios;
 	}
 }

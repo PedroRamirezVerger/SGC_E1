@@ -43,8 +43,11 @@ export class LoginComponent implements OnInit {
           console.log(this.respuestaLogin);
           if(this.respuestaLogin.loginPasado){
             Swal.fire('Login correcto', "Ha iniciado sesión", 'success');
+            this.cookieService.delete('rol')
             this.cookieService.set('usuario', JSON.stringify(this.respuestaLogin.usuario));
             this.cookieService.set('rol', JSON.stringify(this.respuestaLogin.rol));
+            console.log(this.cookieService.get('rol'));
+            console.log(JSON.parse(this.cookieService.get('rol')));
             if (this.respuestaLogin.usuario.tipo==='GESTOR')
               this.router.navigate(['/panelgestor'])
             else
