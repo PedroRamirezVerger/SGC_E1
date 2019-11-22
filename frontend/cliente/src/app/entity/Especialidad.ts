@@ -1,7 +1,7 @@
 export class Especialidad{
     _id?: string;
     nombre: string;
-    duracionCita: Int16Array;
+    duracionCita: number;
     listaMedicos: String[];
 
     constructor(){
