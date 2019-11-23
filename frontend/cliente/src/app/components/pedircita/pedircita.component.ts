@@ -37,6 +37,7 @@ export class PedircitaComponent implements OnInit {
     x.style.display="none";
     y.style.display="none";
     this.esMedicoCabecera = true;
+    this.obtenerespecialidades();
   }
 
   obtenerespecialidades() {
@@ -48,8 +49,6 @@ export class PedircitaComponent implements OnInit {
     );
 
   }
-
-
 
   comprobarfecha(fecha:Date){
     let hoy=new Date();

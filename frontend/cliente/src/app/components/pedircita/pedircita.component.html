@@ -21,12 +21,10 @@
             <button type="button" (click)="anadircita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
         </div>
 
-
         <div class="columna2">
-            <div class="form-group" id="especialistas" display=none>
-                <!--<select class='form-control' [(ngModel)]="cita.especialidad" #especialidad name='especialidad' id="especialidad" placeholder="Seleccione especialista">   !-->          
+            <div class="form-group" id="especialistas">
                 <select fromControlName="especialidadControl">
-                    <option [value]="especialidad" *ngFor="let especialidad of especialidades">{{especialidad.nombre}}</option>
+                    <option *ngFor="let especialidad of especialidades">{{especialidad._nombre}}</option>
                 </select>
             </div>
         </div>
@@ -37,18 +35,7 @@
                 <select class='form-control' [(ngModel)]="cita.dniMedico" #medicos name='medicos' id="medicos" placeholder="Seleccione médico">
                         <option>Mariano Santillana Rodríguez</option> 
                         <option>María Fernández Rodríguez</option>
-                        <option>Roberto Ramírez Pacheco</option>
-                        <option>Alejandro Rico Jiménez</option>
-                        <option>Carolina Medina Yañez</option>
-                        <option>Esther Rubio Moreno</option>
-                        <option>Jose Luis Morales Hernández</option>
-                        <option>Manuel Blanco Rodríguez</option>
-                        <option>Ignacio Úbeda Serrano</option>
-                        <option>Mercedes González Díaz</option>
-                        <option>Gonzalo Rincón Martínez</option>
-                        <option>Ana Hernández Parra</option>
-                        <option>Francisco Ruiz Fernández</option>
-                        <option>Teresa Hernández Montes</option>
+                        
                 </select>
             </div>
         </div>

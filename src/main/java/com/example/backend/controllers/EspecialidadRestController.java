@@ -30,8 +30,9 @@ public class EspecialidadRestController {
 	
 	@GetMapping("/especialidades")
 	public List<Especialidad> getAllEspecialidades() {
+		System.out.println();
 		return especialidadService.findAll();
 	}
-
+	
     
 }
