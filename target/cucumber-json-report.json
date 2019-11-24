@@ -4,136 +4,301 @@
     "elements": [
       {
         "line": 5,
-        "name": "Peticion cita correcta con datos correctos",
+        "name": "Modificar datos personales correcto",
         "description": "",
-        "id": "pedir-cita;peticion-cita-correcta-con-datos-correctos",
+        "id": "modificar-datos-de-un-usuario-siendo-gestor;modificar-datos-personales-correcto",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 31896000,
+              "duration": 43186100,
               "status": "passed"
             },
             "line": 6,
-            "name": "Usuario en pagina de pedir cita",
+            "name": "Gestor en la pagina de modificar datos personales y usuario Luís Fernandez",
             "match": {
-              "location": "CitaTest.usuario_en_pagina_de_pedir_cita()"
+              "location": "ModificarDatosPersonalesTest.gestor_en_la_pagina_de_modificar_datos_personales_y_usuario_Luís_Fernandez()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 91500,
+              "duration": 126900,
               "status": "passed"
             },
             "line": 7,
-            "name": "Medico correcto",
+            "name": "nombre introducido es \u003cRoberto\u003e",
             "match": {
-              "location": "CitaTest.medico_correcto()"
+              "location": "ModificarDatosPersonalesTest.nombre_introducido_es_Roberto()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 43600,
+              "duration": 81900,
               "status": "passed"
             },
             "line": 8,
-            "name": "Fecha correcta",
+            "name": "Apellidos introducidos \u003cJiménez López\u003e",
             "match": {
-              "location": "CitaTest.fecha_correcta()"
+              "location": "ModificarDatosPersonalesTest.apellidos_introducidos_Jiménez_López()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 46400,
+              "duration": 67300,
               "status": "passed"
             },
             "line": 9,
-            "name": "Mensaje de cita creada correctamente",
+            "name": "Sexo introducido es \u003cHombre\u003e",
             "match": {
-              "location": "CitaTest.mensaje_de_cita_creada_correctamente()"
+              "location": "ModificarDatosPersonalesTest.sexo_introducido_es_Hombre()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 67700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Tipo de usuario es \u003cGESTOR\u003e",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.tipo_de_usuario_es_GESTOR()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2636600,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "usuario modificado",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.usuario_modificado()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
+          {
+            "name": "@Scenario"
+          },
           {
             "name": "@Scenario1"
           }
         ]
       },
       {
-        "line": 12,
-        "name": "Peticion cita incorrecta con fecha incorrecta",
+        "line": 14,
+        "name": "Modificar nombre incorrecto",
         "description": "",
-        "id": "pedir-cita;peticion-cita-incorrecta-con-fecha-incorrecta",
+        "id": "modificar-datos-de-un-usuario-siendo-gestor;modificar-nombre-incorrecto",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 194100,
+              "duration": 210200,
               "status": "passed"
             },
-            "line": 13,
-            "name": "Usuario en pagina de pedir cita",
+            "line": 15,
+            "name": "Gestor en la pagina de modificar datos personales y usuario Luís Fernandez",
             "match": {
-              "location": "CitaTest.usuario_en_pagina_de_pedir_cita()"
+              "location": "ModificarDatosPersonalesTest.gestor_en_la_pagina_de_modificar_datos_personales_y_usuario_Luís_Fernandez()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 58300,
+              "duration": 213700,
               "status": "passed"
             },
-            "line": 14,
-            "name": "Medico correcto",
+            "line": 16,
+            "name": "nombre introducido es \u003c\"\"\u003e",
             "match": {
-              "location": "CitaTest.medico_correcto()"
+              "arguments": [
+                {
+                  "val": "",
+                  "offset": 24
+                }
+              ],
+              "location": "ModificarDatosPersonalesTest.nombre_introducido_es(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 53800,
+              "duration": 62900,
               "status": "passed"
             },
-            "line": 15,
-            "name": "Fecha incorrecta",
+            "line": 17,
+            "name": "Apellidos introducidos \u003cJiménez López\u003e",
             "match": {
-              "location": "CitaTest.fecha_incorrecta()"
+              "location": "ModificarDatosPersonalesTest.apellidos_introducidos_Jiménez_López()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 50100,
+              "duration": 58200,
               "status": "passed"
             },
-            "line": 16,
-            "name": "Mensaje de cita creada incorrectamente",
+            "line": 18,
+            "name": "Sexo introducido es \u003cHombre\u003e",
             "match": {
-              "location": "CitaTest.mensaje_de_cita_creada_incorrectamente()"
+              "location": "ModificarDatosPersonalesTest.sexo_introducido_es_Hombre()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 57300,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Tipo de usuario es \u003cGESTOR\u003e",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.tipo_de_usuario_es_GESTOR()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 111000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "usuario no modificado",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.usuario_no_modificado()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
+            "name": "@Scenario"
+          },
+          {
             "name": "@Scenario2"
+          }
+        ]
+      },
+      {
+        "line": 23,
+        "name": "Modificar Apellidos incorrecto",
+        "description": "",
+        "id": "modificar-datos-de-un-usuario-siendo-gestor;modificar-apellidos-incorrecto",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 386900,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Gestor en la pagina de modificar datos personales y usuario Luís Fernandez",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.gestor_en_la_pagina_de_modificar_datos_personales_y_usuario_Luís_Fernandez()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 312600,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "nombre introducido es \u003cRoberto\u003e",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.nombre_introducido_es_Roberto()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 728800,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Apellidos introducidos \u003c\"\"\u003e",
+            "match": {
+              "arguments": [
+                {
+                  "val": "",
+                  "offset": 25
+                }
+              ],
+              "location": "ModificarDatosPersonalesTest.apellidos_introducidos(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 119200,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Sexo introducido es \u003cHombre\u003e",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.sexo_introducido_es_Hombre()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 57600,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Tipo de usuario es \u003cGESTOR\u003e",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.tipo_de_usuario_es_GESTOR()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 59600,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "usuario no modificado",
+            "match": {
+              "location": "ModificarDatosPersonalesTest.usuario_no_modificado()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Scenario"
+          },
+          {
+            "name": "@Scenario3"
           }
         ]
       }
     ],
-    "name": "Pedir Cita",
+    "name": "Modificar datos de un usuario siendo gestor",
     "description": "",
-    "id": "pedir-cita",
+    "id": "modificar-datos-de-un-usuario-siendo-gestor",
     "keyword": "Feature",
-    "uri": "src/test/resource/Cita.feature",
-    "tags": []
+    "uri": "src/test/resource/ModificarDatosPersonales.feature",
+    "tags": [
+      {
+        "name": "@Scenario",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]
