@@ -15,8 +15,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CambiodatoscontactoComponent } from './components/cambiodatoscontacto/cambiodatoscontacto.component';
 import { CambiocontrasenaComponent } from './components/cambiocontrasena/cambiocontrasena.component';
 import { CambiarcitaComponent } from './components/cambiarcita/cambiarcita.component';
-
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
