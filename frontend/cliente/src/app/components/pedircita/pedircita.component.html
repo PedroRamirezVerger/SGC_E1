@@ -3,7 +3,6 @@
 
     <form class="columnas">
         <div class="columna1">
-            <!--Elegir tipo de médico COMPLETADO-->
             <label class="container">
                     <input type="radio" name="check" id="check" value="1" (click)="mostrarEspecialidad(0)" checked>Médico de cabecera
                     <br>
@@ -13,63 +12,38 @@
             </label>
 
 
-            <!--Elegir fecha y hora. 
-            FALTA DISTINGUIR ENTRE MED.CABEC (citas cada 5 minutos) y MED.ESPEC(citas sin duracion fijada)
-            FALTA CONFIGURAR PARA QUE NO MUESTRE DIAS PASADOS EN EL CALENDARIO NI LAS HORAS EN EL RELOJ-->
             <div class="form-group">
                 <br>Selecciona la fecha deseada:<br>
                 <input type="date" #fecha name="fecha" step="1" min="2019-01-01" max="2020-12-31" value="2019-11-12" required>
                 <br> Selecciona la hora deseada: <br>
-                <input type="time" #hora name="hora" id="hora" min="07:00" max="21:00" step="300">
+                <input type="time" #hora name="hora" id="hora" min="07:00" max="15:00" step="900">
             </div>
             <button type="button" (click)="anadircita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="pedircita-button">Pedir cita</button>
         </div>
 
-
         <div class="columna2">
-            <div class="form-group" id="especialistas" display=none>
-                <select class='form-control' [(ngModel)]="cita.especialidad" #especialidad name='especialidad' id="especialidad" placeholder="Seleccione especialista">
-                    <!--<option value="0">Seleccione un especialista</option>     -->               
-                        <option value="Urología">Urología</option> 
-                        <option value="Cardiología">Cardiología</option>
-                        <option value="Dermatología">Dermatología</option>
-                        <option value="Endocrinología">Endocrinología</option>
-                        <option value="Ginecología">Ginecología</option>
-                        <option value="Nefrología">Nefrología</option>
-                        <option value="Neumología">Neumología</option>
-                        <option value="Neurología">Neumología</option>
-                        <option value="Oncología">Oncología</option>
-                        <option value="Oftalmología">Oftalmología</option>
-                        <option value="Otorrinolaringología">Otorrinolaringología</option>
-                        <option value="Pediatría">Pediatría</option>
-                        <option value="Psiquiatría">Psiquiatría</option>
-                        <option value="Radiología">Radiología</option>
-                        <option value="Traumatología">Traumatología</option>
+            <div class="form-group" id="especialistas">
+                    <label>Elige especialidad</label>
+                <select [(ngModel)]="especialidadElegida" (change)="capturarEspecialidad()">
+                    <option *ngFor="let especialidad of especialidades">{{especialidad._nombre}}</option>
                 </select>
+                <br/> <br/>
+                <!-- <select [(ngModel)]="medicoElegido" (change) = "capturarMedico()">
+                    <option *ngFor = ></option>
+                </select> --->
             </div>
         </div>
 
-
+<!---
         <div class="columna3">
             <div class="form-group" id="medicos" display=none>
                 <select class='form-control' [(ngModel)]="cita.dniMedico" #medicos name='medicos' id="medicos" placeholder="Seleccione médico">
                         <option>Mariano Santillana Rodríguez</option> 
                         <option>María Fernández Rodríguez</option>
-                        <option>Roberto Ramírez Pacheco</option>
-                        <option>Alejandro Rico Jiménez</option>
-                        <option>Carolina Medina Yañez</option>
-                        <option>Esther Rubio Moreno</option>
-                        <option>Jose Luis Morales Hernández</option>
-                        <option>Manuel Blanco Rodríguez</option>
-                        <option>Ignacio Úbeda Serrano</option>
-                        <option>Mercedes González Díaz</option>
-                        <option>Gonzalo Rincón Martínez</option>
-                        <option>Ana Hernández Parra</option>
-                        <option>Francisco Ruiz Fernández</option>
-                        <option>Teresa Hernández Montes</option>
+                        
                 </select>
             </div>
         </div>
-
+--->
     </form>
 </div>
