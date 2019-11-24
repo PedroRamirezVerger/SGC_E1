@@ -7,6 +7,6 @@ deploy:
  provider: heroku
  api-key:
   secure: $HEROKU_KEY
- app: principal/sgcequipo1
+ app: sgcequipo1
   
 
