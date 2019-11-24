@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.backend.models.entity.Cita;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.ICitaService;
+import com.example.backend.models.services.IHorarioService;
 import com.example.backend.models.services.IUsuarioService;
 import com.example.backend.models.utiles.Encriptador;
 
@@ -39,6 +40,9 @@ public class CitaRestController {
 	
 	@Autowired 
 	private IUsuarioService usuarioService;
+	
+	@Autowired
+	private IHorarioService horarioService;
 	
 	private SecretKey key;
 	private Cipher cipher;
