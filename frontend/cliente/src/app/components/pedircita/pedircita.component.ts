@@ -33,9 +33,7 @@ export class PedircitaComponent implements OnInit {
     this.usuario = JSON.parse(this.cookieService.get('usuario'));
 
     let x=document.getElementById("especialistas");
-    let y=document.getElementById("medicos");
     x.style.display="none";
-    y.style.display="none";
     this.esMedicoCabecera = true;
     this.obtenerespecialidades();
   }
@@ -93,15 +91,12 @@ export class PedircitaComponent implements OnInit {
   }
   mostrarEspecialidad(n:number) {
     let x=document.getElementById("especialistas");
-    let y=document.getElementById("medicos");
     if (n==0) {
       x.style.display="none";
-      y.style.display="none";
       this.esMedicoCabecera = true;
     }
     if (n==1) {
       x.style.display="block";
-      y.style.display="block";
       this.esMedicoCabecera = false;
     }
    
