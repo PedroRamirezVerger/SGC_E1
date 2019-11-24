@@ -49,11 +49,8 @@ public class UsuarioRestController {
 	private int keysize = 16;
 	private String clave = "seguridad";
 	
-	private Encriptador encriptador=new Encriptador(key,cipher,algoritmo,keysize,clave);
+	private Encriptador encriptador = new Encriptador(key, cipher, algoritmo, keysize, clave);
 
-	
-
-	
 	
 	@GetMapping("/usuarios")
 	public List<Usuario> getAllUsers() throws UnsupportedEncodingException {

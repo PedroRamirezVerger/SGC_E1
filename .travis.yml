@@ -1,8 +1,12 @@
---- 
-deploy: 
-  api_key: 
-    secure: 693d1a4c-d38f-4761-8394-adf6cf572067
-  provider: heroku
-language: node_js
-node_js: 
-  - "12.11.1"
+
+
+language: java
+before_install:
+ - chmod +x mvnw
+deploy:
+ provider: heroku
+ api_key:
+  secure: HEROKU_KEY
+  app: principal
+
+
