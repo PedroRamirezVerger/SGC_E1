@@ -7,7 +7,7 @@ before_install:
 deploy:
   provider: heroku
   api_key:
-    secure: $HEROKU
+    secure: e060e5e5-992d-4822-a783-592388b436d6
   app: sgcequipo1
   
     
