@@ -112,6 +112,8 @@ export class CitasComponent implements OnInit {
   modificardatosPersonales(){
     this.router.navigate(['/cambiodatospersonales'])
   }
+
+  //Modificar un paciente para que sea médico
   modificarMedico(){
     this.crearmedico();
     this.usuarioService.modificarMedico(this.medico).subscribe(
