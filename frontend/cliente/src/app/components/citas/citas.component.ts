@@ -24,6 +24,7 @@ export class CitasComponent implements OnInit {
   usuario: Usuario = new Usuario();
   medico: Medico= new Medico();
   rol: Rol = new Rol();
+  esMedico: boolean;
 
   constructor(private router:Router,
               private citaService: CitaService,
@@ -38,6 +39,7 @@ export class CitasComponent implements OnInit {
     console.log(this.cookieService.get('rol')); 
     console.log(JSON.parse(this.cookieService.get('usuario')));
     //console.log(JSON.parse(this.cookieService.get('rol')));
+    
     this.habilitarBotones(this.rol.nombre);
     this.mostrarListaCitas(this.usuario.tipo);
   }
@@ -68,25 +70,16 @@ export class CitasComponent implements OnInit {
    
   }
   habilitarBotones(tipo: String){
+  
     switch (tipo) {
       case "PACIENTE":
-        document.getElementById("modificardatos-button").style.display="block";
-         //document.getElementById("cambiarcita-button").style.display="block";
-        document.getElementById("pedircita-button").style.display="block";
-        //document.getElementById("eliminarcita-button").style.display="block";
-        document.getElementById("cambiocontrasena-button").style.display="block";
+          this.esMedico=false;
         break;
       case "MEDICO":
-          document.getElementById("modificardatos-button").style.display="block";
-        //  document.getElementById("cambiarcita-button").style.display="none";
-          document.getElementById("pedircita-button").style.display="none";
-         // document.getElementById("eliminarcita-button").style.display="none";
-          document.getElementById("cambiocontrasena-button").style.display="block";
+          this.esMedico=true;
         break;
         case "GESTOR":
-            document.getElementById("modificardatos-button").style.display="block";
-            document.getElementById("pedircita-button").style.display="block";
-            document.getElementById("cambiocontrasena-button").style.display="block";
+            this.esMedico=false;
       default:
         break;
     }
