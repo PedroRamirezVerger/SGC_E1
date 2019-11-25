@@ -16,7 +16,6 @@ public class Horario {
 	private int dia;
 	private int mes;
 	private int ano;
-	private int duracionCita;
 	private ArrayList<Date> listaCitas = new ArrayList<Date>();
 	
 	public String get_id() {
@@ -57,14 +56,6 @@ public class Horario {
 
 	public void setAno(int ano) {
 		this.ano = ano;
-	}
-
-	public int getDuracionCita() {
-		return duracionCita;
-	}
-
-	public void setDuracionCita(int duracionCita) {
-		this.duracionCita = duracionCita;
 	}
 
 	public ArrayList<Date> getListaCitas() {

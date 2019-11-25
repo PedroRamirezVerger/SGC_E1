@@ -4,9 +4,12 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.stereotype.Service;
+
 import com.example.backend.models.dao.IHorarioDAO;
 import com.example.backend.models.entity.Horario;
 
+@Service
 public class HorarioServiceImpl implements IHorarioService{
 	private IHorarioDAO horarioDao;
 	

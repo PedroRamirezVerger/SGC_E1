@@ -29,10 +29,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.backend.models.entity.Especialidad;
 import com.example.backend.models.entity.Medico;
 import com.example.backend.models.entity.Rol;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.respuesta.RespuestaLogin;
+import com.example.backend.models.services.IEspecialidadService;
 import com.example.backend.models.services.IRolService;
 import com.example.backend.models.services.IUsuarioService;
 import com.example.backend.models.utiles.Encriptador;
@@ -45,18 +47,20 @@ public class UsuarioRestController {
 
 	@Autowired
 	private IUsuarioService usuarioService;
-	
+
 	@Autowired
 	private IRolService rolService;
-	
+
+	@Autowired
+	private IEspecialidadService especialidadService;
+
 	private SecretKey key;
 	private Cipher cipher;
 	private String algoritmo = "AES";
 	private int keysize = 16;
 	private String clave = "seguridad";
-	
-	private Encriptador encriptador = new Encriptador(key, cipher, algoritmo, keysize, clave);
 
+	private Encriptador encriptador = new Encriptador(key, cipher, algoritmo, keysize, clave);
 
 	@GetMapping("/usuarios")
 	public List<Usuario> getAllUsers() throws UnsupportedEncodingException {
@@ -76,6 +80,7 @@ public class UsuarioRestController {
 
 	/**
 	 * validar el login del usuario
+	 * 
 	 * @param dni
 	 * @param password
 	 * @return
@@ -86,15 +91,15 @@ public class UsuarioRestController {
 			throws UnsupportedEncodingException {
 		RespuestaLogin respuestaLogin = new RespuestaLogin();
 		List<Usuario> listaUsuarios = usuarioService.findAll();
-		Rol rol=new Rol();
-		
+		Rol rol = new Rol();
+
 		dni = encriptador.encriptarDni(dni);
 		password = encriptador.encriptarPassword(password);
-		
+
 		for (Usuario u : listaUsuarios) {
 			if (u.getDni().equals(dni) && u.getPassword().equals(password)) {
-				u=encriptador.desencriptarUsuario(u);
-				rol=rolService.findRolByNombre(u.getTipo());
+				u = encriptador.desencriptarUsuario(u);
+				rol = rolService.findRolByNombre(u.getTipo());
 				respuestaLogin.setUsuario(u);
 				respuestaLogin.setRol(rol);
 				respuestaLogin.setLoginPasado(true);
@@ -117,30 +122,30 @@ public class UsuarioRestController {
 	@PostMapping("/usuarios")
 	public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 		usuario.set_id(ObjectId.get());
-		usuario=encriptador.encriptarUsuario(usuario);
+		usuario = encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 	}
-	/**
-     * Modificar un usuario para hacerlo médico
-     * 
-     * @param 
-	 * @throws Exception 
-     */
-    @PutMapping("/usuarios/registrarMedico/{id}")
-    public Medico registrarMedico(@PathVariable("id") ObjectId id, @Valid @RequestBody Medico medico)
-	    throws UnsupportedEncodingException {
-    		medico.set_id(id);
-        	medico.setTipo("MEDICO");
-        	//coger especialidad desde el front
-    		medico.setEspecialidad("urologia");
-        	medico=encriptador.encriptarMedico(medico);
-    		usuarioService.saveUser(medico);   	
-		
-		return encriptador.desencriptarMedico(medico);
-		
 
-    }
+	/**
+	 * Modificar un usuario para hacerlo médico
+	 * 
+	 * @param
+	 * @throws Exception
+	 */
+	@PutMapping("/usuarios/registrarMedico/{id}")
+	public Medico registrarMedico(@PathVariable("id") ObjectId id, @Valid @RequestBody Medico medico)
+			throws UnsupportedEncodingException {
+		medico.set_id(id);
+		medico.setTipo("MEDICO");
+		// coger especialidad desde el front
+		medico.setEspecialidad("urologia");
+		medico = encriptador.encriptarMedico(medico);
+		usuarioService.saveUser(medico);
+
+		return encriptador.desencriptarMedico(medico);
+
+	}
 
 	/**
 	 * Modificar la contraseña del usuario
@@ -152,7 +157,7 @@ public class UsuarioRestController {
 	public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
 		usuario.set_id(id);
-		usuario=encriptador.encriptarUsuario(usuario);
+		usuario = encriptador.encriptarUsuario(usuario);
 		usuario.setPassword(encriptador.encriptarPassword(usuario.getPassword()));
 		usuarioService.saveUser(usuario);
 		return usuario;
@@ -170,7 +175,7 @@ public class UsuarioRestController {
 	public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
 		usuario.set_id(id);
-		usuario=encriptador.encriptarUsuario(usuario);
+		usuario = encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 	}
@@ -184,10 +189,16 @@ public class UsuarioRestController {
 	@PutMapping("/usuarios/datospersonales/{id}")
 	public Usuario modificarDatosPersonales(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
-		usuario=encriptador.encriptarUsuario(usuario);
+		usuario = encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
 
+	}
+	
+	@GetMapping("/especialidades")
+	public List<Especialidad> getAllEspecialidades() {
+		System.out.println();
+		return especialidadService.findAll();
 	}
 
 }
