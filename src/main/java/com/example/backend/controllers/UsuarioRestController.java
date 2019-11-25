@@ -138,8 +138,7 @@ public class UsuarioRestController {
 			throws UnsupportedEncodingException {
 		medico.set_id(id);
 		medico.setTipo("MEDICO");
-		// coger especialidad desde el front
-		medico.setEspecialidad("urologia");
+		medico.setEspecialidad(medico.getEspecialidad());
 		medico = encriptador.encriptarMedico(medico);
 		usuarioService.saveUser(medico);
 

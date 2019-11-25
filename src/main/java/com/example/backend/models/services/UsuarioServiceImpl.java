@@ -42,5 +42,10 @@ public class UsuarioServiceImpl implements IUsuarioService {
     	this.usuarioDao.save(medico);
     }
 
+	@Override
+	public Medico findMedicoByDni(String dni) {
+		return null;
+	}
+
 	
 }

@@ -7,10 +7,10 @@ import java.util.Date;
 
 public class Medico extends Usuario {
 
-    private Especialidad especialidad;
+    private String especialidad;
     //calendario
     
-    public Medico( Especialidad especialidad) {
+    public Medico( String especialidad) {
 	super();
 	this.especialidad = especialidad;
     }
@@ -20,11 +20,11 @@ public class Medico extends Usuario {
 	}
 
 
-	public Especialidad getEspecialidad() {
+	public String getEspecialidad() {
 	return especialidad;
     }
 
-    public void setEspecialidad(Especialidad especialidad) {
+    public void setEspecialidad(String especialidad) {
 	this.especialidad = especialidad;
     }
 

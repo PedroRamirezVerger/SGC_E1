@@ -25,10 +25,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Cita;
+import com.example.backend.models.entity.Especialidad;
 import com.example.backend.models.entity.Horario;
 import com.example.backend.models.entity.Medico;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.ICitaService;
+import com.example.backend.models.services.IEspecialidadService;
 import com.example.backend.models.services.IHorarioService;
 import com.example.backend.models.services.IUsuarioService;
 import com.example.backend.models.utiles.Encriptador;
@@ -47,6 +49,9 @@ public class CitaRestController {
 
 	@Autowired
 	private IHorarioService horarioService;
+	
+	@Autowired
+	private IEspecialidadService especialidadService;
 
 	private SecretKey key;
 	private Cipher cipher;
@@ -164,7 +169,9 @@ public class CitaRestController {
 		ArrayList<LocalTime> listaHuecosLibres = new ArrayList<LocalTime>();
 		Medico medico = usuarioService.findMedicoByDni(dniMedico);
 		Horario horario = horarioService.findHorarioByDnimedicoAndDiaAndMesAndAno(dniMedico, dia, mes, ano);
-		int duracionCita = medico.getEspecialidad().get_duracionCita();
+		Especialidad especialidad=especialidadService.findByNombre(medico.getEspecialidad());
+		int duracionCita = especialidad.get_duracionCita();
+		
 		ArrayList<Date> listaCitas = horario.getListaCitas();
 		
 		LocalTime horaInicio = LocalTime.of(7, 00);
