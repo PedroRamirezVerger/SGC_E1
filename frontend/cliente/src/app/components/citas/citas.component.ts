@@ -25,6 +25,11 @@ export class CitasComponent implements OnInit {
   medico: Medico= new Medico();
   rol: Rol = new Rol();
   esMedico: boolean;
+  esPaciente: boolean;
+  estaEnVistaMedico: boolean;
+
+  
+
 
   constructor(private router:Router,
               private citaService: CitaService,
@@ -43,7 +48,16 @@ export class CitasComponent implements OnInit {
     this.habilitarBotones(this.rol.nombre);
     this.mostrarListaCitas(this.usuario.tipo);
   }
-
+  cambiarMedico_Paciente(){
+    if (this.estaEnVistaMedico){
+      this.mostrarListaCitas("PACIENTE");
+      this.estaEnVistaMedico=false;
+    }else{
+      //cambiar nombre al boton
+      this.mostrarListaCitas("MEDICO");
+      this.estaEnVistaMedico=true;
+    }
+  }  
   mostrarListaCitas(tipo: String){
     switch (tipo) {
       case "PACIENTE":
@@ -70,16 +84,19 @@ export class CitasComponent implements OnInit {
    
   }
   habilitarBotones(tipo: String){
-  
+
     switch (tipo) {
       case "PACIENTE":
+          this.esPaciente=true;
           this.esMedico=false;
         break;
       case "MEDICO":
+          this.estaEnVistaMedico=true;
           this.esMedico=true;
         break;
         case "GESTOR":
-            this.esMedico=false;
+            this.esMedico=true;
+            this.esPaciente=true;
       default:
         break;
     }
