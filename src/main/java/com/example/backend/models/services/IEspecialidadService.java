@@ -9,4 +9,5 @@ import com.example.backend.models.entity.Especialidad;
 public interface IEspecialidadService {
 	
 	public List<Especialidad> findAll();
+	public Especialidad findByNombre(String nombre);
 }

@@ -42,7 +42,10 @@ export class PedircitaComponent implements OnInit {
     this.esMedicoCabecera = true;
     this.obtenerespecialidades();
   }
-
+ /* obtenerHuecosLibres(){
+    return this.
+  }
+  */
   obtenerespecialidades() {
     return this.especialidadService.getAllEspecialidades().subscribe(
       response => {

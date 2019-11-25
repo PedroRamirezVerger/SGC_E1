@@ -9,6 +9,6 @@ import com.example.backend.models.entity.Especialidad;
 @Repository
 public interface IEspecialidadDAO extends MongoRepository<Especialidad, String> {
     List<Especialidad> findAll();
-
+    Especialidad findByNombre(String nombre);
 
 }
