@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 plugin = {"html:target/cucumber-html-report", "json:target/cucumber-json-report.json"},
-features = "src/test/resource/ModificarDatosPersonales.feature"
+features = "src/test/resource/LoginRoles.feature"
 )
 public class runTest {
 }
