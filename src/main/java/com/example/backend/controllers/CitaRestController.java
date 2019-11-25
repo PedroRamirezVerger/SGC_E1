@@ -164,9 +164,9 @@ public class CitaRestController {
 	
 	///Comprobar getMapping
 	@GetMapping("/citas/huecoslibres/{dniMedico}")
-	public ArrayList<LocalTime> getHuecos(@PathVariable("dniMedico") String dniMedico, int dia, int mes, int ano) {
+	public ArrayList<String> getHuecos(@PathVariable("dniMedico") String dniMedico, int dia, int mes, int ano) {
 
-		ArrayList<LocalTime> listaHuecosLibres = new ArrayList<LocalTime>();
+		ArrayList<String> listaHuecosLibres = new ArrayList<String>();
 		Medico medico = usuarioService.findMedicoByDni(dniMedico);
 		Horario horario = horarioService.findHorarioByDnimedicoAndDiaAndMesAndAno(dniMedico, dia, mes, ano);
 		Especialidad especialidad=especialidadService.findByNombre(medico.getEspecialidad());
@@ -181,7 +181,7 @@ public class CitaRestController {
 		for (LocalTime i = horaInicio; i.equals(horaFin); i.plus(duracionCita, ChronoUnit.MINUTES)) {
 			for(int j=0; j<listaCitas.size(); j++) {
 		    	if(!((listaCitas.get(j).getHours()==i.getHour()) && (listaCitas.get(j).getMinutes()==i.getMinute()))) {
-		    		listaHuecosLibres.add(i);	    		
+		    		listaHuecosLibres.add(i.toString());	    		
 		    	}
 		    }
 		}

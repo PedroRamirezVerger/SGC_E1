@@ -44,7 +44,15 @@ export class CitaService {
       )
   }
 
-
+ /* getHuecosLibres(dni:String, dia:Number , mes:Number, ano:Number): Observable<String[]>{
+    this.tipo_data='/huecoslibres/'+dni;
+    return this.httpClient.get<String[]>(this.URL_ENDPOINT+this.tipo_data, dni, dia, mes, ano)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+*/
   getCitasById(id: string): Observable<Cita> {
     this.tipo_data = '/fecha/' + id;
     return this.httpClient.get<Cita>(this.URL_ENDPOINT + this.tipo_data)
