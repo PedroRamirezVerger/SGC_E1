@@ -13,6 +13,8 @@ public interface IUsuarioService {
 
     public Usuario findUserByDni(String dni);
 
+    public Medico findMedicoByDni(String dni); 
+    
     public void saveUser(Usuario usuario);
     public void saveMedico(Medico medico);
 }

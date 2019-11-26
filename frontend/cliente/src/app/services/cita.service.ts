@@ -3,6 +3,7 @@ import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Cita } from '../entity/Cita';
+import { Especialidad } from '../entity/Especialidad';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,15 @@ export class CitaService {
       )
   }
 
-
+ /* getHuecosLibres(dni:String, dia:Number , mes:Number, ano:Number): Observable<String[]>{
+    this.tipo_data='/huecoslibres/'+dni;
+    return this.httpClient.get<String[]>(this.URL_ENDPOINT+this.tipo_data, dni, dia, mes, ano)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+*/
   getCitasById(id: string): Observable<Cita> {
     this.tipo_data = '/fecha/' + id;
     return this.httpClient.get<Cita>(this.URL_ENDPOINT + this.tipo_data)
@@ -80,6 +89,28 @@ export class CitaService {
           catchError(this.handleError)
       )
   }
+
+
+  getAllEspecialidades(): Observable<Especialidad[]>{
+    this.tipo_data = '/especialidades';
+    return this.httpClient.get<Especialidad[]>(this.URL_ENDPOINT + this.tipo_data)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  getMedicosEspecialidad(nombreEspecialidad: string): Observable<string[]>{
+    this.tipo_data = '/especialidades/' + nombreEspecialidad;
+    return this.httpClient.get<string[]>(this.URL_ENDPOINT + this.tipo_data)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+
+
  
     // Error handling 
     handleError(error) {

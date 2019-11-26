@@ -1,12 +1,14 @@
 export class Especialidad{
     _id?: string;
-    nombre: string;
-    duracionCita: Int16Array;
+    _nombre: string;
+    _duracionCita: number;
+    _listaMedicos: string[];
 
     constructor(){
         this._id="";
-        this.nombre= "";
-        this.duracionCita=null;
+        this._nombre= "";
+        this._duracionCita=null;
+        this._listaMedicos=null;
 
     }
 }

@@ -8,6 +8,7 @@ import { Medico } from 'src/app/entity/Medico';
 import { UsuarioService} from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 import { CookieService } from 'ngx-cookie-service';
+import { Rol } from 'src/app/entity/Rol';
 
 
 
@@ -22,6 +23,13 @@ export class CitasComponent implements OnInit {
   citas: Cita[] = [];
   usuario: Usuario = new Usuario();
   medico: Medico= new Medico();
+  rol: Rol = new Rol();
+  esMedico: boolean;
+  esPaciente: boolean;
+  estaEnVistaMedico: boolean;
+
+  
+
 
   constructor(private router:Router,
               private citaService: CitaService,
@@ -32,11 +40,24 @@ export class CitasComponent implements OnInit {
 
   ngOnInit() {
     this.usuario = JSON.parse(this.cookieService.get('usuario'));
+    this.rol=JSON.parse(this.cookieService.get('rol'));
+    console.log(this.cookieService.get('rol')); 
     console.log(JSON.parse(this.cookieService.get('usuario')));
-    this.habilitarBotones(this.usuario.tipo);
+    //console.log(JSON.parse(this.cookieService.get('rol')));
+    
+    this.habilitarBotones(this.rol.nombre);
     this.mostrarListaCitas(this.usuario.tipo);
   }
-
+  cambiarMedico_Paciente(){
+    if (this.estaEnVistaMedico){
+      this.mostrarListaCitas("PACIENTE");
+      this.estaEnVistaMedico=false;
+    }else{
+      //cambiar nombre al boton
+      this.mostrarListaCitas("MEDICO");
+      this.estaEnVistaMedico=true;
+    }
+  }  
   mostrarListaCitas(tipo: String){
     switch (tipo) {
       case "PACIENTE":
@@ -63,26 +84,19 @@ export class CitasComponent implements OnInit {
    
   }
   habilitarBotones(tipo: String){
+
     switch (tipo) {
       case "PACIENTE":
-        document.getElementById("modificardatos-button").style.display="block";
-         //document.getElementById("cambiarcita-button").style.display="block";
-        document.getElementById("pedircita-button").style.display="block";
-        //document.getElementById("eliminarcita-button").style.display="block";
-        document.getElementById("cambiocontrasena-button").style.display="block";
+          this.esPaciente=true;
+          this.esMedico=false;
         break;
       case "MEDICO":
-          document.getElementById("modificardatos-button").style.display="block";
-        //  document.getElementById("cambiarcita-button").style.display="none";
-          document.getElementById("pedircita-button").style.display="none";
-         // document.getElementById("eliminarcita-button").style.display="none";
-          document.getElementById("cambiocontrasena-button").style.display="block";
-          console.log(this.cookieService.get('gestor'));
-          if (this.cookieService.get('gestor')==='true') {
-            document.getElementById("pedircita-button").style.display="block";
-          }
+          this.estaEnVistaMedico=true;
+          this.esMedico=true;
         break;
-
+        case "GESTOR":
+            this.esMedico=true;
+            this.esPaciente=true;
       default:
         break;
     }
@@ -115,6 +129,8 @@ export class CitasComponent implements OnInit {
   modificardatosPersonales(){
     this.router.navigate(['/cambiodatospersonales'])
   }
+
+  //Modificar un paciente para que sea médico
   modificarMedico(){
     this.crearmedico();
     this.usuarioService.modificarMedico(this.medico).subscribe(

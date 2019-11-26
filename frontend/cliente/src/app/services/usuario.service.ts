@@ -81,7 +81,7 @@ export class UsuarioService {
   }
   modificarMedico(medico:Medico): Observable<Medico> {
     this.tipo_data = '/registrarMedico/' + medico._id;
-    return this.httpClient.put<Medico>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(medico), this.httpOptions)
+    return this.httpClient.put<Medico>(this.URL_ENDPOINT + this.tipo_data, JSON.stringify(medico) ,this.httpOptions)
       .pipe(
         retry(1),
           catchError(this.handleDatosContactoError)
