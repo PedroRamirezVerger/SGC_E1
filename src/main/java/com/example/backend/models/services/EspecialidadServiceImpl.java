@@ -21,6 +21,16 @@ public class EspecialidadServiceImpl implements IEspecialidadService {
     	return especialidadDao.findAll();
     }
 
+	@Override
+	public Especialidad findEspecialidadById(String id) {
+		return especialidadDao.findBy_id(id);
+	}
+
+	@Override
+	public Especialidad findEspecialidadByNombre(String nombre) {
+		return especialidadDao.findByNombre(nombre);
+	}
+
 }
 
 

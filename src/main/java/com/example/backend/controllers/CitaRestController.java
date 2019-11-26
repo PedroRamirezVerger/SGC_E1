@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.models.entity.Cita;
+import com.example.backend.models.entity.Especialidad;
 import com.example.backend.models.entity.Usuario;
 import com.example.backend.models.services.ICitaService;
+import com.example.backend.models.services.IEspecialidadService;
 import com.example.backend.models.services.IUsuarioService;
 
 
@@ -35,6 +37,13 @@ public class CitaRestController {
 	@Autowired 
 	private IUsuarioService usuarioService;
 	
+	@Autowired 
+	private IEspecialidadService especialidadService;
+	
+	/**
+	 * obtener todas las citas
+	 * @return citas
+	 */
 	@GetMapping("/citas")
 	public List<Cita> getAllCitas() {
 		return citaService.findAll();
@@ -98,5 +107,27 @@ public class CitaRestController {
     	return cita;
     	
     }
+    
+    
+    /**
+     * Obtener todas las especialidades
+     * @return especialidades
+     */
+    @GetMapping("/citas/especialidades")
+	public List<Especialidad> getAllEspecialidades() {
+		return especialidadService.findAll();
+	}
+	
+	/**
+     * obtener los medicos de una especialidad
+     * @param id
+     * @return
+     */
+	@GetMapping("/citas/especialidades/{nombreEspecialidad}")
+	public String[] getEspecialidadesByid(@PathVariable ("nombreEspecialidad") String nombreEspecialidad){
+		Especialidad especialidad = new Especialidad();
+		especialidad = especialidadService.findEspecialidadByNombre(nombreEspecialidad);
+		return especialidad.get_listaMedicos();
+	}
 	
 }

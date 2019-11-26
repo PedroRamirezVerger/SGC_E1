@@ -5,7 +5,6 @@ import { CitaService } from 'src/app/services/cita.service';
 import { Usuario } from 'src/app/entity/Usuario';
 import { Especialidad } from 'src/app/entity/Especialidad';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import {EspecialidadService} from 'src/app/services/especialidad.service';
 import Swal from 'sweetalert2';
 import { CookieService } from 'ngx-cookie-service';
 import { Medico } from 'src/app/entity/Medico';
@@ -22,60 +21,43 @@ export class PedircitaComponent implements OnInit {
   usuario: Usuario = new Usuario;
   esMedicoCabecera: boolean;
   especialidades: Especialidad[] = [];
-  especialidadSeleccionada:number = 0;
-  especialidadElegida: Especialidad;
-  medicoSeleccionado:number = 0;
-  medicoElegido: String;
+  especialidadElegida: string;
+  medicoElegido: string;
+  listaMedicos : string[] = []
 
   constructor(private router:Router, 
               private citaService : CitaService, 
               private cookieService: CookieService, 
               private usuarioService: UsuarioService,
-              private especialidadService: EspecialidadService) { }
+              ) { }
   
   
   ngOnInit() {
     this.usuario = JSON.parse(this.cookieService.get('usuario'));
-
-    let x=document.getElementById("especialistas");
-    x.style.display="none";
     this.esMedicoCabecera = true;
-    this.obtenerespecialidades();
   }
 
   obtenerespecialidades() {
-    return this.especialidadService.getAllEspecialidades().subscribe(
+    return this.citaService.getAllEspecialidades().subscribe(
       response => {
         this.especialidades = response;
         console.log(this.especialidades);
+        console.log(this.especialidades[0]._nombre);
       }
     );
   }
-  //Coger del array de especialidades, la especialidad seleccionada
-  capturarEspecialidad(){
-    this.especialidadElegida = this.especialidades[this.especialidadSeleccionada];
+
+  obtenerMedicosEspecialidad() {
+    console.log(this.especialidadElegida);
+    return this.citaService.getMedicosEspecialidad(this.especialidadElegida).subscribe(
+      response => {
+        this.listaMedicos = response;
+        this.medicoElegido = this.listaMedicos[0];
+        console.log(this.listaMedicos);
+      }
+    );
+
   }
-  //Coger de la especialidad elegida, de su lista de medicos, el medico elegido (para el calendario)
-  /*capturarMedico(){
-    this.medicoElegido = this.especialidadElegida.listaMedicos[this.medicoSeleccionado]
-  }*/
-
-
-  mostrarMedicosDeEspecialidad(especialidad:Especialidad) {
-    var especialistas = especialidad.listaMedicos;
-    for (var i=0;i<especialistas.length;i++){
-      console.log(especialistas[i]);
-    }
-  }
-    
-    
-    /*for (var i = 0; i < numbers.length; _i++) {
-      var num = numbers[_i];
-      console.log(num);
-  }*/
-  //}
-  
-
 
   comprobarfecha(fecha:Date){
     let hoy=new Date();
@@ -88,7 +70,6 @@ export class PedircitaComponent implements OnInit {
 
 
   anadircita(dia: string, hora: string){
-    console.log(this.especialidadMostrar);
     let horaSeparada = hora.split(':');
     let diaSeparado = dia.split('-');
     let fecha = new Date(parseInt(diaSeparado[0]),parseInt(diaSeparado[1])-1, parseInt(diaSeparado[2]),
@@ -100,33 +81,37 @@ export class PedircitaComponent implements OnInit {
       if (this.esMedicoCabecera) {
         this.cita.dniMedico = this.usuario.medico;
         this.cita.especialidad = "Médico de cabecera";
+      } else {
+        console.log(this.medicoElegido);
+        console.log(this.especialidadElegida);
+        if(this.medicoElegido.length === 0 || this.especialidadElegida.length === 0){
+          Swal.fire('Error al crear cita', "Todos los campos han de estar completos.", 'error');
+        } else {
+          this.cita.dniMedico = this.medicoElegido;
+          this.cita.especialidad = this.especialidadElegida;
+        }
       }
-      if(this.cita.especialidad.length === 0 || this.cita.dniMedico.length === 0){
-        Swal.fire('Error al crear cita', "Todos los campos han de estar completos.", 'error');
-      } 
-      else {
-        console.log(this.cita);
-        this.citaService.addCita(this.cita).subscribe(
-          response => {
-            this.router.navigate(['/citas'])
-            Swal.fire('Nueva cita', `Cita creada con éxito!`, 'success');
-          }
-        );
-      }
+      console.log(this.cita);
+      this.citaService.addCita(this.cita).subscribe(
+        response => {
+          this.router.navigate(['/citas'])
+          Swal.fire('Nueva cita', `Cita creada con éxito!`, 'success');
+        }
+      );
     }
     else{
       Swal.fire('Error de fecha', "La fecha introducida no es correcta.", 'error');
     }
   }
   mostrarEspecialidad(n:number) {
-    let x=document.getElementById("especialistas");
     if (n==0) {
-      x.style.display="none";
       this.esMedicoCabecera = true;
     }
     if (n==1) {
-      x.style.display="block";
       this.esMedicoCabecera = false;
+      this.obtenerespecialidades();
+      this.especialidadElegida = "Dermatologia";
+      this.obtenerMedicosEspecialidad();
     }
    
   }
