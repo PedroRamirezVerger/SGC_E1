@@ -22,10 +22,14 @@ public class EspecialidadServiceImpl implements IEspecialidadService {
     }
 
 	@Override
-	public Especialidad findByNombre(String nombre) {
+	public Especialidad findEspecialidadById(String id) {
+		return especialidadDao.findBy_id(id);
+	}
+
+	@Override
+	public Especialidad findEspecialidadByNombre(String nombre) {
 		return especialidadDao.findByNombre(nombre);
 	}
-    
 
 }
 
