@@ -4,7 +4,8 @@
         <tr>
             <th scope="col" style="width: 200px;">Fecha</th>
             <th scope="col" style="width: 100px;">Consulta</th>
-            <th scope="col" style="width: 300px;">Médico</th>
+            <th scope="col" style="width: 300px;" *ngIf="!esMedico">Médico</th>
+            <th scope="col" style="width: 300px;" *ngIf="esMedico">Paciente</th>
             <th scope="col" style="width: 200px;">Especialidad</th>
             <th scope="col" style="width: 200px;">Borrar</th>
             <th scope="col" style="width: 200px;">Modificar</th>
