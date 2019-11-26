@@ -61,6 +61,13 @@ public class CitaRestController {
 
 	private Encriptador encriptador = new Encriptador(key, cipher, algoritmo, keysize, clave);
 
+	@Autowired 
+	private IEspecialidadService especialidadService;
+	
+	/**
+	 * obtener todas las citas
+	 * @return citas
+	 */
 	@GetMapping("/citas")
 	public List<Cita> getAllCitas() {
 		return citaService.findAll();
@@ -188,4 +195,40 @@ public class CitaRestController {
 		return listaHuecosLibres;
 	}
 
+	   
+    /** 
+     * Modificar la fecha de la cita
+     * @param teléfono
+     * @param modificarDatosContacto
+     */
+    @PutMapping("/citas/{id}")
+    public Cita modificarFechaCita(@PathVariable("id") ObjectId id, @Valid @RequestBody Cita cita) {
+    	cita.set_id(id);
+    	citaService.saveCita(cita);
+    	return cita;
+    	
+    }
+    
+    
+    /**
+     * Obtener todas las especialidades
+     * @return especialidades
+     */
+    @GetMapping("/citas/especialidades")
+	public List<Especialidad> getAllEspecialidades() {
+		return especialidadService.findAll();
+	}
+	
+	/**
+     * obtener los medicos de una especialidad
+     * @param id
+     * @return
+     */
+	@GetMapping("/citas/especialidades/{nombreEspecialidad}")
+	public String[] getEspecialidadesByid(@PathVariable ("nombreEspecialidad") String nombreEspecialidad){
+		Especialidad especialidad = new Especialidad();
+		especialidad = especialidadService.findEspecialidadByNombre(nombreEspecialidad);
+		return especialidad.get_listaMedicos();
+	}
+	
 }
