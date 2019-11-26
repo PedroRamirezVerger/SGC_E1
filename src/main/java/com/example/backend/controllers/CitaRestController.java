@@ -35,8 +35,8 @@ import com.example.backend.models.services.IHorarioService;
 import com.example.backend.models.services.IUsuarioService;
 import com.example.backend.models.utiles.Encriptador;
 
-//@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
-@CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
+@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
+//@CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
 @RestController
 @RequestMapping("api")
 public class CitaRestController {
@@ -50,8 +50,6 @@ public class CitaRestController {
 	@Autowired
 	private IHorarioService horarioService;
 	
-	@Autowired
-	private IEspecialidadService especialidadService;
 
 	private SecretKey key;
 	private Cipher cipher;
@@ -176,7 +174,7 @@ public class CitaRestController {
 		ArrayList<String> listaHuecosLibres = new ArrayList<String>();
 		Medico medico = usuarioService.findMedicoByDni(dniMedico);
 		Horario horario = horarioService.findHorarioByDnimedicoAndDiaAndMesAndAno(dniMedico, dia, mes, ano);
-		Especialidad especialidad=especialidadService.findByNombre(medico.getEspecialidad());
+		Especialidad especialidad=especialidadService.findEspecialidadByNombre(medico.getEspecialidad());
 		int duracionCita = especialidad.get_duracionCita();
 		
 		ArrayList<Date> listaCitas = horario.getListaCitas();
@@ -195,20 +193,7 @@ public class CitaRestController {
 		return listaHuecosLibres;
 	}
 
-	   
-    /** 
-     * Modificar la fecha de la cita
-     * @param teléfono
-     * @param modificarDatosContacto
-     */
-    @PutMapping("/citas/{id}")
-    public Cita modificarFechaCita(@PathVariable("id") ObjectId id, @Valid @RequestBody Cita cita) {
-    	cita.set_id(id);
-    	citaService.saveCita(cita);
-    	return cita;
-    	
-    }
-    
+	  
     
     /**
      * Obtener todas las especialidades
