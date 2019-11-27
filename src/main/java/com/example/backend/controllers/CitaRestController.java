@@ -39,13 +39,9 @@ import com.example.backend.models.utiles.Encriptador;
 //@CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
 @RestController
 @RequestMapping("api")
-public class CitaRestController {
-
-	
+public class CitaRestController {	
 	@Autowired
 	private ICitaService citaService;
-
-	
 	@Autowired
 	private IUsuarioService usuarioService;
 
