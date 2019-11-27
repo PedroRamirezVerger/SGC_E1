@@ -1,9 +1,4 @@
-*/bin/*
-*/.git/*
-*/.settings/*
-*/.classpath
-*/.project
-*.class
+target/
 target/
 # Eclipse
 .classpath
