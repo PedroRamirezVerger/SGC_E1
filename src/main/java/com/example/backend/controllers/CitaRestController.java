@@ -56,6 +56,7 @@ public class CitaRestController {
 	private String algoritmo = "AES";
 	private int keysize = 16;
 	private String clave = "seguridad";
+	
 
 	private Encriptador encriptador = new Encriptador(key, cipher, algoritmo, keysize, clave);
 
