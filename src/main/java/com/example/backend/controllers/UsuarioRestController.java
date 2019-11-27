@@ -44,6 +44,7 @@ import com.example.backend.models.utiles.Encriptador;
 @RestController
 @RequestMapping("api")
 public class UsuarioRestController {
+	
 
 	@Autowired
 	private IUsuarioService usuarioService;
