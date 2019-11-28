@@ -63,10 +63,16 @@ public class CitaRestController {
 	/**
 	 * obtener todas las citas
 	 * @return citas
+	 * @throws UnsupportedEncodingException
 	 */
 	@GetMapping("/citas")
-	public List<Cita> getAllCitas() {
-		return citaService.findAll();
+	public List<Cita> getAllCitas() throws UnsupportedEncodingException {
+		List<Cita> listaCitas = citaService.findAll();
+		List<Cita> listaCitasDesencriptadas = new ArrayList<>();
+		for (int i = 0; i < listaCitas.size(); i++) {
+			listaCitasDesencriptadas.add(encriptador.desencriptarCita(listaCitas.get(i)));
+		}
+		return listaCitasDesencriptadas;
 	}
 
 	/**
