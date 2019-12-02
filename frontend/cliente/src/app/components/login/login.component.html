@@ -11,8 +11,8 @@
                 <input type="password" class="form-control" #password name="password" placeholder="Password" ngControl="password" required minlength="4">
             </div>
             <div>
-                <button type="button" (click)="logIn(dni.value, password.value, $event)" style="margin: 10px" class="btn btn-primary" id="login-button">Login</button>
-                <button type="button" (click)="singIn($event)" style="margin: 10px" class="btn btn-primary" id="registro-button">Registro</button>
+                <button type="button" (click)="logIn(dni.value, password.value)" style="margin: 10px" class="btn btn-primary" id="login-button">Login</button>
+                <button type="button" (click)="singIn()" style="margin: 10px" class="btn btn-primary" id="registro-button">Registro</button>
                 <hr>
                 <p for="Control-login" style="color: red;">{{msg}}</p>
             </div>

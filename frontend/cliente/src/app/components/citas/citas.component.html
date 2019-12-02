@@ -18,7 +18,7 @@
             <td>{{cita.dniMedico}}</td>
             <td>{{cita.especialidad}}</td>
             <td><button type="button" *ngIf="!esMedico || !estaEnVistaMedico" (click)="eliminarcita(cita)" style="margin: 10px" class="btn btn-primary" id="eliminarcita-button">Eliminar Cita</button></td>
-            <td><button type="button" *ngIf="!esMedico || !estaEnVistaMedico" (click)="cambiarcita(cita, $event)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar Cita</button></td>
+            <td><button type="button" *ngIf="!esMedico || !estaEnVistaMedico" (click)="cambiarcita(cita)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar Cita</button></td>
         </tr>
     </tbody>
     <br>

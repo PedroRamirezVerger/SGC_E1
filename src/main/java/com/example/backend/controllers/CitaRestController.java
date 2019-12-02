@@ -35,7 +35,7 @@ import com.example.backend.models.services.IUsuarioService;
 import com.example.backend.models.utiles.Encriptador;
 
 //@CrossOrigin(value = "https://sgcequipo1.herokuapp.com") 
-@CrossOrigin(value = "http://localhost:4200") // PARA DESARROLLO
+@CrossOrigin(value = "*") // PARA DESARROLLO
 @RestController
 @RequestMapping("api")
 public class CitaRestController {	

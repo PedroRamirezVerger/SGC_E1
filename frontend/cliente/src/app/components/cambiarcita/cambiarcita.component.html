@@ -10,7 +10,7 @@
                 <br> Selecciona la hora deseada: <br>
                 <input type="time" #hora name="hora" id="hora" min="07:00" max="21:00" step="300">
             </div>
-            <button type="button" (click)="cambiarCita(fecha.value, hora.value, $event)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar cita</button>
+            <button type="button" (click)="cambiarCita(fecha.value, hora.value)" style="margin: 10px" class="btn btn-primary" id="cambiarcita-button">Cambiar cita</button>
         </div>
     </form>
 </div>
